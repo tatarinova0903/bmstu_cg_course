@@ -3,12 +3,12 @@ package com.example.cg_cource;
 import javafx.scene.*;
 
 import javafx.scene.image.Image;
-import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Box;
-import javafx.scene.shape.Sphere;
 import javafx.scene.transform.Rotate;
 import javafx.scene.transform.Transform;
+
+import java.io.InputStream;
 
 public class MainGroup extends Group {
     Rotate r;
@@ -35,7 +35,8 @@ public class MainGroup extends Group {
 
     private Box prepareBox() {
         PhongMaterial material = new PhongMaterial();
-//        material.setDiffuseMap(new Image(getClass().getResourceAsStream("..../resources/images/wood.jpg")));
+        InputStream inputStream = getClass().getResourceAsStream("/images/wood.jpg");
+        material.setDiffuseMap(new Image(inputStream));
         Box box = new Box(100, 20, 50);
         box.setMaterial(material);
         return box;
