@@ -34,11 +34,6 @@ public class MainGroup extends Group {
     }
 
     private Box prepareBox() {
-        PhongMaterial material = new PhongMaterial();
-        InputStream inputStream = getClass().getResourceAsStream("/images/wood.jpg");
-        material.setDiffuseMap(new Image(inputStream));
-        Box box = new Box(100, 20, 50);
-        box.setMaterial(material);
-        return box;
+        return new Wall(100, 20, 50, new Material(MaterialType.PLASTIC));
     }
 }
