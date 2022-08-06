@@ -11,15 +11,15 @@ import java.io.IOException;
 public class MainApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        MainController mainPane = new MainController();
-        Scene scene = new Scene(mainPane);
+        MainGroup mainPane = new MainGroup();
+        MainScene scene = new MainScene(mainPane, ScreenConstants.WIDTH, ScreenConstants.HEIGHT);
         stage.setScene(scene);
         stage.setTitle("Курсовая работа");
         stage.setHeight(800);
         stage.setWidth(1300);
         scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
             public void handle(KeyEvent ke) {
-                mainPane.keyboardDidTap(ke);
+                scene.keyboardDidTap(ke);
             }
         });
         stage.show();
