@@ -11,4 +11,6 @@ module com.example.cg_cource {
     opens com.example.cg_cource.Helpers to javafx.fxml;
     exports com.example.cg_cource.Objects;
     opens com.example.cg_cource.Objects to javafx.fxml;
+    exports com.example.cg_cource.Views;
+    opens com.example.cg_cource.Views to javafx.fxml;
 }
