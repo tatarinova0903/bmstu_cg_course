@@ -2,6 +2,8 @@ package com.example.cg_cource.MainSceneModule.Room;
 
 import com.example.cg_cource.Helpers.Material;
 import com.example.cg_cource.Helpers.MaterialType;
+import com.example.cg_cource.Helpers.MenuEvent;
+import com.example.cg_cource.Helpers.ScreenConstants;
 import com.example.cg_cource.Objects.Wall;
 import javafx.scene.Group;
 import javafx.scene.transform.Rotate;
@@ -16,14 +18,29 @@ public class RoomGroup extends Group {
         getChildren().add(wall);
     }
 
-    public void rotateByX(int ang) {
+    public void handleEventFromMenu(MenuEvent menuEvent) {
+        switch (menuEvent) {
+            case MINUS -> translateZProperty().set(
+                    getTranslateZ() + ScreenConstants.Zoom.COORD_CHANGE
+            );
+            case PLUS -> translateZProperty().set(
+                    getTranslateZ() - ScreenConstants.Zoom.COORD_CHANGE
+            );
+            case ROTATE_UP -> rotateByX(-10);
+            case ROTATE_DOWN -> rotateByX(10);
+            case ROTATE_LEFT -> rotateByY(10);
+            case ROTATE_RIGHT -> rotateByY(-10);
+        }
+    }
+
+    private void rotateByX(int ang) {
         r = new Rotate(ang, Rotate.X_AXIS);
         t = t.createConcatenation(r);
         this.getTransforms().clear();
         this.getTransforms().addAll(t);
     }
 
-    public void rotateByY(int ang) {
+    private void rotateByY(int ang) {
         r = new Rotate(ang, Rotate.Y_AXIS);
         t = t.createConcatenation(r);
         this.getTransforms().clear();

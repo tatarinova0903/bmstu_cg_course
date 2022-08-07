@@ -23,19 +23,4 @@ public class MainScene extends Scene {
         camera.setNearClip(1);
         camera.setFarClip(1500);
     }
-
-    public void keyboardDidTap(KeyEvent keyEvent) {
-        switch (keyEvent.getCode()) {
-            case W -> group.roomGroup.translateZProperty().set(
-                    group.roomGroup.getTranslateZ() + ScreenConstants.Zoom.COORD_CHANGE
-            );
-            case S -> group.roomGroup.translateZProperty().set(
-                    group.roomGroup.getTranslateZ() - ScreenConstants.Zoom.COORD_CHANGE
-            );
-            case UP -> group.roomGroup.rotateByX(-10);
-            case DOWN -> group.roomGroup.rotateByX(10);
-            case LEFT -> group.roomGroup.rotateByY(10);
-            case RIGHT -> group.roomGroup.rotateByY(-10);
-        }
-    }
 }

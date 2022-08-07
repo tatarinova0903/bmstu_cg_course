@@ -15,8 +15,6 @@ public class TranslateButton extends Button {
         ImageView view = new ImageView(img);
         view.setFitHeight(10);
         view.setPreserveRatio(true);
-//        setHeight(10);
-//        setWidth(10);
         setGraphic(view);
     }
 }

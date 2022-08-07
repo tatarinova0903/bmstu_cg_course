@@ -2,6 +2,7 @@ package com.example.cg_cource.MainSceneModule;
 
 import com.example.cg_cource.Helpers.Material;
 import com.example.cg_cource.Helpers.MaterialType;
+import com.example.cg_cource.Helpers.MenuEvent;
 import com.example.cg_cource.MainSceneModule.Menu.MenuGroup;
 import com.example.cg_cource.MainSceneModule.Room.RoomGroup;
 import com.example.cg_cource.Objects.Wall;
@@ -19,8 +20,12 @@ public class MainGroup extends Group {
         this.roomGroup = roomGroup;
         getChildren().add(roomGroup);
 
-        MenuGroup menuGroup = new MenuGroup();
+        MenuGroup menuGroup = new MenuGroup(this);
         this.menuGroup = menuGroup;
         getChildren().add(menuGroup);
+    }
+
+    public void handleEventFromMenu(MenuEvent menuEvent) {
+        roomGroup.handleEventFromMenu(menuEvent);
     }
 }

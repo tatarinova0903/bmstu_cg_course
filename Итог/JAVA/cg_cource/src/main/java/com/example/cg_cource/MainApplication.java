@@ -18,11 +18,6 @@ public class MainApplication extends Application {
         stage.setTitle("Курсовая работа");
         stage.setHeight(800);
         stage.setWidth(1300);
-        scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
-            public void handle(KeyEvent ke) {
-                scene.keyboardDidTap(ke);
-            }
-        });
         stage.show();
     }
 
