@@ -26,12 +26,12 @@ public class MainScene extends Scene {
 
     public void keyboardDidTap(KeyEvent keyEvent) {
         switch (keyEvent.getCode()) {
-            case W -> group.translateZProperty().set(group.getTranslateZ() + COORD_CHANGE);
-            case S -> group.translateZProperty().set(group.getTranslateZ() - COORD_CHANGE);
-            case UP -> group.rotateByX(-10);
-            case DOWN -> group.rotateByX(10);
-            case LEFT -> group.rotateByY(10);
-            case RIGHT -> group.rotateByY(-10);
+            case W -> group.roomGroup.translateZProperty().set(group.roomGroup.getTranslateZ() + COORD_CHANGE);
+            case S -> group.roomGroup.translateZProperty().set(group.roomGroup.getTranslateZ() - COORD_CHANGE);
+            case UP -> group.roomGroup.rotateByX(-10);
+            case DOWN -> group.roomGroup.rotateByX(10);
+            case LEFT -> group.roomGroup.rotateByY(10);
+            case RIGHT -> group.roomGroup.rotateByY(-10);
         }
     }
 }
