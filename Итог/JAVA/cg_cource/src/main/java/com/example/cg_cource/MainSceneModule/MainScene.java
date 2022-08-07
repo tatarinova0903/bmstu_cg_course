@@ -1,12 +1,13 @@
-package com.example.cg_cource;
+package com.example.cg_cource.MainSceneModule;
 
-import javafx.scene.*;
+import javafx.scene.Camera;
+import javafx.scene.Parent;
+import javafx.scene.PerspectiveCamera;
+import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
-import javafx.scene.transform.Rotate;
-import javafx.scene.transform.Transform;
 
-class MainScene extends Scene {
+public class MainScene extends Scene {
     private static final double COORD_CHANGE = 50;
     private Camera camera = new PerspectiveCamera(true);
     private MainGroup group;
@@ -23,10 +24,10 @@ class MainScene extends Scene {
         camera.setFarClip(1000);
     }
 
-    void keyboardDidTap(KeyEvent keyEvent) {
+    public void keyboardDidTap(KeyEvent keyEvent) {
         switch (keyEvent.getCode()) {
-            case W -> group.translateZProperty().set(group.getTranslateZ() + 100);
-            case S -> group.translateZProperty().set(group.getTranslateZ() - 100);
+            case W -> group.translateZProperty().set(group.getTranslateZ() + COORD_CHANGE);
+            case S -> group.translateZProperty().set(group.getTranslateZ() - COORD_CHANGE);
             case UP -> group.rotateByX(-10);
             case DOWN -> group.rotateByX(10);
             case LEFT -> group.rotateByY(10);

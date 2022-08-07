@@ -1,22 +1,20 @@
-package com.example.cg_cource;
+package com.example.cg_cource.MainSceneModule;
 
+import com.example.cg_cource.Material;
+import com.example.cg_cource.MaterialType;
+import com.example.cg_cource.Wall;
 import javafx.scene.*;
-
-import javafx.scene.image.Image;
-import javafx.scene.paint.PhongMaterial;
-import javafx.scene.shape.Box;
 import javafx.scene.transform.Rotate;
 import javafx.scene.transform.Transform;
 
-import java.io.InputStream;
 
 public class MainGroup extends Group {
     Rotate r;
     Transform t = new Rotate();
 
     public MainGroup() {
-        Box box = prepareBox();
-        getChildren().add(box);
+        Wall wall = prepareBox();
+        getChildren().add(wall);
     }
 
     void rotateByX(int ang) {
@@ -33,7 +31,7 @@ public class MainGroup extends Group {
         this.getTransforms().addAll(t);
     }
 
-    private Box prepareBox() {
+    private Wall prepareBox() {
         return new Wall(100, 20, 50, new Material(MaterialType.PLASTIC));
     }
 }

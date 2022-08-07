@@ -29,7 +29,3 @@ public class Material {
         return new Image(inputStream);
     }
 }
-
-enum MaterialType {
-    WOOD, PAPER, PLASTIC
-}
