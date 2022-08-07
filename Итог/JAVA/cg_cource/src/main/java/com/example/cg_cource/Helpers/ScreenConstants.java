@@ -1,4 +1,4 @@
-package com.example.cg_cource;
+package com.example.cg_cource.Helpers;
 
 public class ScreenConstants {
     public static final double HEIGHT = 800;

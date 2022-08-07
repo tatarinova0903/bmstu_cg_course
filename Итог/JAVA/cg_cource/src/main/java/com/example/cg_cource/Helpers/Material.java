@@ -1,4 +1,4 @@
-package com.example.cg_cource;
+package com.example.cg_cource.Helpers;
 
 import javafx.scene.image.Image;
 

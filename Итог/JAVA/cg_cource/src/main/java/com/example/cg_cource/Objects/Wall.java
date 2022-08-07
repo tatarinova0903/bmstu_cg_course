@@ -1,6 +1,6 @@
-package com.example.cg_cource;
+package com.example.cg_cource.Objects;
 
-import javafx.scene.image.Image;
+import com.example.cg_cource.Helpers.Material;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Box;
 

@@ -1,8 +1,8 @@
 package com.example.cg_cource.MainSceneModule;
 
-import com.example.cg_cource.Material;
-import com.example.cg_cource.MaterialType;
-import com.example.cg_cource.Wall;
+import com.example.cg_cource.Helpers.Material;
+import com.example.cg_cource.Helpers.MaterialType;
+import com.example.cg_cource.Objects.Wall;
 import javafx.scene.*;
 import javafx.scene.transform.Rotate;
 import javafx.scene.transform.Transform;
