@@ -1,12 +1,11 @@
 package com.example.cg_cource;
 
+import com.example.cg_cource.Helpers.ScreenConstants;
 import com.example.cg_cource.MainSceneModule.MainScene;
 import com.example.cg_cource.MainSceneModule.MainSceneBuilder;
 import com.example.cg_cource.MenuModule.MenuScene;
 import com.example.cg_cource.MenuModule.MenuSceneBuilder;
-import com.example.cg_cource.MenuModule.MenuStack;
 import javafx.application.Application;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -14,21 +13,21 @@ import java.io.IOException;
 public class MainApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        MainScene scene = MainSceneBuilder.build();
-        stage.setScene(scene);
+        MainScene mainScene = MainSceneBuilder.build();
+        stage.setScene(mainScene);
         stage.setTitle("Курсовая работа");
-        stage.setHeight(800);
-        stage.setWidth(1100);
-        stage.setX(320);
+        stage.setHeight(ScreenConstants.Main.HEIGHT);
+        stage.setWidth(ScreenConstants.Main.WIDTH);
+        stage.setX(ScreenConstants.Menu.WIDTH + ScreenConstants.Screen.HORIZ_PADDING);
         stage.show();
 
-        MenuScene menuScene = MenuSceneBuilder.build(scene.getGroup());
+        MenuScene menuScene = MenuSceneBuilder.build(mainScene.getGroup());
         Stage menuStage = new Stage();
         menuStage.setScene(menuScene);
-        menuStage.setHeight(800);
-        menuStage.setWidth(300);
+        menuStage.setHeight(ScreenConstants.Main.HEIGHT);
+        menuStage.setWidth(ScreenConstants.Menu.WIDTH);
         menuStage.setTitle("Меню");
-        menuStage.setX(20);
+        menuStage.setX(ScreenConstants.Screen.HORIZ_PADDING);
         menuStage.show();
     }
 

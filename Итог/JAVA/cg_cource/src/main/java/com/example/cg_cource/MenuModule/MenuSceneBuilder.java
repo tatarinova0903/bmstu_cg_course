@@ -6,7 +6,7 @@ import com.example.cg_cource.MainSceneModule.MainGroup;
 public class MenuSceneBuilder {
     public static MenuScene build(MainGroup group) {
         MenuStack menu = new MenuStack(group);
-        MenuScene menuScene = new MenuScene(menu, ScreenConstants.Menu.WIDTH, ScreenConstants.Menu.HEIGHT);
+        MenuScene menuScene = new MenuScene(menu, ScreenConstants.Menu.WIDTH, ScreenConstants.Main.HEIGHT);
         return menuScene;
     }
 }
