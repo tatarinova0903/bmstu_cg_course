@@ -1,14 +1,12 @@
 package com.example.cg_cource;
 
-import com.example.cg_cource.MainSceneModule.MainGroup;
 import com.example.cg_cource.MainSceneModule.MainScene;
 import com.example.cg_cource.MainSceneModule.MainSceneBuilder;
-import com.example.cg_cource.MenuModule.MenuBuilder;
+import com.example.cg_cource.MenuModule.MenuScene;
+import com.example.cg_cource.MenuModule.MenuSceneBuilder;
 import com.example.cg_cource.MenuModule.MenuStack;
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -24,8 +22,7 @@ public class MainApplication extends Application {
         stage.setX(320);
         stage.show();
 
-        MenuStack menuStack = MenuBuilder.build(scene.getGroup());
-        Scene menuScene = new Scene(menuStack, 100, 100);
+        MenuScene menuScene = MenuSceneBuilder.build(scene.getGroup());
         Stage menuStage = new Stage();
         menuStage.setScene(menuScene);
         menuStage.setHeight(800);
