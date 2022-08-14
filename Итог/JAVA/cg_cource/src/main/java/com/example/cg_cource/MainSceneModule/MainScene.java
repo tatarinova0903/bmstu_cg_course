@@ -1,11 +1,9 @@
 package com.example.cg_cource.MainSceneModule;
 
-import com.example.cg_cource.Helpers.ScreenConstants;
 import javafx.scene.Camera;
 import javafx.scene.Parent;
 import javafx.scene.PerspectiveCamera;
 import javafx.scene.Scene;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 
 public class MainScene extends Scene {

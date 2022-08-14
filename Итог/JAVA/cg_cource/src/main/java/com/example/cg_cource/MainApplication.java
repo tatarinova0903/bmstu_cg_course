@@ -1,6 +1,6 @@
 package com.example.cg_cource;
 
-import com.example.cg_cource.Helpers.ScreenConstants;
+import com.example.cg_cource.Helpers.Constants;
 import com.example.cg_cource.MainSceneModule.MainScene;
 import com.example.cg_cource.MainSceneModule.MainSceneBuilder;
 import com.example.cg_cource.MenuModule.MenuScene;
@@ -16,18 +16,18 @@ public class MainApplication extends Application {
         MainScene mainScene = MainSceneBuilder.build();
         stage.setScene(mainScene);
         stage.setTitle("Курсовая работа");
-        stage.setHeight(ScreenConstants.Main.HEIGHT);
-        stage.setWidth(ScreenConstants.Main.WIDTH);
-        stage.setX(ScreenConstants.Menu.WIDTH + ScreenConstants.Screen.HORIZ_PADDING);
+        stage.setHeight(Constants.Main.HEIGHT);
+        stage.setWidth(Constants.Main.WIDTH);
+        stage.setX(Constants.Menu.WIDTH + Constants.Screen.HORIZ_PADDING);
         stage.show();
 
         MenuScene menuScene = MenuSceneBuilder.build(mainScene.getGroup());
         Stage menuStage = new Stage();
         menuStage.setScene(menuScene);
-        menuStage.setHeight(ScreenConstants.Main.HEIGHT);
-        menuStage.setWidth(ScreenConstants.Menu.WIDTH);
+        menuStage.setHeight(Constants.Main.HEIGHT);
+        menuStage.setWidth(Constants.Menu.WIDTH);
         menuStage.setTitle("Меню");
-        menuStage.setX(ScreenConstants.Screen.HORIZ_PADDING);
+        menuStage.setX(Constants.Screen.HORIZ_PADDING);
         menuStage.show();
     }
 

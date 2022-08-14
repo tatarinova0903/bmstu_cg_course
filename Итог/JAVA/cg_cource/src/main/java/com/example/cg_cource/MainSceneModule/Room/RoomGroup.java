@@ -1,10 +1,8 @@
 package com.example.cg_cource.MainSceneModule.Room;
 
-import com.example.cg_cource.Helpers.Material;
-import com.example.cg_cource.Helpers.MaterialType;
-import com.example.cg_cource.Helpers.MenuEvent;
-import com.example.cg_cource.Helpers.ScreenConstants;
-import com.example.cg_cource.Objects.Wall;
+import com.example.cg_cource.Helpers.*;
+import com.example.cg_cource.Objects.SmartBox;
+import javafx.geometry.Point3D;
 import javafx.scene.Group;
 import javafx.scene.transform.Rotate;
 import javafx.scene.transform.Transform;
@@ -14,17 +12,27 @@ public class RoomGroup extends Group {
     Transform t = new Rotate();
 
     public RoomGroup() {
-        Wall wall = prepareBox();
-        getChildren().add(wall);
+        SmartBox floor = prepareFloor();
+        floor.setTranslateY(Constants.Room.SIZE / 2);
+        getChildren().add(floor);
+
+        SmartBox backWall = prepareWall(WallPosition.BACK);
+        getChildren().add(backWall);
+
+        SmartBox leftWall = prepareWall(WallPosition.LEFT);
+        getChildren().add(leftWall);
+
+        SmartBox rightWall = prepareWall(WallPosition.RIGHT);
+        getChildren().add(rightWall);
     }
 
     public void handleEventFromMenu(MenuEvent menuEvent) {
         switch (menuEvent) {
             case MINUS -> translateZProperty().set(
-                    getTranslateZ() + ScreenConstants.Zoom.COORD_CHANGE
+                    getTranslateZ() + Constants.Zoom.COORD_CHANGE
             );
             case PLUS -> translateZProperty().set(
-                    getTranslateZ() - ScreenConstants.Zoom.COORD_CHANGE
+                    getTranslateZ() - Constants.Zoom.COORD_CHANGE
             );
             case ROTATE_UP -> rotateByX(-10);
             case ROTATE_DOWN -> rotateByX(10);
@@ -47,7 +55,27 @@ public class RoomGroup extends Group {
         this.getTransforms().addAll(t);
     }
 
-    private Wall prepareBox() {
-        return new Wall(100, 20, 50, new Material(MaterialType.PLASTIC));
+    private SmartBox prepareFloor() {
+        return new SmartBox(Constants.Room.SIZE, 5, Constants.Room.SIZE, new Material(MaterialType.WOOD));
+    }
+
+    private SmartBox prepareWall(WallPosition position) {
+        SmartBox res = null;
+        switch (position) {
+            case BACK -> {
+                res = new SmartBox(Constants.Room.SIZE, 5, Constants.Room.SIZE, new Material(MaterialType.PAPER));
+                res.translateForBack();
+            }
+            case LEFT -> {
+                res = new SmartBox(Constants.Room.SIZE, 10, Constants.Room.SIZE, new Material(MaterialType.PAPER));
+                res.translateForLeft();
+            }
+            case RIGHT -> {
+                res = new SmartBox(Constants.Room.SIZE, 20, Constants.Room.SIZE, new Material(MaterialType.PAPER));
+                res.translateForRight();
+            }
+        }
+        return res;
     }
 }
+
