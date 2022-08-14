@@ -3,8 +3,11 @@ package com.example.cg_cource;
 import com.example.cg_cource.MainSceneModule.MainGroup;
 import com.example.cg_cource.MainSceneModule.MainScene;
 import com.example.cg_cource.MainSceneModule.MainSceneBuilder;
+import com.example.cg_cource.MenuModule.MenuBuilder;
+import com.example.cg_cource.MenuModule.MenuStack;
 import javafx.application.Application;
 import javafx.event.EventHandler;
+import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
@@ -17,8 +20,19 @@ public class MainApplication extends Application {
         stage.setScene(scene);
         stage.setTitle("Курсовая работа");
         stage.setHeight(800);
-        stage.setWidth(1300);
+        stage.setWidth(1100);
+        stage.setX(320);
         stage.show();
+
+        MenuStack menuStack = MenuBuilder.build(scene.getGroup());
+        Scene menuScene = new Scene(menuStack, 100, 100);
+        Stage menuStage = new Stage();
+        menuStage.setScene(menuScene);
+        menuStage.setHeight(800);
+        menuStage.setWidth(300);
+        menuStage.setTitle("Меню");
+        menuStage.setX(20);
+        menuStage.show();
     }
 
     public static void main(String[] args) {

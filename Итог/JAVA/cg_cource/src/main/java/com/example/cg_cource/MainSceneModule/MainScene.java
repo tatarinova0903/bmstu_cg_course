@@ -23,4 +23,8 @@ public class MainScene extends Scene {
         camera.setNearClip(1);
         camera.setFarClip(1500);
     }
+
+    public MainGroup getGroup() {
+        return group;
+    }
 }
