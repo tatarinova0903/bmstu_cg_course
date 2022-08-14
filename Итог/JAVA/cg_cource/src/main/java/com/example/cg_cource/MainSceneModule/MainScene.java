@@ -15,7 +15,7 @@ public class MainScene extends Scene {
     public MainScene(Parent parent, double v, double v1) {
         super(parent, v, v1);
         group = (MainGroup) parent;
-        setFill(Color.RED);
+        setFill(Color.WHITE);
         setCamera(camera);
 
         camera.translateZProperty().set(-1000);
