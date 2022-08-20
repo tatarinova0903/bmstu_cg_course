@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.3)  6 AUG 2022 14:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.3)  20 AUG 2022 13:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1419,11 +1419,10 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout2 = `introd.aux'.
 
  (./introd.tex
-
-LaTeX Warning: Citation `realistic-water' on page 5 undefined on input line 5.
-
-
-LaTeX Warning: Citation `water-matters' on page 5 undefined on input line 7.
+Overfull \hbox (7.31636pt too wide) in paragraph at lines 11--12
+[]\T2A/cmr/m/n/14.4 проанализировать ме-то-ды и ал-го-рит-мы, мо-де-ли-ру-ю-щие
+ бро-унов-ское дви-
+ []
 
 ) [5
 
@@ -1460,19 +1459,19 @@ Overfull \hbox (1.18999pt too wide) in paragraph at lines 152--153
 [11]
 \c@theorem1=\count372
  [12] [13] [14] [15] [16] [17] [18] [19]
-Overfull \hbox (1.98882pt too wide) in paragraph at lines 398--399
+Overfull \hbox (1.98882pt too wide) in paragraph at lines 400--401
 []\T2A/cmr/m/it/14.4 VK_ATTACHMENT_LOAD_OP_LOAD \T2A/cmr/m/n/14.4 -- бу-фер бу-
 дет со-дер-жать
  []
 
 
-Overfull \hbox (6.8055pt too wide) in paragraph at lines 400--401
+Overfull \hbox (6.8055pt too wide) in paragraph at lines 402--403
 []\T2A/cmr/m/it/14.4 VK_ATTACHMENT_LOAD_OP_DONT_CARE \T2A/cmr/m/n/14.4 -- со-де
 р-жи-мое бу-
  []
 
 [20]
-Overfull \hbox (7.69765pt too wide) in paragraph at lines 486--486
+Overfull \hbox (7.69765pt too wide) in paragraph at lines 488--488
  |[]\T2A/cmr/bx/n/20.74 —уществующие про-грамм-ные обес-пе-че-ни€| 
  []
 
@@ -1480,22 +1479,22 @@ Overfull \hbox (7.69765pt too wide) in paragraph at lines 486--486
 <img/waterfall_example1.jpg, id=308, 1449.415pt x 751.80875pt>
 File: img/waterfall_example1.jpg Graphic file (type jpg)
 <use img/waterfall_example1.jpg>
-Package pdftex.def Info: img/waterfall_example1.jpg  used on input line 492.
+Package pdftex.def Info: img/waterfall_example1.jpg  used on input line 494.
 (pdftex.def)             Requested size: 329.11212pt x 170.71652pt.
 <img/waterfall_example2.jpg, id=309, 1467.4825pt x 762.85pt>
 File: img/waterfall_example2.jpg Graphic file (type jpg)
 <use img/waterfall_example2.jpg>
-Package pdftex.def Info: img/waterfall_example2.jpg  used on input line 493.
+Package pdftex.def Info: img/waterfall_example2.jpg  used on input line 495.
 (pdftex.def)             Requested size: 328.40034pt x 170.71652pt.
 <img/waterfall_example3.jpg, id=310, 1449.415pt x 757.83125pt>
 File: img/waterfall_example3.jpg Graphic file (type jpg)
 <use img/waterfall_example3.jpg>
-Package pdftex.def Info: img/waterfall_example3.jpg  used on input line 494.
+Package pdftex.def Info: img/waterfall_example3.jpg  used on input line 496.
 (pdftex.def)             Requested size: 326.5024pt x 170.71652pt.
 <img/waterfall_example4.jpg, id=311, 1451.4225pt x 758.835pt>
 File: img/waterfall_example4.jpg Graphic file (type jpg)
 <use img/waterfall_example4.jpg>
-Package pdftex.def Info: img/waterfall_example4.jpg  used on input line 495.
+Package pdftex.def Info: img/waterfall_example4.jpg  used on input line 497.
 (pdftex.def)             Requested size: 326.51167pt x 170.71652pt.
 
 
@@ -1731,7 +1730,7 @@ xmf-dist/fonts/type1/public/cm-super/sfss1200.pfb></usr/local/texlive/2022/texm
 f-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2022/texmf-
 dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2022/texmf-di
 st/fonts/type1/public/cm-super/sfti1440.pfb>
-Output written on rpz.pdf (39 pages, 4529998 bytes).
+Output written on rpz.pdf (39 pages, 4530223 bytes).
 PDF statistics:
  596 PDF objects out of 1000 (max. 8388607)
  495 compressed objects within 5 object streams

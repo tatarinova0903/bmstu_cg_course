@@ -16,7 +16,7 @@
 \contentsline {subsection}{\numberline {1.4.1}DirectX}{16}{subsection.1.4.1}%
 \contentsline {subsection}{\numberline {1.4.2}OpenGL}{18}{subsection.1.4.2}%
 \contentsline {subsection}{\numberline {1.4.3}Vulkan}{19}{subsection.1.4.3}%
-\contentsline {section}{\numberline {1.5}Существующие программные обеспечения}{21}{section.1.5}%
+\contentsline {section}{\numberline {1.5}Существующие программные обеспечения}{22}{section.1.5}%
 \contentsline {chapter}{\numberline {2}Конструкторская часть}{25}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Требования к программному обеспечению}{25}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Разработка алгоритмов}{25}{section.2.2}%
