@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.3)  27 AUG 2022 13:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.3)  27 AUG 2022 13:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1448,69 +1448,69 @@ Overfull \hbox (8.99106pt too wide) in paragraph at lines 78--79
 <img/brown_movement.png, id=204, 797.98125pt x 797.98125pt>
 File: img/brown_movement.png Graphic file (type png)
 <use img/brown_movement.png>
-Package pdftex.def Info: img/brown_movement.png  used on input line 157.
+Package pdftex.def Info: img/brown_movement.png  used on input line 153.
 (pdftex.def)             Requested size: 170.71028pt x 170.71652pt.
  [11 <./img/brown_movement.png>] [12]
-Overfull \hbox (1.18999pt too wide) in paragraph at lines 213--214
+Overfull \hbox (1.18999pt too wide) in paragraph at lines 209--210
 []\T2A/cmr/m/n/14.4 ѕриращение \T2A/cmr/m/it/14.4 X(t) \T2A/cmr/m/n/14.4 об-ла-
 да-ет свой-ством ста-ти-сти-че-ско-го са-мо-по-до-би€: дл€
  []
 
 [13] [14] [15]
-Overfull \hbox (1.18999pt too wide) in paragraph at lines 302--303
+Overfull \hbox (1.18999pt too wide) in paragraph at lines 298--299
 []\T2A/cmr/m/n/14.4 ѕриращение \T2A/cmr/m/it/14.4 X(t) \T2A/cmr/m/n/14.4 об-ла-
 да-ет свой-ством ста-ти-сти-че-ско-го са-мо-по-до-би€: дл€
  []
 
 [16]
 \c@theorem1=\count372
- [17] [18] [19] [20] [21] [22] [23]) [24]
+ [17] [18] [19] [20]) [21]
 \openout2 = `design.aux'.
 
  (./design.tex
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 2.
+[22
 
-Overfull \hbox (3.70653pt too wide) in paragraph at lines 6--6
+
+
+
+] [23]
+Overfull \hbox (3.70653pt too wide) in paragraph at lines 76--76
  |[]\T2A/cmr/bx/n/20.74 “ребовани€ к про-грамм-но-му обес-пе-че-нию| 
  []
 
+[24]
 <img/waterfall_scheme.png, id=309, 989.6975pt x 1421.31pt>
 File: img/waterfall_scheme.png Graphic file (type png)
 <use img/waterfall_scheme.png>
-Package pdftex.def Info: img/waterfall_scheme.png  used on input line 33.
+Package pdftex.def Info: img/waterfall_scheme.png  used on input line 103.
 (pdftex.def)             Requested size: 396.24953pt x 569.05511pt.
 
+
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[25
-
-
-
-
-]
-<img/draw_dynamic.png, id=318, 560.0925pt x 1320.935pt>
+<img/draw_dynamic.png, id=313, 560.0925pt x 1320.935pt>
 File: img/draw_dynamic.png Graphic file (type png)
 <use img/draw_dynamic.png>
-Package pdftex.def Info: img/draw_dynamic.png  used on input line 40.
+Package pdftex.def Info: img/draw_dynamic.png  used on input line 110.
 (pdftex.def)             Requested size: 241.29657pt x 569.05511pt.
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/draw_solid.png, id=319, 565.11125pt x 1431.3475pt>
+<img/draw_solid.png, id=314, 565.11125pt x 1431.3475pt>
 File: img/draw_solid.png Graphic file (type png)
 <use img/draw_solid.png>
-Package pdftex.def Info: img/draw_solid.png  used on input line 41.
+Package pdftex.def Info: img/draw_solid.png  used on input line 111.
 (pdftex.def)             Requested size: 224.66945pt x 569.05511pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[26 <./img/waterfall_scheme.png>] [27 <./img/draw_dynamic.png>] [28 <./img/draw
-_solid.png>]
+[25] [26 <./img/waterfall_scheme.png>] [27 <./img/draw_dynamic.png>] [28 <./img
+/draw_solid.png>]
 <img/classes_scheme.png, id=339, 723.70375pt x 546.04pt>
 File: img/classes_scheme.png Graphic file (type png)
 <use img/classes_scheme.png>
-Package pdftex.def Info: img/classes_scheme.png  used on input line 50.
+Package pdftex.def Info: img/classes_scheme.png  used on input line 120.
 (pdftex.def)             Requested size: 377.1011pt x 284.52756pt.
  [29
 
@@ -1569,7 +1569,7 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `rpz.out' has not changed.
-(rerunfilecheck)             Checksum: 5ED954C7704A42521A25FC59E423F623;7438.
+(rerunfilecheck)             Checksum: 2E194CCF9C2D25C220D043A69AEEE0A0;7438.
  ) 
 Here is how much of TeX's memory you used:
  40866 strings out of 478268
@@ -1603,7 +1603,7 @@ xmf-dist/fonts/type1/public/cm-super/sfss1200.pfb></usr/local/texlive/2022/texm
 f-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2022/texmf-
 dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2022/texmf-di
 st/fonts/type1/public/cm-super/sfti1440.pfb>
-Output written on rpz.pdf (32 pages, 3097087 bytes).
+Output written on rpz.pdf (32 pages, 3096547 bytes).
 PDF statistics:
  515 PDF objects out of 1000 (max. 8388607)
  436 compressed objects within 5 object streams
