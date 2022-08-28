@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.3)  27 AUG 2022 13:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.3)  28 AUG 2022 11:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1266,7 +1266,7 @@ Package tocloft Info: The document has chapter divisions on input line 51.
 
 LaTeX Warning: Label `1.6' multiply defined.
 
-) (./design.aux) (./implement.aux) (./conclusion.aux) (./lib.aux))
+) (./design.aux) (./conclusion.aux) (./lib.aux))
 \openout1 = `rpz.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
@@ -1407,14 +1407,14 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [3
-
-
-{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
+))
 \tf@toc=\write6
 \openout6 = `rpz.toc'.
 
-) [4]
+) [3
+
+
+{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 \openout2 = `introd.aux'.
 
  (./introd.tex
@@ -1423,7 +1423,7 @@ Overfull \hbox (7.31636pt too wide) in paragraph at lines 11--12
  бро-унов-ское дви-
  []
 
-) [5
+) [4
 
 
 
@@ -1433,125 +1433,56 @@ Overfull \hbox (7.31636pt too wide) in paragraph at lines 11--12
 
  (./analysis.tex
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 1.
-[6
+[5
 
 
 
 
-] [7]
+] [6]
 Overfull \hbox (8.99106pt too wide) in paragraph at lines 78--79
 []\T2A/cmr/m/n/14.4 Для уда-ле-ния неви-ди-мых ли-ний и по-верх-но-стей вы-бран
  ал-го-ритм Z-буфера,
  []
 
-[8] [9] [10]
-<img/brown_movement.png, id=204, 797.98125pt x 797.98125pt>
+[7] [8] [9]
+<img/brown_movement.png, id=159, 797.98125pt x 797.98125pt>
 File: img/brown_movement.png Graphic file (type png)
 <use img/brown_movement.png>
 Package pdftex.def Info: img/brown_movement.png  used on input line 153.
 (pdftex.def)             Requested size: 170.71028pt x 170.71652pt.
- [11 <./img/brown_movement.png>] [12]
+ [10 <./img/brown_movement.png>] [11]
 Overfull \hbox (1.18999pt too wide) in paragraph at lines 209--210
 []\T2A/cmr/m/n/14.4 Приращение \T2A/cmr/m/it/14.4 X(t) \T2A/cmr/m/n/14.4 об-ла-
 да-ет свой-ством ста-ти-сти-че-ско-го са-мо-по-до-бия: для
  []
 
-[13] [14] [15]
+[12] [13] [14]
 Overfull \hbox (1.18999pt too wide) in paragraph at lines 298--299
 []\T2A/cmr/m/n/14.4 Приращение \T2A/cmr/m/it/14.4 X(t) \T2A/cmr/m/n/14.4 об-ла-
 да-ет свой-ством ста-ти-сти-че-ско-го са-мо-по-до-бия: для
  []
 
-[16]
+[15]
 \c@theorem1=\count372
- [17] [18] [19] [20]) [21]
+ [16] [17] [18] [19]) [20]
 \openout2 = `design.aux'.
 
  (./design.tex
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 2.
-[22
+[21
 
 
 
 
-] [23]
-Overfull \hbox (3.70653pt too wide) in paragraph at lines 76--76
+] [22]
+Overfull \hbox (3.70653pt too wide) in paragraph at lines 75--75
  |[]\T2A/cmr/bx/n/20.74 Требования к про-грамм-но-му обес-пе-че-нию| 
  []
 
-[24]
-<img/waterfall_scheme.png, id=309, 989.6975pt x 1421.31pt>
-File: img/waterfall_scheme.png Graphic file (type png)
-<use img/waterfall_scheme.png>
-Package pdftex.def Info: img/waterfall_scheme.png  used on input line 103.
-(pdftex.def)             Requested size: 396.24953pt x 569.05511pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<img/draw_dynamic.png, id=313, 560.0925pt x 1320.935pt>
-File: img/draw_dynamic.png Graphic file (type png)
-<use img/draw_dynamic.png>
-Package pdftex.def Info: img/draw_dynamic.png  used on input line 110.
-(pdftex.def)             Requested size: 241.29657pt x 569.05511pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<img/draw_solid.png, id=314, 565.11125pt x 1431.3475pt>
-File: img/draw_solid.png Graphic file (type png)
-<use img/draw_solid.png>
-Package pdftex.def Info: img/draw_solid.png  used on input line 111.
-(pdftex.def)             Requested size: 224.66945pt x 569.05511pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[25] [26 <./img/waterfall_scheme.png>] [27 <./img/draw_dynamic.png>] [28 <./img
-/draw_solid.png>]
-<img/classes_scheme.png, id=339, 723.70375pt x 546.04pt>
-File: img/classes_scheme.png Graphic file (type png)
-<use img/classes_scheme.png>
-Package pdftex.def Info: img/classes_scheme.png  used on input line 120.
-(pdftex.def)             Requested size: 377.1011pt x 284.52756pt.
- [29
-
- <./img/classes_scheme.png>]) [30
-
-] [31]
-\openout2 = `implement.aux'.
-
- (./implement.tex
-{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 3.
-
-LaTeX Warning: Citation `python-lang' on page 32 undefined on input line 8.
-
-
-LaTeX Warning: Citation `qt-designer' on page 32 undefined on input line 16.
-
-
-LaTeX Warning: Citation `vs-code' on page 32 undefined on input line 18.
-
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 27.
-LaTeX Font Info:    Trying to load font information for T2A+cmss on input line 
-27.
-(/usr/local/texlive/2022/texmf-dist/tex/latex/cyrillic/t2acmss.fd
-File: t2acmss.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
-)
-LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 
-30.
-
-(/usr/local/texlive/2022/texmf-dist/tex/latex/base/ts1cmss.fd
-File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [32
-
-
-
-
-]) [33]
+[23]) [24]
 \openout2 = `conclusion.aux'.
 
-
-(./conclusion.tex) [34
+ (./conclusion.tex) [25
 
 
 
@@ -1559,28 +1490,25 @@ File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 ]
 \openout2 = `lib.aux'.
 
- (./lib.tex (./rpz.bbl)) (./rpz.aux (./contents.aux)
-(./introd.aux) (./analysis.aux) (./design.aux) (./implement.aux)
+ (./lib.tex (./rpz.bbl)) (./rpz.aux
+(./contents.aux) (./introd.aux) (./analysis.aux) (./design.aux)
 (./conclusion.aux) (./lib.aux))
-
-LaTeX Warning: There were undefined references.
-
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `rpz.out' has not changed.
-(rerunfilecheck)             Checksum: 2E194CCF9C2D25C220D043A69AEEE0A0;7438.
+(rerunfilecheck)             Checksum: 7F6E0E04B3DD3036FBA15AFCA77DD867;5354.
  ) 
 Here is how much of TeX's memory you used:
- 40866 strings out of 478268
- 938663 string characters out of 5846348
- 1402919 words of memory out of 5000000
- 58193 multiletter control sequences out of 15000+600000
- 487348 words of font info for 59 fonts, out of 8000000 for 9000
+ 40275 strings out of 478268
+ 931091 string characters out of 5846348
+ 1314601 words of memory out of 5000000
+ 57682 multiletter control sequences out of 15000+600000
+ 484554 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 106i,15n,99p,1079b,2132s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
-}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc}
+ 106i,15n,99p,1079b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc
+}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}
 </usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
 /usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
 usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></u
@@ -1597,16 +1525,13 @@ live/2022/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texli
 ve/2022/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive
 /2022/texmf-dist/fonts/type1/public/cm-super/sfbx3583.pfb></usr/local/texlive/2
 022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/202
-2/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2022/
-texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2022/te
-xmf-dist/fonts/type1/public/cm-super/sfss1200.pfb></usr/local/texlive/2022/texm
-f-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2022/texmf-
-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2022/texmf-di
-st/fonts/type1/public/cm-super/sfti1440.pfb>
-Output written on rpz.pdf (32 pages, 3096547 bytes).
+2/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2022/
+texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2022/te
+xmf-dist/fonts/type1/public/cm-super/sfti1440.pfb>
+Output written on rpz.pdf (23 pages, 2767044 bytes).
 PDF statistics:
- 515 PDF objects out of 1000 (max. 8388607)
- 436 compressed objects within 5 object streams
- 132 named destinations out of 1000 (max. 500000)
- 298 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 358 PDF objects out of 1000 (max. 8388607)
+ 301 compressed objects within 4 object streams
+ 76 named destinations out of 1000 (max. 500000)
+ 214 words of extra memory for PDF output out of 10000 (max. 10000000)
 
