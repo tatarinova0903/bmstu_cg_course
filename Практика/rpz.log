@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.3)  28 AUG 2022 11:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.3)  28 AUG 2022 13:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1445,7 +1445,7 @@ Overfull \hbox (8.99106pt too wide) in paragraph at lines 78--79
  []
 
 [7] [8] [9]
-<img/brown_movement.png, id=159, 797.98125pt x 797.98125pt>
+<img/brown_movement.png, id=164, 797.98125pt x 797.98125pt>
 File: img/brown_movement.png Graphic file (type png)
 <use img/brown_movement.png>
 Package pdftex.def Info: img/brown_movement.png  used on input line 153.
@@ -1490,20 +1490,30 @@ Overfull \hbox (3.70653pt too wide) in paragraph at lines 75--75
 ]
 \openout2 = `lib.aux'.
 
- (./lib.tex (./rpz.bbl)) (./rpz.aux
-(./contents.aux) (./introd.aux) (./analysis.aux) (./design.aux)
-(./conclusion.aux) (./lib.aux))
+ (./lib.tex (./rpz.bbl)
+Underfull \hbox (badness 1436) in paragraph at lines 16--17
+[]\T2A/cmr/m/n/14.4 Mandelbrot, B. B. Fractional brownian motions, fractional n
+oises and
+ []
+
+) [26
+
+
+
+
+] (./rpz.aux (./contents.aux) (./introd.aux) (./analysis.aux)
+(./design.aux) (./conclusion.aux) (./lib.aux))
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `rpz.out' has not changed.
-(rerunfilecheck)             Checksum: 7F6E0E04B3DD3036FBA15AFCA77DD867;5354.
+(rerunfilecheck)             Checksum: D9EF4D4FE82461237C98F8DEF3A5EF3E;5479.
  ) 
 Here is how much of TeX's memory you used:
- 40275 strings out of 478268
- 931091 string characters out of 5846348
- 1314601 words of memory out of 5000000
- 57682 multiletter control sequences out of 15000+600000
+ 40295 strings out of 478268
+ 931251 string characters out of 5846348
+ 1314835 words of memory out of 5000000
+ 57691 multiletter control sequences out of 15000+600000
  484554 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  106i,15n,99p,1079b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1528,10 +1538,10 @@ ve/2022/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive
 2/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2022/
 texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2022/te
 xmf-dist/fonts/type1/public/cm-super/sfti1440.pfb>
-Output written on rpz.pdf (23 pages, 2767044 bytes).
+Output written on rpz.pdf (24 pages, 2773277 bytes).
 PDF statistics:
- 358 PDF objects out of 1000 (max. 8388607)
- 301 compressed objects within 4 object streams
- 76 named destinations out of 1000 (max. 500000)
- 214 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 378 PDF objects out of 1000 (max. 8388607)
+ 320 compressed objects within 4 object streams
+ 87 named destinations out of 1000 (max. 500000)
+ 222 words of extra memory for PDF output out of 10000 (max. 10000000)
 

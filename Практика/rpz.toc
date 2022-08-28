@@ -26,3 +26,4 @@
 \contentsline {subsection}{\numberline {2.2.2}JavaFX}{22}{subsection.2.2.2}%
 \contentsline {section}{\numberline {2.3}Требования к программному обеспечению}{23}{section.2.3}%
 \contentsline {chapter}{Заключение}{25}{chapter*.8}%
+\contentsline {chapter}{Литература}{26}{chapter*.8}%
