@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.3)  4 SEP 2022 14:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.3)  4 SEP 2022 16:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1418,9 +1418,9 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout2 = `introd.aux'.
 
  (./introd.tex
-Overfull \hbox (7.31636pt too wide) in paragraph at lines 11--12
-[]\T2A/cmr/m/n/14.4 проанализировать ме-то-ды и ал-го-рит-мы, мо-де-ли-ру-ю-щие
- бро-унов-ское дви-
+Overfull \hbox (3.51189pt too wide) in paragraph at lines 13--14
+[]\T2A/cmr/m/n/14.4 проанализировать ал-го-рит-мы, мо-де-ли-ру-ю-щие бро-унов-с
+кое дви-же-ние ча-
  []
 
 ) [5
@@ -1433,7 +1433,7 @@ Overfull \hbox (7.31636pt too wide) in paragraph at lines 11--12
 
  (./analysis.tex
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 1.
-<img/trace.png, id=154, 515.9275pt x 369.38pt>
+<img/trace.png, id=159, 515.9275pt x 369.38pt>
 File: img/trace.png Graphic file (type png)
 <use img/trace.png>
 Package pdftex.def Info: img/trace.png  used on input line 9.
@@ -1450,19 +1450,19 @@ Overfull \hbox (8.99106pt too wide) in paragraph at lines 109--110
  []
 
 [10]
-<img/draw_simple.png, id=191, 217.81375pt x 211.79124pt>
+<img/draw_simple.png, id=196, 217.81375pt x 211.79124pt>
 File: img/draw_simple.png Graphic file (type png)
 <use img/draw_simple.png>
 Package pdftex.def Info: img/draw_simple.png  used on input line 137.
 (pdftex.def)             Requested size: 175.57732pt x 170.71652pt.
  [11 <./img/draw_simple.png>]
-<img/draw_guro.png, id=198, 224.84pt x 200.75pt>
+<img/draw_guro.png, id=203, 224.84pt x 200.75pt>
 File: img/draw_guro.png Graphic file (type png)
 <use img/draw_guro.png>
 Package pdftex.def Info: img/draw_guro.png  used on input line 164.
 (pdftex.def)             Requested size: 191.21439pt x 170.71652pt.
  [12 <./img/draw_guro.png>]
-<img/draw_phong.png, id=205, 222.8325pt x 206.7725pt>
+<img/draw_phong.png, id=210, 222.8325pt x 206.7725pt>
 File: img/draw_phong.png Graphic file (type png)
 <use img/draw_phong.png>
 Package pdftex.def Info: img/draw_phong.png  used on input line 193.
@@ -1472,7 +1472,7 @@ Package pdftex.def Info: img/draw_phong.png  used on input line 193.
 
  (./design.tex
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 2.
-<img/brown_movement.png, id=216, 797.98125pt x 797.98125pt>
+<img/brown_movement.png, id=221, 797.98125pt x 797.98125pt>
 File: img/brown_movement.png Graphic file (type png)
 <use img/brown_movement.png>
 Package pdftex.def Info: img/brown_movement.png  used on input line 7.
@@ -1496,7 +1496,7 @@ Overfull \hbox (1.18999pt too wide) in paragraph at lines 97--98
 
 \c@theorem1=\count372
 [19] [20] [21] [22]
-Overfull \hbox (3.70653pt too wide) in paragraph at lines 232--232
+Overfull \hbox (3.70653pt too wide) in paragraph at lines 231--231
  |[]\T2A/cmr/bx/n/20.74 “ребовани€ к про-грамм-но-му обес-пе-че-нию| 
  []
 
@@ -1510,10 +1510,18 @@ Overfull \hbox (3.70653pt too wide) in paragraph at lines 232--232
 
 
 
-] [25]) [26]
+] [25]
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 75.
+LaTeX Font Info:    Trying to load font information for T2A+cmss on input line 
+75.
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/cyrillic/t2acmss.fd
+File: t2acmss.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
+)
+[26]) [27]
 \openout2 = `conclusion.aux'.
 
- (./conclusion.tex) [27
+ (./conclusion.tex) [28
 
 
 
@@ -1527,7 +1535,7 @@ Underfull \hbox (badness 1436) in paragraph at lines 16--17
 oises and
  []
 
-) [28
+) [29
 
 
 
@@ -1538,16 +1546,16 @@ oises and
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `rpz.out' has not changed.
-(rerunfilecheck)             Checksum: 7A4F44215BF0005F30EB2355D1DBA668;5900.
+(rerunfilecheck)             Checksum: 1049ADE7E3E6974290674D76891566F2;6315.
  ) 
 Here is how much of TeX's memory you used:
- 40353 strings out of 478268
- 932625 string characters out of 5846348
- 1315903 words of memory out of 5000000
- 57739 multiletter control sequences out of 15000+600000
- 482000 words of font info for 52 fonts, out of 8000000 for 9000
+ 40813 strings out of 478268
+ 937239 string characters out of 5846348
+ 1318044 words of memory out of 5000000
+ 58172 multiletter control sequences out of 15000+600000
+ 484451 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 106i,15n,99p,1542b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 106i,15n,99p,1542b,2130s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc
 }{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}
 </usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
@@ -1565,12 +1573,15 @@ exlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/tex
 live/2022/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texli
 ve/2022/texmf-dist/fonts/type1/public/cm-super/sfbx3583.pfb></usr/local/texlive
 /2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2
-022/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/202
-2/texmf-dist/fonts/type1/public/cm-super/sfti1440.pfb>
-Output written on rpz.pdf (26 pages, 2890975 bytes).
+022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/202
+2/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2022/
+texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb></usr/local/texlive/2022/te
+xmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2022/texm
+f-dist/fonts/type1/public/cm-super/sfti1440.pfb>
+Output written on rpz.pdf (27 pages, 2934996 bytes).
 PDF statistics:
- 399 PDF objects out of 1000 (max. 8388607)
- 333 compressed objects within 4 object streams
- 92 named destinations out of 1000 (max. 500000)
- 258 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 440 PDF objects out of 1000 (max. 8388607)
+ 370 compressed objects within 4 object streams
+ 110 named destinations out of 1000 (max. 500000)
+ 266 words of extra memory for PDF output out of 10000 (max. 10000000)
 
