@@ -38,9 +38,6 @@ MainWindow::~MainWindow()
     if (addModelWindow->isVisible())
         addModelWindow->destroyed();
 
-    if (addLightWindow->isVisible())
-        addLightWindow->destroyed();
-
     delete ui;
 }
 

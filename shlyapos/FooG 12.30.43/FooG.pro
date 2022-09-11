@@ -15,7 +15,6 @@ SOURCES += \
     SceneObjects/camera.cpp \
     SceneObjects/lightsourcepoint.cpp \
     SceneObjects/model.cpp \
-    addlightwindow.cpp \
     addmodelwindow.cpp \
     drawer.cpp \
     main.cpp \
@@ -31,7 +30,6 @@ HEADERS += \
     SceneObjects/camera.h \
     SceneObjects/lightsourcepoint.h \
     SceneObjects/model.h \
-    addlightwindow.h \
     addmodelwindow.h \
     drawer.h \
     mainwindow.h \

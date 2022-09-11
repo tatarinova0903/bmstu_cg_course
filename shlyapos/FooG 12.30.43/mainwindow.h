@@ -46,9 +46,6 @@ private:
     AddModelWindow *addModelWindow;
     AddModelParameters addModelparams;
 
-    AddLightWindow *addLightWindow;
-    AddLightParameters addLightParams;
-
 private slots:
 
     // Model
