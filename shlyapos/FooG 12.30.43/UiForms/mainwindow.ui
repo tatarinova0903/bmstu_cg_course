@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1094</width>
-    <height>800</height>
+    <height>745</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -181,7 +181,7 @@ QComboBox:on{
     <property name="geometry">
      <rect>
       <x>900</x>
-      <y>260</y>
+      <y>270</y>
       <width>81</width>
       <height>31</height>
      </rect>
@@ -210,7 +210,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>810</x>
-      <y>260</y>
+      <y>270</y>
       <width>81</width>
       <height>31</height>
      </rect>
@@ -257,53 +257,15 @@ QPushButton:pressed {
      </item>
      <item>
       <layout class="QGridLayout" name="gridLayout_2">
-       <item row="1" column="1">
-        <widget class="QLineEdit" name="le_mscale_y">
-         <property name="styleSheet">
-          <string notr="true">QLineEdit {
-    background: rgba(20, 20, 20, 180);
-	color: rgba(200, 200, 200, 255);
-	border-style: inset;
-    border-radius: 5px;
-}</string>
+       <item row="0" column="0">
+        <widget class="QLabel" name="lbl_mscale_x">
+         <property name="text">
+          <string>K:</string>
          </property>
         </widget>
        </item>
        <item row="0" column="1">
         <widget class="QLineEdit" name="le_mscale_x">
-         <property name="styleSheet">
-          <string notr="true">QLineEdit {
-    background: rgba(20, 20, 20, 180);
-	color: rgba(200, 200, 200, 255);
-	border-style: inset;
-    border-radius: 5px;
-}</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0">
-        <widget class="QLabel" name="lbl_mscale_x">
-         <property name="text">
-          <string>X:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="lbl_mscale_y">
-         <property name="text">
-          <string>Y:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="lbl_mscale_z">
-         <property name="text">
-          <string>Z:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QLineEdit" name="le_mscale_z">
          <property name="styleSheet">
           <string notr="true">QLineEdit {
     background: rgba(20, 20, 20, 180);
@@ -322,7 +284,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>810</x>
-      <y>290</y>
+      <y>300</y>
       <width>171</width>
       <height>20</height>
      </rect>
@@ -456,35 +418,13 @@ QComboBox:on{
       <x>810</x>
       <y>160</y>
       <width>171</width>
-      <height>102</height>
+      <height>104</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_6">
      <item>
-      <widget class="QLabel" name="lbl_mrotate">
-       <property name="text">
-        <string>Rotate</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item>
       <layout class="QGridLayout" name="gridLayout_6">
        <item row="1" column="1">
-        <widget class="QLineEdit" name="le_mrotate_y">
-         <property name="styleSheet">
-          <string notr="true">QLineEdit {
-    background: rgba(20, 20, 20, 180);
-	color: rgba(200, 200, 200, 255);
-	border-style: inset;
-    border-radius: 5px;
-}</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
         <widget class="QLineEdit" name="le_mrotate_x">
          <property name="styleSheet">
           <string notr="true">QLineEdit {
@@ -496,28 +436,40 @@ QComboBox:on{
          </property>
         </widget>
        </item>
-       <item row="0" column="0">
-        <widget class="QLabel" name="lbl_mrotate_x">
-         <property name="text">
-          <string>X:</string>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="le_mrotate_y">
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+    background: rgba(20, 20, 20, 180);
+	color: rgba(200, 200, 200, 255);
+	border-style: inset;
+    border-radius: 5px;
+}</string>
          </property>
         </widget>
        </item>
-       <item row="1" column="0">
+       <item row="2" column="0">
         <widget class="QLabel" name="lbl_mrotate_y">
          <property name="text">
           <string>Y:</string>
          </property>
         </widget>
        </item>
-       <item row="2" column="0">
+       <item row="3" column="0">
         <widget class="QLabel" name="lbl_mrotate_z">
          <property name="text">
           <string>Z:</string>
          </property>
         </widget>
        </item>
-       <item row="2" column="1">
+       <item row="1" column="0">
+        <widget class="QLabel" name="lbl_mrotate_x">
+         <property name="text">
+          <string>X:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
         <widget class="QLineEdit" name="le_mrotate_z">
          <property name="styleSheet">
           <string notr="true">QLineEdit {
@@ -526,6 +478,16 @@ QComboBox:on{
 	border-style: inset;
     border-radius: 5px;
 }</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLabel" name="lbl_mrotate">
+         <property name="text">
+          <string>Rotate</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
          </property>
         </widget>
        </item>
@@ -560,36 +522,6 @@ QPushButton:pressed {
     </property>
     <property name="text">
      <string>Apply</string>
-    </property>
-   </widget>
-   <widget class="QCheckBox" name="checkBox">
-    <property name="geometry">
-     <rect>
-      <x>662</x>
-      <y>10</y>
-      <width>131</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QCheckBox::indicator + QCheckBox::unchecked {
-	background-color: rgba(40, 40, 40, 150);
-}
-
-QCheckBox::indicator + QCheckBox::checked {
-	background-color: rgba(20, 20, 20, 150);
-}
-
-QCheckBox{
-	background-color: rgba(20, 20, 20, 0);
-	color: rgba(255, 255, 255, 150);
-}</string>
-    </property>
-    <property name="text">
-     <string>Constructor mode</string>
-    </property>
-    <property name="checked">
-     <bool>false</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_lcancel">

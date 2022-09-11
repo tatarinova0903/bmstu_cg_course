@@ -82,8 +82,6 @@ void MainWindow::initLables()
 
     ui->lbl_model_scale->setStyleSheet("QLabel {color: rgba(200, 200, 200, 255);}");
     ui->lbl_mscale_x->setStyleSheet("QLabel {color: rgba(200, 200, 200, 255);}");
-    ui->lbl_mscale_y->setStyleSheet("QLabel {color: rgba(200, 200, 200, 255);}");
-    ui->lbl_mscale_z->setStyleSheet("QLabel {color: rgba(200, 200, 200, 255);}");
 
     ui->lbl_mrotate->setStyleSheet("QLabel {color: rgba(200, 200, 200, 255);}");
     ui->lbl_mrotate_x->setStyleSheet("QLabel {color: rgba(200, 200, 200, 255);}");
@@ -113,8 +111,6 @@ void MainWindow::changeModel()
     ui->le_mmove_z->setText(std::to_string(currentCenter.z).c_str());
 
     ui->le_mscale_x->setText("1");
-    ui->le_mscale_y->setText("1");
-    ui->le_mscale_z->setText("1");
 
     ui->le_mrotate_x->setText("0");
     ui->le_mrotate_y->setText("0");
@@ -145,17 +141,14 @@ void MainWindow::applyModelChange()
     }
 
     // For scale
-    if (ui->le_mscale_x->text().isEmpty() ||
-        ui->le_mscale_y->text().isEmpty() ||
-        ui->le_mscale_z->text().isEmpty())
+    if (ui->le_mscale_x->text().isEmpty())
     {
         scale = Vector3f(1, 1, 1);
     }
     else
     {
-        scale = Vector3f(ui->le_mscale_x->text().toFloat(),
-                         ui->le_mscale_y->text().toFloat(),
-                         ui->le_mscale_z->text().toFloat());
+        float kScale = ui->le_mscale_x->text().toFloat();
+        scale = Vector3f(kScale, kScale, kScale);
     }
 
     // For rotate
@@ -186,8 +179,6 @@ void MainWindow::cancelLineEditsModel()
     ui->le_lmove_z->setText(std::to_string(currentCenter.z).c_str());
 
     ui->le_mscale_x->setText("1");
-    ui->le_mscale_y->setText("1");
-    ui->le_mscale_z->setText("1");
 
     ui->le_mrotate_x->setText("0");
     ui->le_mrotate_y->setText("0");
