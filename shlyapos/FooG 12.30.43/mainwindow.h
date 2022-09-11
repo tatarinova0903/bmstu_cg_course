@@ -70,8 +70,5 @@ private slots:
     // Window
     void openAddModelWindow();
     void setAddModelParams(AddModelParameters&);
-
-    void openAddLightWindow();
-    void setLightParams(AddLightParameters&);
 };
 #endif // MAINWINDOW_H

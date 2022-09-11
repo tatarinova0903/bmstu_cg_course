@@ -41,7 +41,6 @@ HEADERS += \
     zbuffer.h
 
 FORMS += \
-    UiForms/addlightwindow.ui \
     UiForms/addmodelwindow.ui \
     UiForms/mainwindow.ui
 

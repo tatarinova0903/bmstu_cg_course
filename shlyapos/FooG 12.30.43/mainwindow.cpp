@@ -66,7 +66,6 @@ void MainWindow::initDrawer()
 void MainWindow::initButton()
 {
     connect(ui->pushButton_addModel, SIGNAL(released()), this, SLOT(openAddModelWindow()));
-    connect(ui->pushButton_addLight, SIGNAL(released()), this, SLOT(openAddLightWindow()));
 
     connect(ui->pushButton_mapply, SIGNAL(released()), this, SLOT(applyModelChange()));
     connect(ui->pushButton_mcancel, SIGNAL(released()), this, SLOT(cancelLineEditsModel()));
@@ -506,25 +505,3 @@ void MainWindow::setAddModelParams(AddModelParameters& newParams)
     drawer->draw();
 }
 
-
-// Add new light
-void MainWindow::openAddLightWindow()
-{
-    addLightWindow = new AddLightWindow(lightCnt);
-
-    connect(addLightWindow, SIGNAL(saveLightParams(AddLightParameters&)),
-            this, SLOT(setLightParams(AddLightParameters&)));
-
-    addLightWindow->show();
-}
-
-void MainWindow::setLightParams(AddLightParameters& newParams)
-{
-    Vector3f pos(newParams.x, newParams.y, newParams.z);
-    drawer->addLight(pos, newParams.power);
-
-    lightPos.push_back(pos);
-    ui->comboBox_light->addItem(newParams.name);
-
-    drawer->draw();
-}
