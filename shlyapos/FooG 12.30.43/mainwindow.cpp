@@ -21,7 +21,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Combobox
     connect(ui->comboBox_model, SIGNAL(currentIndexChanged(QString)), SLOT(changeModel()));
-    connect(ui->comboBox_sprite, SIGNAL(currentIndexChanged(QString)), SLOT(changeSprite()));
     connect(ui->comboBox_light, SIGNAL(currentIndexChanged(QString)), SLOT(changeLight()));
 
     this->resize(990, 800);
@@ -91,32 +90,6 @@ void MainWindow::initLables()
     ui->lbl_mrotate_x->setStyleSheet("QLabel {color: rgba(200, 200, 200, 255);}");
     ui->lbl_mrotate_y->setStyleSheet("QLabel {color: rgba(200, 200, 200, 255);}");
     ui->lbl_mrotate_z->setStyleSheet("QLabel {color: rgba(200, 200, 200, 255);}");
-
-
-    //Sprites
-    ui->lbl_sprites->setStyleSheet("QLabel {color: rgba(200, 200, 200, 255);}");
-    ui->lbl_smove->setStyleSheet("QLabel {color: rgba(200, 200, 200, 255);}");
-    ui->lbl_smove_x->setStyleSheet("QLabel {color: rgba(200, 200, 200, 255);}");
-    ui->lbl_smove_y->setStyleSheet("QLabel {color: rgba(200, 200, 200, 255);}");
-    ui->lbl_smove_z->setStyleSheet("QLabel {color: rgba(200, 200, 200, 255);}");
-
-    ui->lbl_sscale->setStyleSheet("QLabel {color: rgba(200, 200, 200, 255);}");
-    ui->lbl_sscale_x->setStyleSheet("QLabel {color: rgba(200, 200, 200, 255);}");
-    ui->lbl_sscale_y->setStyleSheet("QLabel {color: rgba(200, 200, 200, 255);}");
-    ui->lbl_sscale_z->setStyleSheet("QLabel {color: rgba(200, 200, 200, 255);}");
-
-    ui->lbl_srotate->setStyleSheet("QLabel {color: rgba(200, 200, 200, 255);}");
-    ui->lbl_srotate_x->setStyleSheet("QLabel {color: rgba(200, 200, 200, 255);}");
-    ui->lbl_srotate_y->setStyleSheet("QLabel {color: rgba(200, 200, 200, 255);}");
-    ui->lbl_srotate_z->setStyleSheet("QLabel {color: rgba(200, 200, 200, 255);}");
-
-    ui->lbl_smovement->setStyleSheet("QLabel {color: rgba(200, 200, 200, 255);}");
-    ui->lbl_smovement_x->setStyleSheet("QLabel {color: rgba(200, 200, 200, 255);}");
-    ui->lbl_smovement_y->setStyleSheet("QLabel {color: rgba(200, 200, 200, 255);}");
-    ui->lbl_smovement_z->setStyleSheet("QLabel {color: rgba(200, 200, 200, 255);}");
-
-    ui->lbl_speed->setStyleSheet("QLabel {color: rgba(200, 200, 200, 255);}");
-
 
     // Lights
     ui->lbl_lights->setStyleSheet("QLabel {color: rgba(200, 200, 200, 255);}");

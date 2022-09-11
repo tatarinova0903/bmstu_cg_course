@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>1094</width>
     <height>800</height>
    </rect>
   </property>
@@ -100,7 +100,7 @@ QComboBox:on{
       <x>810</x>
       <y>60</y>
       <width>81</width>
-      <height>95</height>
+      <height>102</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -241,7 +241,7 @@ QPushButton:pressed {
       <x>900</x>
       <y>60</y>
       <width>81</width>
-      <height>95</height>
+      <height>102</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -331,226 +331,11 @@ QPushButton:pressed {
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
-   <widget class="QLabel" name="lbl_sprites">
-    <property name="geometry">
-     <rect>
-      <x>810</x>
-      <y>310</y>
-      <width>171</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Sprite list</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QWidget" name="verticalLayoutWidget_3">
-    <property name="geometry">
-     <rect>
-      <x>900</x>
-      <y>360</y>
-      <width>81</width>
-      <height>95</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_3">
-     <item>
-      <widget class="QLabel" name="lbl_sscale">
-       <property name="text">
-        <string>Scale</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <layout class="QGridLayout" name="gridLayout_3">
-       <item row="1" column="1">
-        <widget class="QLineEdit" name="le_sscale_y">
-         <property name="styleSheet">
-          <string notr="true">QLineEdit {
-    background: rgba(20, 20, 20, 180);
-	color: rgba(200, 200, 200, 255);
-	border-style: inset;
-    border-radius: 5px;
-}</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QLineEdit" name="le_sscale_x">
-         <property name="styleSheet">
-          <string notr="true">QLineEdit {
-    background: rgba(20, 20, 20, 180);
-	color: rgba(200, 200, 200, 255);
-	border-style: inset;
-    border-radius: 5px;
-}</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0">
-        <widget class="QLabel" name="lbl_sscale_x">
-         <property name="text">
-          <string>X:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="lbl_sscale_y">
-         <property name="text">
-          <string>Y:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="lbl_sscale_z">
-         <property name="text">
-          <string>Z:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QLineEdit" name="le_sscale_z">
-         <property name="styleSheet">
-          <string notr="true">QLineEdit {
-    background: rgba(20, 20, 20, 180);
-	color: rgba(200, 200, 200, 255);
-	border-style: inset;
-    border-radius: 5px;
-}</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QComboBox" name="comboBox_sprite">
-    <property name="geometry">
-     <rect>
-      <x>810</x>
-      <y>330</y>
-      <width>171</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QComboBox{
-	color: rgba(200, 200, 200, 255);
-}
-
-QComboBox:on{
-    background-color: rgba(30, 30, 30, 180);
-	color: rgba(200, 200, 200, 255);
-}</string>
-    </property>
-   </widget>
-   <widget class="QWidget" name="verticalLayoutWidget_4">
-    <property name="geometry">
-     <rect>
-      <x>810</x>
-      <y>360</y>
-      <width>81</width>
-      <height>95</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_4">
-     <item>
-      <widget class="QLabel" name="lbl_smove">
-       <property name="text">
-        <string>Move</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <layout class="QGridLayout" name="gridLayout_4">
-       <item row="1" column="1">
-        <widget class="QLineEdit" name="le_smove_y">
-         <property name="styleSheet">
-          <string notr="true">QLineEdit {
-    background: rgba(20, 20, 20, 180);
-	color: rgba(200, 200, 200, 255);
-	border-style: inset;
-    border-radius: 5px;
-}</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QLineEdit" name="le_smove_x">
-         <property name="styleSheet">
-          <string notr="true">QLineEdit {
-    background: rgba(20, 20, 20, 180);
-	color: rgba(200, 200, 200, 255);
-	border-style: inset;
-    border-radius: 5px;
-}</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0">
-        <widget class="QLabel" name="lbl_smove_x">
-         <property name="text">
-          <string>X:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="lbl_smove_y">
-         <property name="text">
-          <string>Y:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="lbl_smove_z">
-         <property name="text">
-          <string>Z:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QLineEdit" name="le_smove_z">
-         <property name="styleSheet">
-          <string notr="true">QLineEdit {
-    background: rgba(20, 20, 20, 180);
-	color: rgba(200, 200, 200, 255);
-	border-style: inset;
-    border-radius: 5px;
-}</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </widget>
-   <widget class="Line" name="line_2">
-    <property name="geometry">
-     <rect>
-      <x>810</x>
-      <y>620</y>
-      <width>171</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
    <widget class="QComboBox" name="comboBox_light">
     <property name="geometry">
      <rect>
       <x>810</x>
-      <y>660</y>
+      <y>600</y>
       <width>171</width>
       <height>24</height>
      </rect>
@@ -570,7 +355,7 @@ QComboBox:on{
     <property name="geometry">
      <rect>
       <x>810</x>
-      <y>640</y>
+      <y>580</y>
       <width>171</width>
       <height>16</height>
      </rect>
@@ -586,9 +371,9 @@ QComboBox:on{
     <property name="geometry">
      <rect>
       <x>810</x>
-      <y>690</y>
+      <y>630</y>
       <width>81</width>
-      <height>101</height>
+      <height>102</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -671,7 +456,7 @@ QComboBox:on{
       <x>810</x>
       <y>160</y>
       <width>171</width>
-      <height>95</height>
+      <height>102</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -748,208 +533,11 @@ QComboBox:on{
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="verticalLayoutWidget_7">
-    <property name="geometry">
-     <rect>
-      <x>810</x>
-      <y>460</y>
-      <width>81</width>
-      <height>95</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_7">
-     <item>
-      <widget class="QLabel" name="lbl_srotate">
-       <property name="text">
-        <string>Rotate</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <layout class="QGridLayout" name="gridLayout_7">
-       <item row="1" column="1">
-        <widget class="QLineEdit" name="le_srotate_y">
-         <property name="styleSheet">
-          <string notr="true">QLineEdit {
-    background: rgba(20, 20, 20, 180);
-	color: rgba(200, 200, 200, 255);
-	border-style: inset;
-    border-radius: 5px;
-}</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QLineEdit" name="le_srotate_x">
-         <property name="styleSheet">
-          <string notr="true">QLineEdit {
-    background: rgba(20, 20, 20, 180);
-	color: rgba(200, 200, 200, 255);
-	border-style: inset;
-    border-radius: 5px;
-}</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0">
-        <widget class="QLabel" name="lbl_srotate_x">
-         <property name="text">
-          <string>X:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="lbl_srotate_y">
-         <property name="text">
-          <string>Y:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="lbl_srotate_z">
-         <property name="text">
-          <string>Z:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QLineEdit" name="le_srotate_z">
-         <property name="styleSheet">
-          <string notr="true">QLineEdit {
-    background: rgba(20, 20, 20, 180);
-	color: rgba(200, 200, 200, 255);
-	border-style: inset;
-    border-radius: 5px;
-}</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="verticalLayoutWidget_8">
-    <property name="geometry">
-     <rect>
-      <x>900</x>
-      <y>460</y>
-      <width>81</width>
-      <height>95</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_8">
-     <item>
-      <widget class="QLabel" name="lbl_smovement">
-       <property name="text">
-        <string>End move</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <layout class="QGridLayout" name="gridLayout_8">
-       <item row="1" column="1">
-        <widget class="QLineEdit" name="le_smovement_y">
-         <property name="styleSheet">
-          <string notr="true">QLineEdit {
-    background: rgba(20, 20, 20, 180);
-	color: rgba(200, 200, 200, 255);
-	border-style: inset;
-    border-radius: 5px;
-}</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QLineEdit" name="le_smovement_x">
-         <property name="styleSheet">
-          <string notr="true">QLineEdit {
-    background: rgba(20, 20, 20, 180);
-	color: rgba(200, 200, 200, 255);
-	border-style: inset;
-    border-radius: 5px;
-}</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0">
-        <widget class="QLabel" name="lbl_smovement_x">
-         <property name="text">
-          <string>X:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="lbl_smovement_y">
-         <property name="text">
-          <string>Y:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="lbl_smovement_z">
-         <property name="text">
-          <string>Z:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QLineEdit" name="le_smovement_z">
-         <property name="styleSheet">
-          <string notr="true">QLineEdit {
-    background: rgba(20, 20, 20, 180);
-	color: rgba(200, 200, 200, 255);
-	border-style: inset;
-    border-radius: 5px;
-}</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QLabel" name="lbl_speed">
-    <property name="geometry">
-     <rect>
-      <x>810</x>
-      <y>560</y>
-      <width>55</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Speed:</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="le_speed">
-    <property name="geometry">
-     <rect>
-      <x>860</x>
-      <y>560</y>
-      <width>121</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QLineEdit {
-    background: rgba(20, 20, 20, 180);
-	color: rgba(200, 200, 200, 255);
-	border-style: inset;
-    border-radius: 5px;
-}</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="pushButton_lapply">
     <property name="geometry">
      <rect>
       <x>900</x>
-      <y>740</y>
+      <y>680</y>
       <width>81</width>
       <height>21</height>
      </rect>
@@ -974,11 +562,41 @@ QPushButton:pressed {
      <string>Apply</string>
     </property>
    </widget>
+   <widget class="QCheckBox" name="checkBox">
+    <property name="geometry">
+     <rect>
+      <x>662</x>
+      <y>10</y>
+      <width>131</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QCheckBox::indicator + QCheckBox::unchecked {
+	background-color: rgba(40, 40, 40, 150);
+}
+
+QCheckBox::indicator + QCheckBox::checked {
+	background-color: rgba(20, 20, 20, 150);
+}
+
+QCheckBox{
+	background-color: rgba(20, 20, 20, 0);
+	color: rgba(255, 255, 255, 150);
+}</string>
+    </property>
+    <property name="text">
+     <string>Constructor mode</string>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+   </widget>
    <widget class="QPushButton" name="pushButton_lcancel">
     <property name="geometry">
      <rect>
       <x>900</x>
-      <y>770</y>
+      <y>710</y>
       <width>81</width>
       <height>21</height>
      </rect>
@@ -1007,7 +625,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>902</x>
-      <y>690</y>
+      <y>630</y>
       <width>71</width>
       <height>20</height>
      </rect>
@@ -1023,7 +641,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>900</x>
-      <y>710</y>
+      <y>650</y>
       <width>81</width>
       <height>21</height>
      </rect>
