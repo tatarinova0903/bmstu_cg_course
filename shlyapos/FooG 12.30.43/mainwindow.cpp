@@ -26,7 +26,6 @@ MainWindow::MainWindow(QWidget *parent)
     this->resize(990, 800);
 
     modelCnt  = 0;
-    spriteCnt = 0;
     lightCnt  = 0;
 
     lightPos.push_back(Vector3f(100, 1000, 100));

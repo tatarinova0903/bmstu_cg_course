@@ -68,11 +68,6 @@ public:
     void addModel(Vector3f&, Vector3f&, QString&, QColor&);
     void editModel(const int&, Vector3f&, Vector3f&, Vector3f&);
 
-    // Sprite
-    void addSprite(Vector3f&, Vector3f&, QString&, QColor&, Vector3f&, float&);
-    void editSprite(const int&, Vector3f&, Vector3f&, Vector3f&, Vector3f&, const float&);
-    void editSprite(const int&, Vector3f&, Vector3f&, Vector3f&);   // Without movement
-
     // Light
     void addLight(const Vector3f&, const float&);
     void editLight(const int&, const Vector3f&, const float& power = 500);

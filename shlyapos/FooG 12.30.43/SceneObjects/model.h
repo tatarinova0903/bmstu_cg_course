@@ -29,8 +29,6 @@ protected:
     Vector3f normalCalculate(const Vector3f&, const Vector3f&, const Vector3f&);
     void normalsProcessing();
 
-    bool isSprite = false;
-
 public:
     Model(const char*, const QColor&, const Vector3f& center = Vector3f(0, 0, 0));
 

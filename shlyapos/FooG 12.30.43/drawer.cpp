@@ -63,15 +63,6 @@ void Drawer::draw()
     Vector3f camDir = scene.getCameraView();
     Vector3f camUp  = scene.getCameraUp();
 
-    size_t i;
-    size_t sprites = scene.countSprites();
-
-    for (i = 0; i < sprites; i++)
-    {
-        scene.updateSpriteCenter(i);
-        objectProcessing(scene.getSprite(i), camPos, camDir, camUp);
-    }
-
     size_t models = scene.countModels();
 
     for (size_t i = 0; i < models; i++)
@@ -93,25 +84,6 @@ void Drawer::addModel(Vector3f& center, Vector3f& scale, QString& filename, QCol
 void Drawer::editModel(const int& idx, Vector3f& center, Vector3f& scale, Vector3f& rotate)
 {
     scene.editModel(idx, center, scale, rotate);
-}
-
-
-
-// Sprite
-void Drawer::addSprite(Vector3f& center, Vector3f& scale, QString& filename,
-                       QColor& color, Vector3f& end, float& speed)
-{
-    scene.addSprite(Sprite(filename.toStdString().c_str(), color, center), scale, end ,speed);
-}
-
-void Drawer::editSprite(const int& idx, Vector3f& cntr, Vector3f& scl, Vector3f& rt, Vector3f& end, const float& sp)
-{
-    scene.editSprite(idx, cntr, scl, rt, end, sp);
-}
-
-void Drawer::editSprite(const int& idx, Vector3f& cntr, Vector3f& scl, Vector3f& rt)
-{
-    scene.editSprite(idx, cntr, scl, rt);
 }
 
 
