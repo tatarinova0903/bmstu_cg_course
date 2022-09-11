@@ -24,8 +24,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->comboBox_sprite, SIGNAL(currentIndexChanged(QString)), SLOT(changeSprite()));
     connect(ui->comboBox_light, SIGNAL(currentIndexChanged(QString)), SLOT(changeLight()));
 
-
-    connect(ui->checkBox, SIGNAL(toggled(bool)), this, SLOT(constructorMode(bool)));
+    this->resize(990, 800);
 
     modelCnt  = 0;
     spriteCnt = 0;
@@ -275,20 +274,6 @@ void MainWindow::cancelLineEditsLight()
     ui->le_lmove_z->setText(std::to_string(currentCenter.z).c_str());
 
     ui->le_power->setText("200");
-}
-
-
-
-void MainWindow::constructorMode(bool value)
-{
-    if (value)
-    {
-        this->resize(990, 800);
-    }
-    else
-    {
-        this->resize(800, 800);
-    }
 }
 
 void MainWindow::keyPressEvent(QKeyEvent *event)

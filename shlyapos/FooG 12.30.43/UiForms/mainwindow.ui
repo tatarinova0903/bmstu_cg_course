@@ -974,36 +974,6 @@ QPushButton:pressed {
      <string>Apply</string>
     </property>
    </widget>
-   <widget class="QCheckBox" name="checkBox">
-    <property name="geometry">
-     <rect>
-      <x>662</x>
-      <y>10</y>
-      <width>131</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QCheckBox::indicator + QCheckBox::unchecked {
-	background-color: rgba(40, 40, 40, 150);
-}
-
-QCheckBox::indicator + QCheckBox::checked {
-	background-color: rgba(20, 20, 20, 150);
-}
-
-QCheckBox{
-	background-color: rgba(20, 20, 20, 0);
-	color: rgba(255, 255, 255, 150);
-}</string>
-    </property>
-    <property name="text">
-     <string>Constructor mode</string>
-    </property>
-    <property name="checked">
-     <bool>false</bool>
-    </property>
-   </widget>
    <widget class="QPushButton" name="pushButton_lcancel">
     <property name="geometry">
      <rect>

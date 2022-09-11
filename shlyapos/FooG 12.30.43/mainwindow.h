@@ -50,7 +50,6 @@ private:
     AddLightParameters addLightParams;
 
 private slots:
-    void constructorMode(bool);
 
     // Model
     void changeModel();
