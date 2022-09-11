@@ -10,7 +10,6 @@
 #include <chrono>
 
 #include "addmodelwindow.h"
-#include "addlightwindow.h"
 
 #include "MathObjects/vector3.h"
 #include "drawer.h"
