@@ -60,6 +60,7 @@ void MainWindow::initDrawer()
 void MainWindow::initButton()
 {
     connect(ui->pushButton_addModel, SIGNAL(released()), this, SLOT(openAddModelWindow()));
+    connect(ui->pushButton_clear, SIGNAL(released()), this, SLOT(clear()));
 
     connect(ui->pushButton_mapply, SIGNAL(released()), this, SLOT(applyModelChange()));
     connect(ui->pushButton_mcancel, SIGNAL(released()), this, SLOT(cancelLineEditsModel()));
@@ -300,5 +301,11 @@ void MainWindow::setAddModelParams(AddModelParameters& newParams)
     frames = 0;
     frameTime = 0;
     drawer->draw();
+}
+
+// Clear
+void MainWindow::clear()
+{
+
 }
 

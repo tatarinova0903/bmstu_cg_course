@@ -58,6 +58,7 @@ private slots:
     void cancelLineEditsLight();
 
     // Window
+    void clear();
     void openAddModelWindow();
     void setAddModelParams(AddModelParameters&);
 };
