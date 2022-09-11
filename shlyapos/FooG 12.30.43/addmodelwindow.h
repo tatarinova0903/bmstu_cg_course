@@ -17,8 +17,6 @@ struct AddModelParameters
 
     QColor color;
 
-    bool isSprite;
-
     float enX, enY, enZ;
     float speed;
 };
@@ -48,8 +46,6 @@ private:
     void initParams();
 
 private slots:
-    void isSpriteToggledCheckButton(bool);
-
     void openFileDialog();
     void chooseColor();
 

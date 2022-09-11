@@ -480,25 +480,12 @@ void MainWindow::setAddModelParams(AddModelParameters& newParams)
     Vector3f center(newParams.moveX, newParams.moveY, newParams.moveZ);
     Vector3f scaleK(newParams.scaleX, newParams.scaleY, newParams.scaleZ);
 
-    if (newParams.isSprite)
-    {
-        Vector3f end(newParams.enX, newParams.enY, newParams.enZ);
-        drawer->addSprite(center, scaleK, newParams.filename, newParams.color, end, newParams.speed);
+    drawer->addModel(center, scaleK, newParams.filename, newParams.color);
 
-        centersS.push_back(center);
-        ui->comboBox_sprite->addItem(newParams.modelName);
+    centersM.push_back(center);
+    ui->comboBox_model->addItem(newParams.modelName);
 
-        spriteCnt++;
-    }
-    else
-    {
-        drawer->addModel(center, scaleK, newParams.filename, newParams.color);
-
-        centersM.push_back(center);
-        ui->comboBox_model->addItem(newParams.modelName);
-
-        modelCnt++;
-    }
+    modelCnt++;
 
     frames = 0;
     frameTime = 0;

@@ -11,8 +11,6 @@ AddModelWindow::AddModelWindow(int modelCnt, QDialog *parent)
     initLabels();
     initLineEdits();
 
-    connect(ui->checkBox_isSprite, SIGNAL(toggled(bool)), this, SLOT(isSpriteToggledCheckButton(bool)));
-
     connect(ui->pushButton_file, SIGNAL(released()), this, SLOT(openFileDialog()));
     connect(ui->pushButton_color, SIGNAL(released()), this, SLOT(chooseColor()));
 
@@ -74,26 +72,7 @@ void AddModelWindow::initLineEdits()
 void AddModelWindow::initParams()
 {
     params.color = Qt::white;
-    params.isSprite = false;
 }
-
-
-
-void AddModelWindow::isSpriteToggledCheckButton(bool value)
-{
-    if (value)
-    {
-        params.isSprite = true;
-        this->resize(479, 289);
-    }
-    else
-    {
-        params.isSprite = false;
-        this->resize(328, 289);
-    }
-}
-
-
 
 void AddModelWindow::openFileDialog()
 {
@@ -129,15 +108,6 @@ void AddModelWindow::okButton()
     this->params.scaleX = ui->le_scaleX->text().toFloat();
     this->params.scaleY = -ui->le_scaleY->text().toFloat();
     this->params.scaleZ = ui->le_scaleZ->text().toFloat();
-
-    if (params.isSprite)
-    {
-        params.enX = ui->le_en_x->text().toFloat();
-        params.enY = ui->le_en_y->text().toFloat();
-        params.enZ = ui->le_en_z->text().toFloat();
-
-        params.speed = ui->le_speed->text().toFloat();
-    }
 
     emit saveModelParams(params);
 
