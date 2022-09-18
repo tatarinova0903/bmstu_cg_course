@@ -19,6 +19,13 @@ struct AddModelParameters
 
     float enX, enY, enZ;
     float speed;
+
+    void configPerson()
+    {
+        moveX = moveY = moveZ = 0.0;
+        scaleX = scaleY = scaleZ = 1.0;
+        filename = "/Users/daria/Desktop/bmstu_cg_cource/shlyapos/FooG\ 12.30.43/SourceObjects/person.obj";
+    }
 };
 
 namespace Ui {

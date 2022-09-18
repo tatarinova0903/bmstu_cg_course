@@ -59,7 +59,7 @@ private slots:
 
     // Window
     void clear();
-    void openAddModelWindow();
+    void addModels();
     void setAddModelParams(AddModelParameters&);
 };
 #endif // MAINWINDOW_H

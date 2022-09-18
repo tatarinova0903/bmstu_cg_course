@@ -59,7 +59,7 @@ void MainWindow::initDrawer()
 
 void MainWindow::initButton()
 {
-    connect(ui->pushButton_addModel, SIGNAL(released()), this, SLOT(openAddModelWindow()));
+    connect(ui->pushButton_addModel, SIGNAL(released()), this, SLOT(addModels()));
     connect(ui->pushButton_clear, SIGNAL(released()), this, SLOT(clear()));
 
     connect(ui->pushButton_mapply, SIGNAL(released()), this, SLOT(applyModelChange()));
@@ -276,14 +276,15 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
 
 
 // Add new model
-void MainWindow::openAddModelWindow()
+void MainWindow::addModels()
 {
     addModelWindow = new AddModelWindow(modelCnt);
 
+    AddModelParameters person = AddModelParameters();
+    person.configPerson();
+
     connect(addModelWindow, SIGNAL(saveModelParams(AddModelParameters&)),
             this, SLOT(setAddModelParams(AddModelParameters&)));
-
-    addModelWindow->show();
 }
 
 void MainWindow::setAddModelParams(AddModelParameters& newParams)
