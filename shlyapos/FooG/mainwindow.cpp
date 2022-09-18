@@ -278,13 +278,9 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
 // Add new model
 void MainWindow::addModels()
 {
-    addModelWindow = new AddModelWindow(modelCnt);
-
     AddModelParameters person = AddModelParameters();
     person.configPerson();
-
-    connect(addModelWindow, SIGNAL(saveModelParams(AddModelParameters&)),
-            this, SLOT(setAddModelParams(AddModelParameters&)));
+    setAddModelParams(person);
 }
 
 void MainWindow::setAddModelParams(AddModelParameters& newParams)
