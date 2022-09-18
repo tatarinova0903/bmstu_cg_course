@@ -15,7 +15,6 @@ SOURCES += \
     SceneObjects/camera.cpp \
     SceneObjects/lightsourcepoint.cpp \
     SceneObjects/model.cpp \
-    addmodelwindow.cpp \
     drawer.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -27,17 +26,16 @@ HEADERS += \
     MathObjects/transformmatrix.h \
     MathObjects/vector3.h \
     MathObjects/vector3.hpp \
+    SceneObjects/AddModelParameters.h \
     SceneObjects/camera.h \
     SceneObjects/lightsourcepoint.h \
     SceneObjects/model.h \
-    addmodelwindow.h \
     drawer.h \
     mainwindow.h \
     scene.h \
     zbuffer.h
 
 FORMS += \
-    UiForms/addmodelwindow.ui \
     UiForms/mainwindow.ui
 
 # Default rules for deployment.

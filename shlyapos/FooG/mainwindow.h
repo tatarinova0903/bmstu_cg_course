@@ -9,9 +9,8 @@
 #include <string>
 #include <chrono>
 
-#include "addmodelwindow.h"
-
 #include "MathObjects/vector3.h"
+#include "SceneObjects/AddModelParameters.h"
 #include "drawer.h"
 
 QT_BEGIN_NAMESPACE
@@ -41,9 +40,6 @@ private:
     void initButton();
 
     void keyPressEvent(QKeyEvent *event);
-
-    AddModelWindow *addModelWindow;
-    AddModelParameters addModelparams;
 
 private slots:
 

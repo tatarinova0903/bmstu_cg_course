@@ -35,9 +35,6 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
-    if (addModelWindow->isVisible())
-        addModelWindow->destroyed();
-
     delete ui;
 }
 
@@ -281,6 +278,22 @@ void MainWindow::addModels()
     AddModelParameters person = AddModelParameters();
     person.configPerson();
     setAddModelParams(person);
+
+    AddModelParameters leftWall = AddModelParameters();
+    leftWall.configLeftWall();
+    setAddModelParams(leftWall);
+
+    AddModelParameters rightWall = AddModelParameters();
+    rightWall.configRightWall();
+    setAddModelParams(rightWall);
+
+    AddModelParameters backWall = AddModelParameters();
+    backWall.configBackWall();
+    setAddModelParams(backWall);
+
+    AddModelParameters floor = AddModelParameters();
+    floor.configFloor();
+    setAddModelParams(floor);
 }
 
 void MainWindow::setAddModelParams(AddModelParameters& newParams)
