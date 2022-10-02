@@ -81,9 +81,9 @@ void Drawer::addModel(Vector3f& center, Vector3f& scale, QString& filename, QCol
     scene.addModel(Model(filename.toStdString().c_str(), color, center), scale);
 }
 
-void Drawer::editModel(const int& idx, Vector3f& center, Vector3f& scale, Vector3f& rotate)
+void Drawer::editModel(Vector3f& center, Vector3f& scale, Vector3f& rotate)
 {
-    scene.editModel(idx, center, scale, rotate);
+    scene.editModel(center, scale, rotate);
 }
 
 

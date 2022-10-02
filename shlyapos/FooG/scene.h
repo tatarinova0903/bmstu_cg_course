@@ -19,7 +19,7 @@ public:
     int    countModels();
     void   addModel(const Model&, const Vector3f& scale = Vector3f(1, 1, 1));
     Model& getModel(const int&);
-    void   editModel(const int&, Vector3f&, Vector3f&, Vector3f&);
+    void   editModel(Vector3f&, Vector3f&, Vector3f&);
 
     // Lights
     void              addLightSource(const Vector3f&, const float&);

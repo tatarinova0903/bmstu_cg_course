@@ -117,8 +117,6 @@ void MainWindow::applyModelChange()
     if (centersM.size() == 0)
         return;
 
-    int idx = ui->comboBox_model->currentIndex();
-
     Vector3f center, scale, rotate;
 
     // For move
@@ -126,7 +124,7 @@ void MainWindow::applyModelChange()
         ui->le_mmove_y->text().isEmpty() ||
         ui->le_mmove_z->text().isEmpty())
     {
-        center = Vector3f(centersM[idx]);
+        center = Vector3f(0, 0, 0);
     }
     else
     {
@@ -160,7 +158,7 @@ void MainWindow::applyModelChange()
                           ui->le_mrotate_z->text().toFloat());
     }
 
-    drawer->editModel(idx, center, scale, rotate);
+    drawer->editModel(center, scale, rotate);
     drawer->draw();
 }
 

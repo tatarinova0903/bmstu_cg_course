@@ -66,7 +66,7 @@ public:
 
     // Model
     void addModel(Vector3f&, Vector3f&, QString&, QColor&);
-    void editModel(const int&, Vector3f&, Vector3f&, Vector3f&);
+    void editModel(Vector3f&, Vector3f&, Vector3f&);
 
     // Light
     void addLight(const Vector3f&, const float&);

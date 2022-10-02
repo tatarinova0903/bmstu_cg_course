@@ -1,6 +1,8 @@
 #include "scene.h"
 
 #include <QDebug>
+#include <iterator>
+#include <vector>
 
 // Constructors
 Scene::Scene()
@@ -28,11 +30,13 @@ Model& Scene::getModel(const int& idx)
     return models[idx];
 }
 
-void Scene::editModel(const int& idx, Vector3f& center, Vector3f& scale, Vector3f& rotate)
+void Scene::editModel(Vector3f& center, Vector3f& scale, Vector3f& rotate)
 {
-    models[idx].setCenter(center);
-    models[idx].scale(scale);
-    models[idx].rotate(rotate);
+    for (auto it = models.begin(); it < models.end(); it++) {
+        it->setCenter(center);
+        it->scale(scale);
+        it->rotate(rotate);
+     }
 }
 
 
