@@ -179,8 +179,8 @@ void Model::scale(const Vector3f& k)
 
 void Model::rotate(const Vector3f& angle)
 {
-    std::shared_ptr<Matrix> m1(new MoveMatrix(-center.x, -center.y, -center.z));
-    std::shared_ptr<Matrix> m2(new MoveMatrix(center.x, center.y, center.z));
+    std::shared_ptr<Matrix> m1(new MoveMatrix(center.x, center.y, center.z));
+    std::shared_ptr<Matrix> m2(new MoveMatrix(-center.x, -center.y, -center.z));
 
     std::shared_ptr<Matrix> rx(new RotateOxMatrix(angle.x * M_PI / 180));
     std::shared_ptr<Matrix> ry(new RotateOyMatrix(angle.y * M_PI / 180));
