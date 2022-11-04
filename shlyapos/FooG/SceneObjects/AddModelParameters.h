@@ -25,7 +25,7 @@ struct AddModelParameters
         scaleY = -1.0;
         filename = "/Users/daria/Desktop/bmstu_cg_cource/shlyapos/FooG/SourceObjects/person.obj";
         modelName = "person";
-        color = QColor(255, 255, 255, 127);
+        color = QColor(240, 161, 137);
     }
 
     void configLeftWall()
@@ -34,7 +34,7 @@ struct AddModelParameters
         scaleX = scaleY = scaleZ = 1.0;
         filename = "/Users/daria/Desktop/bmstu_cg_cource/shlyapos/FooG/SourceObjects/left_wall.obj";
         modelName = "leftWall";
-        color = QColor(255, 255, 255, 127);
+        color = QColor(255, 255, 255);
     }
 
     void configRightWall()
@@ -43,7 +43,7 @@ struct AddModelParameters
         scaleX = scaleY = scaleZ = 1.0;
         filename = "/Users/daria/Desktop/bmstu_cg_cource/shlyapos/FooG/SourceObjects/right_wall.obj";
         modelName = "rightWall";
-        color = QColor(255, 255, 255, 127);
+        color = QColor(255, 255, 255);
     }
 
     void configBackWall()
@@ -52,7 +52,7 @@ struct AddModelParameters
         scaleX = scaleY = scaleZ = 1.0;
         filename = "/Users/daria/Desktop/bmstu_cg_cource/shlyapos/FooG/SourceObjects/back_wall.obj";
         modelName = "backWall";
-        color = QColor(255, 255, 255, 127);
+        color = QColor(255, 255, 255);
     }
 
     void configFloor()
@@ -61,7 +61,7 @@ struct AddModelParameters
         scaleX = scaleY = scaleZ = 1.0;
         filename = "/Users/daria/Desktop/bmstu_cg_cource/shlyapos/FooG/SourceObjects/floor.obj";
         modelName = "floor";
-        color = QColor(255, 255, 255, 127);
+        color = QColor(255, 255, 255);
     }
 };
 
