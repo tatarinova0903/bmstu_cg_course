@@ -1,5 +1,5 @@
 #include "scene.h"
-
+#include "MathObjects/brownianmotion.h"
 #include <QDebug>
 #include <iterator>
 #include <vector>
@@ -117,11 +117,14 @@ void Scene::movingCamera(const float& speed)
 // Virus
 void Scene::reCalculateVirus()
 {
+    std::vector<Vector3f *> virus_centers;
     for (auto model = models.begin(); model < models.end(); model++)
     {
         if (model->isVirus)
         {
-            model->setCenter(Vector3f(0.01, 0.01, 0.01));
+            virus_centers.push_back(&(model->getCenter()));
         }
     }
+    BrownianMotion brownianMotion = BrownianMotion();
+    brownianMotion.calculate(virus_centers);
 }

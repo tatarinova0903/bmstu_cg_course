@@ -5,6 +5,7 @@
 #include <QTimer>
 
 #define TIMEOUT 1000
+#define VIRUS_COUNT 10
 
 int frames = 0;
 auto frameTime = 0;
@@ -99,7 +100,7 @@ void MainWindow::initLables()
 // Virus animation
 void MainWindow::startVirusSpread()
 {
-    for (int i = 0; i < 1; i++)
+    for (int i = 0; i < VIRUS_COUNT; i++)
     {
         AddModelParameters virus = AddModelParameters();
         virus.configVirus();
