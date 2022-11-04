@@ -63,6 +63,15 @@ struct AddModelParameters
         modelName = "floor";
         color = QColor(255, 255, 255);
     }
+
+    void configVirus()
+    {
+        moveX = moveY = moveZ = 0.0;
+        scaleX = scaleY = scaleZ = 0.1;
+        filename = "/Users/daria/Desktop/bmstu_cg_cource/shlyapos/FooG/SourceObjects/sphere.obj";
+        modelName = "virus";
+        color = QColor(255, 0, 0, 127);
+    }
 };
 
 #endif // ADDMODELPARAMETERS_H

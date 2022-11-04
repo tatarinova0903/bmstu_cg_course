@@ -57,5 +57,9 @@ private slots:
     void clear();
     void addModels();
     void setAddModelParams(AddModelParameters&);
+
+    // Virus
+    void startVirusSpread();
+    void moveVirus();
 };
 #endif // MAINWINDOW_H

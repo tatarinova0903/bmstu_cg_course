@@ -2,6 +2,9 @@
 #include "ui_mainwindow.h"
 
 #include <QDebug>
+#include <QTimer>
+
+#define TIMEOUT 3000
 
 int frames = 0;
 auto frameTime = 0;
@@ -55,8 +58,10 @@ void MainWindow::initDrawer()
 
 void MainWindow::initButton()
 {
-    connect(ui->pushButton_addModel, SIGNAL(released()), this, SLOT(addModels()));
+    connect(ui->pushButton_loadScene, SIGNAL(released()), this, SLOT(addModels()));
     connect(ui->pushButton_clear, SIGNAL(released()), this, SLOT(clear()));
+
+    connect(ui->pushButton_start, SIGNAL(released()), this, SLOT(startVirusSpread()));
 
     connect(ui->pushButton_mapply, SIGNAL(released()), this, SLOT(applyModelChange()));
     connect(ui->pushButton_mcancel, SIGNAL(released()), this, SLOT(cancelLineEditsModel()));
@@ -91,7 +96,19 @@ void MainWindow::initLables()
     ui->lbl_power->setStyleSheet("QLabel {color: rgba(200, 200, 200, 255);}");
 }
 
+// Virus animation
+void MainWindow::startVirusSpread()
+{
+    QTimer *timer = new QTimer(this);
+    timer->setInterval(TIMEOUT);
+    connect(timer, &QTimer::timeout, this, &MainWindow::moveVirus);
+    timer->start();
+}
 
+void MainWindow::moveVirus()
+{
+    drawer->draw();
+}
 
 // Model
 void MainWindow::setDafaultParametrs()
@@ -265,25 +282,29 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
 // Add new model
 void MainWindow::addModels()
 {
-    AddModelParameters person = AddModelParameters();
-    person.configPerson();
-    setAddModelParams(person);
+//    AddModelParameters person = AddModelParameters();
+//    person.configPerson();
+//    setAddModelParams(person);
 
-    AddModelParameters leftWall = AddModelParameters();
-    leftWall.configLeftWall();
-    setAddModelParams(leftWall);
+//    AddModelParameters leftWall = AddModelParameters();
+//    leftWall.configLeftWall();
+//    setAddModelParams(leftWall);
 
-    AddModelParameters rightWall = AddModelParameters();
-    rightWall.configRightWall();
-    setAddModelParams(rightWall);
+//    AddModelParameters rightWall = AddModelParameters();
+//    rightWall.configRightWall();
+//    setAddModelParams(rightWall);
 
-    AddModelParameters backWall = AddModelParameters();
-    backWall.configBackWall();
-    setAddModelParams(backWall);
+//    AddModelParameters backWall = AddModelParameters();
+//    backWall.configBackWall();
+//    setAddModelParams(backWall);
 
-    AddModelParameters floor = AddModelParameters();
-    floor.configFloor();
-    setAddModelParams(floor);
+//    AddModelParameters floor = AddModelParameters();
+//    floor.configFloor();
+//    setAddModelParams(floor);
+
+    AddModelParameters virus = AddModelParameters();
+    virus.configVirus();
+    setAddModelParams(virus);
 
     setDafaultParametrs();
 }
