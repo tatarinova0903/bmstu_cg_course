@@ -44,7 +44,7 @@ private:
 private slots:
 
     // Model
-    void changeModel();
+    void setDafaultParametrs();
     void applyModelChange();
     void cancelLineEditsModel();
 

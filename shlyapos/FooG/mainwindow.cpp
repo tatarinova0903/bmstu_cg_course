@@ -20,7 +20,6 @@ MainWindow::MainWindow(QWidget *parent)
     initButton();
 
     // Combobox
-    connect(ui->comboBox_model, SIGNAL(currentIndexChanged(QString)), SLOT(changeModel()));
     connect(ui->comboBox_light, SIGNAL(currentIndexChanged(QString)), SLOT(changeLight()));
 
     this->resize(990, 800);
@@ -69,7 +68,6 @@ void MainWindow::initButton()
 void MainWindow::initLables()
 {
     // Models
-    ui->lbl_models->setStyleSheet("QLabel {color: rgba(200, 200, 200, 255);}");
     ui->lbl_model_move->setStyleSheet("QLabel {color: rgba(200, 200, 200, 255);}");
     ui->lbl_mmove_x->setStyleSheet("QLabel {color: rgba(200, 200, 200, 255);}");
     ui->lbl_mmove_y->setStyleSheet("QLabel {color: rgba(200, 200, 200, 255);}");
@@ -96,11 +94,8 @@ void MainWindow::initLables()
 
 
 // Model
-void MainWindow::changeModel()
+void MainWindow::setDafaultParametrs()
 {
-    int idx = ui->comboBox_model->currentIndex();
-    Vector3f currentCenter = centersM[idx];
-
     ui->le_mmove_x->setText("0.0");
     ui->le_mmove_y->setText("0.0");
     ui->le_mmove_z->setText("0.0");
@@ -164,12 +159,9 @@ void MainWindow::applyModelChange()
 
 void MainWindow::cancelLineEditsModel()
 {
-    int idx = ui->comboBox_model->currentIndex();
-    Vector3f currentCenter = centersM[idx];
-
-    ui->le_lmove_x->setText(std::to_string(currentCenter.x).c_str());
-    ui->le_lmove_y->setText(std::to_string(currentCenter.y).c_str());
-    ui->le_lmove_z->setText(std::to_string(currentCenter.z).c_str());
+    ui->le_lmove_x->setText("0.0");
+    ui->le_lmove_y->setText("0.0");
+    ui->le_lmove_z->setText("0.0");
 
     ui->le_mscale_x->setText("1");
 
@@ -292,6 +284,8 @@ void MainWindow::addModels()
     AddModelParameters floor = AddModelParameters();
     floor.configFloor();
     setAddModelParams(floor);
+
+    setDafaultParametrs();
 }
 
 void MainWindow::setAddModelParams(AddModelParameters& newParams)
@@ -302,7 +296,6 @@ void MainWindow::setAddModelParams(AddModelParameters& newParams)
     drawer->addModel(center, scaleK, newParams.filename, newParams.color);
 
     centersM.push_back(center);
-    ui->comboBox_model->addItem(newParams.modelName);
 
     modelCnt++;
 
