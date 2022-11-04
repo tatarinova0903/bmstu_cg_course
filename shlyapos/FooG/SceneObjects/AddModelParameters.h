@@ -19,7 +19,8 @@ struct AddModelParameters
 
     void configPerson()
     {
-        moveX = moveY = moveZ = 0.0;
+        moveX = moveZ = 0.0;
+        moveY = 0.5;
         scaleX = scaleZ = 1.0;
         scaleY = -1.0;
         filename = "/Users/daria/Desktop/bmstu_cg_cource/shlyapos/FooG/SourceObjects/person.obj";
