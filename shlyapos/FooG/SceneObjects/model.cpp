@@ -72,7 +72,9 @@ Vector3f& Model::getCenter()
 
 void Model::setCenter(const Vector3f& newCenter)
 {
-    center = newCenter;
+    center.x += newCenter.x;
+    center.y += newCenter.y;
+    center.z += newCenter.z;
 }
 
 

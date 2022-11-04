@@ -101,9 +101,9 @@ void MainWindow::changeModel()
     int idx = ui->comboBox_model->currentIndex();
     Vector3f currentCenter = centersM[idx];
 
-    ui->le_mmove_x->setText(std::to_string(currentCenter.x).c_str());
-    ui->le_mmove_y->setText(std::to_string(currentCenter.y).c_str());
-    ui->le_mmove_z->setText(std::to_string(currentCenter.z).c_str());
+    ui->le_mmove_x->setText("0.0");
+    ui->le_mmove_y->setText("0.0");
+    ui->le_mmove_z->setText("0.0");
 
     ui->le_mscale_x->setText("1");
 
