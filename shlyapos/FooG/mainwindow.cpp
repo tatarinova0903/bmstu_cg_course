@@ -10,7 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    this->setWindowTitle("FooG");
+    this->setWindowTitle("Курсовая работа");
     this->setWindowIcon(QIcon("icon_speedrun.png"));
 
     ui->centralwidget->setStyleSheet("QWidget {background: rgba(50, 50, 50, 255);}");
