@@ -21,9 +21,9 @@ struct AddModelParameters
     void configPerson()
     {
         moveX = moveZ = 0.0;
-        moveY = 0.5;
-        scaleX = scaleZ = 1.0;
-        scaleY = -1.0;
+        moveY = 0.4;
+        scaleX = scaleZ = 1.1;
+        scaleY = -1.1;
         filename = "/Users/daria/Desktop/bmstu_cg_cource/shlyapos/FooG/SourceObjects/person.obj";
         modelName = "person";
         isVirus = false;
@@ -73,7 +73,7 @@ struct AddModelParameters
     void configVirus()
     {
         moveX = moveY = moveZ = 0.0;
-        scaleX = scaleY = scaleZ = 0.1;
+        scaleX = scaleY = scaleZ = 0.04;
         filename = "/Users/daria/Desktop/bmstu_cg_cource/shlyapos/FooG/SourceObjects/sphere.obj";
         modelName = "virus";
         isVirus = true;

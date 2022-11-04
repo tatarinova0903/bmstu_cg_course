@@ -5,7 +5,7 @@
 #include <QTimer>
 
 #define TIMEOUT 500
-#define VIRUS_COUNT 30
+#define VIRUS_COUNT 50
 
 int frames = 0;
 auto frameTime = 0;
