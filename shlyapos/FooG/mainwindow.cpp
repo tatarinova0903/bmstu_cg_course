@@ -159,9 +159,9 @@ void MainWindow::applyModelChange()
 
 void MainWindow::cancelLineEditsModel()
 {
-    ui->le_lmove_x->setText("0.0");
-    ui->le_lmove_y->setText("0.0");
-    ui->le_lmove_z->setText("0.0");
+    ui->le_mmove_x->setText("0.0");
+    ui->le_mmove_y->setText("0.0");
+    ui->le_mmove_z->setText("0.0");
 
     ui->le_mscale_x->setText("1");
 
