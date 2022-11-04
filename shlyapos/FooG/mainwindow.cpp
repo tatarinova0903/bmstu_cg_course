@@ -4,7 +4,7 @@
 #include <QDebug>
 #include <QTimer>
 
-#define TIMEOUT 3000
+#define TIMEOUT 1000
 
 int frames = 0;
 auto frameTime = 0;
@@ -99,6 +99,12 @@ void MainWindow::initLables()
 // Virus animation
 void MainWindow::startVirusSpread()
 {
+    for (int i = 0; i < 1; i++)
+    {
+        AddModelParameters virus = AddModelParameters();
+        virus.configVirus();
+        setAddModelParams(virus);
+    }
     QTimer *timer = new QTimer(this);
     timer->setInterval(TIMEOUT);
     connect(timer, &QTimer::timeout, this, &MainWindow::moveVirus);
@@ -107,6 +113,7 @@ void MainWindow::startVirusSpread()
 
 void MainWindow::moveVirus()
 {
+    drawer->reCalculateVirus();
     drawer->draw();
 }
 
@@ -282,29 +289,25 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
 // Add new model
 void MainWindow::addModels()
 {
-//    AddModelParameters person = AddModelParameters();
-//    person.configPerson();
-//    setAddModelParams(person);
+    AddModelParameters person = AddModelParameters();
+    person.configPerson();
+    setAddModelParams(person);
 
-//    AddModelParameters leftWall = AddModelParameters();
-//    leftWall.configLeftWall();
-//    setAddModelParams(leftWall);
+    AddModelParameters leftWall = AddModelParameters();
+    leftWall.configLeftWall();
+    setAddModelParams(leftWall);
 
-//    AddModelParameters rightWall = AddModelParameters();
-//    rightWall.configRightWall();
-//    setAddModelParams(rightWall);
+    AddModelParameters rightWall = AddModelParameters();
+    rightWall.configRightWall();
+    setAddModelParams(rightWall);
 
-//    AddModelParameters backWall = AddModelParameters();
-//    backWall.configBackWall();
-//    setAddModelParams(backWall);
+    AddModelParameters backWall = AddModelParameters();
+    backWall.configBackWall();
+    setAddModelParams(backWall);
 
-//    AddModelParameters floor = AddModelParameters();
-//    floor.configFloor();
-//    setAddModelParams(floor);
-
-    AddModelParameters virus = AddModelParameters();
-    virus.configVirus();
-    setAddModelParams(virus);
+    AddModelParameters floor = AddModelParameters();
+    floor.configFloor();
+    setAddModelParams(floor);
 
     setDafaultParametrs();
 }
@@ -314,7 +317,7 @@ void MainWindow::setAddModelParams(AddModelParameters& newParams)
     Vector3f center(newParams.moveX, newParams.moveY, newParams.moveZ);
     Vector3f scaleK(newParams.scaleX, newParams.scaleY, newParams.scaleZ);
 
-    drawer->addModel(center, scaleK, newParams.filename, newParams.color);
+    drawer->addModel(newParams.isVirus, center, scaleK, newParams.filename, newParams.color);
 
     centersM.push_back(center);
 

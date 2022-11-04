@@ -76,9 +76,9 @@ void Drawer::draw()
 
 
 // Model
-void Drawer::addModel(Vector3f& center, Vector3f& scale, QString& filename, QColor& color)
+void Drawer::addModel(bool isVirus, Vector3f& center, Vector3f& scale, QString& filename, QColor& color)
 {
-    scene.addModel(Model(filename.toStdString().c_str(), color, center), scale);
+    scene.addModel(Model(isVirus, filename.toStdString().c_str(), color, center), scale);
 }
 
 void Drawer::editModel(Vector3f& center, Vector3f& scale, Vector3f& rotate)
@@ -122,6 +122,11 @@ void Drawer::movingCamera(const float& speed)
     scene.movingCamera(speed);
 }
 
+// Virus
+void Drawer::reCalculateVirus()
+{
+    scene.reCalculateVirus();
+}
 
 
 // Private methods

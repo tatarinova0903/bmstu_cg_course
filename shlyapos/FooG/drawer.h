@@ -65,7 +65,7 @@ public:
     void draw();
 
     // Model
-    void addModel(Vector3f&, Vector3f&, QString&, QColor&);
+    void addModel(bool isVirus, Vector3f&, Vector3f&, QString&, QColor&);
     void editModel(Vector3f&, Vector3f&, Vector3f&);
 
     // Light
@@ -77,6 +77,9 @@ public:
     void rotateCamera(const float&);
     void strafeCamera(const float&);
     void movingCamera(const float&);
+
+    // Virus
+    void reCalculateVirus();
 };
 
 inline QRgb iColor(const QRgb& a, const float& i);

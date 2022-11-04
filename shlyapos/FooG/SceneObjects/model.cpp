@@ -1,7 +1,7 @@
 #include "model.h"
 
-Model::Model(const char *filename, const QColor& color, const Vector3f& center)
-    : center(center), color(color)
+Model::Model(bool isVirus, const char *filename, const QColor& color, const Vector3f& center)
+    : isVirus(isVirus), center(center), color(color)
 {
     std::ifstream in;
 

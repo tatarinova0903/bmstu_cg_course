@@ -12,6 +12,7 @@ struct AddModelParameters
 
     QString filename;
     QString modelName;
+    bool isVirus;
 
     QColor color;
 
@@ -25,6 +26,7 @@ struct AddModelParameters
         scaleY = -1.0;
         filename = "/Users/daria/Desktop/bmstu_cg_cource/shlyapos/FooG/SourceObjects/person.obj";
         modelName = "person";
+        isVirus = false;
         color = QColor(240, 161, 137);
     }
 
@@ -34,6 +36,7 @@ struct AddModelParameters
         scaleX = scaleY = scaleZ = 1.0;
         filename = "/Users/daria/Desktop/bmstu_cg_cource/shlyapos/FooG/SourceObjects/left_wall.obj";
         modelName = "leftWall";
+        isVirus = false;
         color = QColor(255, 255, 255);
     }
 
@@ -43,6 +46,7 @@ struct AddModelParameters
         scaleX = scaleY = scaleZ = 1.0;
         filename = "/Users/daria/Desktop/bmstu_cg_cource/shlyapos/FooG/SourceObjects/right_wall.obj";
         modelName = "rightWall";
+        isVirus = false;
         color = QColor(255, 255, 255);
     }
 
@@ -52,6 +56,7 @@ struct AddModelParameters
         scaleX = scaleY = scaleZ = 1.0;
         filename = "/Users/daria/Desktop/bmstu_cg_cource/shlyapos/FooG/SourceObjects/back_wall.obj";
         modelName = "backWall";
+        isVirus = false;
         color = QColor(255, 255, 255);
     }
 
@@ -61,6 +66,7 @@ struct AddModelParameters
         scaleX = scaleY = scaleZ = 1.0;
         filename = "/Users/daria/Desktop/bmstu_cg_cource/shlyapos/FooG/SourceObjects/floor.obj";
         modelName = "floor";
+        isVirus = false;
         color = QColor(255, 255, 255);
     }
 
@@ -70,6 +76,7 @@ struct AddModelParameters
         scaleX = scaleY = scaleZ = 0.1;
         filename = "/Users/daria/Desktop/bmstu_cg_cource/shlyapos/FooG/SourceObjects/sphere.obj";
         modelName = "virus";
+        isVirus = true;
         color = QColor(255, 0, 0, 127);
     }
 };

@@ -65,17 +65,15 @@ void Scene::editLight(const int& idx, const Vector3f& pos, const float& power)
 
 
 // Camera methods
-Camera&   Scene::getCamera()
+Camera& Scene::getCamera()
 {
     return mainCamera;
 }
 
-void      Scene::setCamera(const Vector3f& pos, const Vector3f& view, const Vector3f& up)
+void Scene::setCamera(const Vector3f& pos, const Vector3f& view, const Vector3f& up)
 {
     mainCamera = Camera(pos, view, up);
 }
-
-
 
 Vector3f& Scene::getCameraPos()
 {
@@ -92,9 +90,7 @@ Vector3f& Scene::getCameraUp()
     return mainCamera.getUp();
 }
 
-
-
-void    Scene::upDownCamera(const float& speed)
+void Scene::upDownCamera(const float& speed)
 {
     Vector3f pos = mainCamera.getPosition();
 
@@ -102,18 +98,30 @@ void    Scene::upDownCamera(const float& speed)
         mainCamera.upDown(speed);
 }
 
-void    Scene::rotateCamera(const float& speed)
+void Scene::rotateCamera(const float& speed)
 {
     mainCamera.rotateView(speed);
 }
 
-void    Scene::strafeCamera(const float& speed)
+void Scene::strafeCamera(const float& speed)
 {
     mainCamera.update();
     mainCamera.strafe(speed);
 }
 
-void    Scene::movingCamera(const float& speed)
+void Scene::movingCamera(const float& speed)
 {
     mainCamera.move(speed);
+}
+
+// Virus
+void Scene::reCalculateVirus()
+{
+    for (auto model = models.begin(); model < models.end(); model++)
+    {
+        if (model->isVirus)
+        {
+            model->setCenter(Vector3f(0.01, 0.01, 0.01));
+        }
+    }
 }

@@ -30,7 +30,9 @@ protected:
     void normalsProcessing();
 
 public:
-    Model(const char*, const QColor&, const Vector3f& center = Vector3f(0, 0, 0));
+    Model(bool isVirus, const char*, const QColor&, const Vector3f& center = Vector3f(0, 0, 0));
+
+    bool isVirus;
 
     // Center
     Vector3f& getCenter();

@@ -39,6 +39,9 @@ public:
     void      rotateCamera(const float&);
     void      strafeCamera(const float&);
     void      movingCamera(const float&);
+
+    // Virus
+    void reCalculateVirus();
 };
 
 #endif // SCENE_H
