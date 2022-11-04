@@ -8,7 +8,7 @@ BrownianMotion::BrownianMotion() { }
 float get_random()
 {
     static default_random_engine e;
-    static uniform_real_distribution<> dis(-0.05, 0.05);
+    static uniform_real_distribution<> dis(-0.03, 0.03);
     return dis(e);
 }
 

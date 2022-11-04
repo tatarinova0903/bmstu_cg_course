@@ -4,7 +4,7 @@
 #include <QDebug>
 #include <QTimer>
 
-#define TIMEOUT 1000
+#define TIMEOUT 500
 #define VIRUS_COUNT 30
 
 int frames = 0;
