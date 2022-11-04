@@ -65,7 +65,7 @@ public:
     void draw();
 
     // Model
-    void addModel(bool isVirus, Vector3f&, Vector3f&, QString&, QColor&);
+    void addModel(Vector3f&, Vector3f&, QString&, QColor&);
     void editModel(Vector3f&, Vector3f&, Vector3f&);
 
     // Light
@@ -79,6 +79,7 @@ public:
     void movingCamera(const float&);
 
     // Virus
+    void addVirus(Vector3f& center, Vector3f& scale, QString& filename, QColor& color, int count);
     void reCalculateVirus();
 };
 

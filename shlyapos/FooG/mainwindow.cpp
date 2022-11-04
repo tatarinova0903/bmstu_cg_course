@@ -5,7 +5,7 @@
 #include <QTimer>
 
 #define TIMEOUT 1000
-#define VIRUS_COUNT 10
+#define VIRUS_COUNT 30
 
 int frames = 0;
 auto frameTime = 0;
@@ -100,12 +100,10 @@ void MainWindow::initLables()
 // Virus animation
 void MainWindow::startVirusSpread()
 {
-    for (int i = 0; i < VIRUS_COUNT; i++)
-    {
-        AddModelParameters virus = AddModelParameters();
-        virus.configVirus();
-        setAddModelParams(virus);
-    }
+    AddModelParameters virus = AddModelParameters();
+    virus.configVirus();
+    setAddModelParams(virus);
+
     QTimer *timer = new QTimer(this);
     timer->setInterval(TIMEOUT);
     connect(timer, &QTimer::timeout, this, &MainWindow::moveVirus);
@@ -318,7 +316,14 @@ void MainWindow::setAddModelParams(AddModelParameters& newParams)
     Vector3f center(newParams.moveX, newParams.moveY, newParams.moveZ);
     Vector3f scaleK(newParams.scaleX, newParams.scaleY, newParams.scaleZ);
 
-    drawer->addModel(newParams.isVirus, center, scaleK, newParams.filename, newParams.color);
+    if (newParams.isVirus)
+    {
+        drawer->addVirus(center, scaleK, newParams.filename, newParams.color, VIRUS_COUNT);
+    }
+    else
+    {
+        drawer->addModel(center, scaleK, newParams.filename, newParams.color);
+    }
 
     centersM.push_back(center);
 
