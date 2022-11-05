@@ -1,4 +1,6 @@
 #include "drawer.h"
+#include "SceneObjects/virus.h"
+#include "SceneObjects/model.h"
 
 #include <QDebug>
 
@@ -78,7 +80,7 @@ void Drawer::draw()
 // Model
 void Drawer::addModel(Vector3f& center, Vector3f& scale, QString& filename, QColor& color)
 {
-    scene.addModel(BaseModel(false, filename.toStdString().c_str(), color, center), scale);
+    scene.addModel(Model(filename.toStdString().c_str(), color, center), scale);
 }
 
 void Drawer::editModel(Vector3f& center, Vector3f& scale, Vector3f& rotate)
@@ -129,7 +131,7 @@ void Drawer::reCalculateVirus()
 
 void Drawer::addVirus(Vector3f& center, Vector3f& scale, QString& filename, QColor& color, int count)
 {
-    BaseModel virus = BaseModel(true, filename.toStdString().c_str(), color, center);
+    Virus virus = Virus(filename.toStdString().c_str(), color, center);
     for (int i = 0; i < count; i++)
     {
         scene.addModel(virus, scale);

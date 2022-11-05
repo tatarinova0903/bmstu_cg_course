@@ -16,6 +16,8 @@ SOURCES += \
     SceneObjects/basemodel.cpp \
     SceneObjects/camera.cpp \
     SceneObjects/lightsourcepoint.cpp \
+    SceneObjects/model.cpp \
+    SceneObjects/virus.cpp \
     drawer.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -32,6 +34,8 @@ HEADERS += \
     SceneObjects/basemodel.h \
     SceneObjects/camera.h \
     SceneObjects/lightsourcepoint.h \
+    SceneObjects/model.h \
+    SceneObjects/virus.h \
     drawer.h \
     mainwindow.h \
     scene.h \
