@@ -2,6 +2,7 @@
 #define MATERIAL_H
 
 #include <string>
+#include <vector>
 
 #define MATERIAL_TYPES_COUNT 3
 
@@ -18,7 +19,7 @@ struct Material
 
 struct Materials
 {
-    Material value[MATERIAL_TYPES_COUNT] = {
+    std::vector<Material> value = {
         { .value = WOOD, .raw_value = "Дерево" },
         { .value = PAPER, .raw_value = "Обои" },
         { .value = CERAMICS, .raw_value = "Керамика" }

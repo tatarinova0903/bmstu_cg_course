@@ -8,10 +8,12 @@
 
 #include <string>
 #include <chrono>
+#include <vector>
 
 #include "MathObjects/vector3.h"
 #include "SceneObjects/AddModelParameters.h"
 #include "drawer.h"
+#include "SceneObjects/Material.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -28,6 +30,8 @@ public:
 private:
     Ui::MainWindow *ui;
     Drawer *drawer;
+
+    std::vector<Material> materials = Materials().value;
 
     int modelCnt, lightCnt;
 

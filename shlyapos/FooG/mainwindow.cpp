@@ -1,6 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "SceneObjects/Material.h"
 
 #include <QDebug>
 #include <QTimer>
@@ -116,12 +115,10 @@ void MainWindow::initFields()
 
 void MainWindow::initComboBoxes()
 {
-    auto materials = Materials();
-    auto values = materials.value;
     for (int i = 0; i < MATERIAL_TYPES_COUNT; i++)
     {
-        ui->walls_comboBox->addItem(QString::fromStdString(values[i].raw_value));
-        ui->floor_comboBox->addItem(QString::fromStdString(values[i].raw_value));
+        ui->walls_comboBox->addItem(QString::fromStdString(materials[i].raw_value));
+        ui->floor_comboBox->addItem(QString::fromStdString(materials[i].raw_value));
     }
 }
 
