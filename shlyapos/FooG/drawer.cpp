@@ -78,7 +78,7 @@ void Drawer::draw()
 // Model
 void Drawer::addModel(Vector3f& center, Vector3f& scale, QString& filename, QColor& color)
 {
-    scene.addModel(Model(false, filename.toStdString().c_str(), color, center), scale);
+    scene.addModel(BaseModel(false, filename.toStdString().c_str(), color, center), scale);
 }
 
 void Drawer::editModel(Vector3f& center, Vector3f& scale, Vector3f& rotate)
@@ -129,7 +129,7 @@ void Drawer::reCalculateVirus()
 
 void Drawer::addVirus(Vector3f& center, Vector3f& scale, QString& filename, QColor& color, int count)
 {
-    Model virus = Model(true, filename.toStdString().c_str(), color, center);
+    BaseModel virus = BaseModel(true, filename.toStdString().c_str(), color, center);
     for (int i = 0; i < count; i++)
     {
         scene.addModel(virus, scale);
@@ -139,7 +139,7 @@ void Drawer::addVirus(Vector3f& center, Vector3f& scale, QString& filename, QCol
 
 // Private methods
 // Main draw processing methods
-void Drawer::objectProcessing(Model& model, Vector3f& camPos, Vector3f& camDir, Vector3f& camUp)
+void Drawer::objectProcessing(BaseModel& model, Vector3f& camPos, Vector3f& camDir, Vector3f& camUp)
 {
     size_t i, j;
     bool skip;

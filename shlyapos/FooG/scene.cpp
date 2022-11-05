@@ -6,7 +6,7 @@
 
 // Constructors
 Scene::Scene()
-    : mainCamera(Camera()), models(std::vector<Model>()), lightSources(std::vector<LightSourcePoint>())
+    : mainCamera(Camera()), models(std::vector<BaseModel>()), lightSources(std::vector<LightSourcePoint>())
 {
 
 }
@@ -19,13 +19,13 @@ int Scene::countModels()
     return models.size();
 }
 
-void Scene::addModel(const Model& newModel, const Vector3f& scale)
+void Scene::addModel(const BaseModel& newModel, const Vector3f& scale)
 {
     models.push_back(newModel);
     models.back().scale(scale);
 }
 
-Model& Scene::getModel(const int& idx)
+BaseModel& Scene::getModel(const int& idx)
 {
     return models[idx];
 }

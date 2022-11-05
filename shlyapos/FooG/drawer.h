@@ -50,7 +50,7 @@ private:
 
 
     // Draw processing
-    void  objectProcessing(Model&, Vector3f&, Vector3f&, Vector3f&);
+    void  objectProcessing(BaseModel&, Vector3f&, Vector3f&, Vector3f&);
     float lightProcessing(const Vector3f&, const Vector3f&);
     void  triangleProcessing(Vector3i&, Vector3i&, Vector3i&,
                             const QColor&, float&, float&, float&);

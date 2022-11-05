@@ -1,6 +1,6 @@
-#include "model.h"
+#include "basemodel.h"
 
-Model::Model(bool isVirus, const char *filename, const QColor& color, const Vector3f& center)
+BaseModel::BaseModel(bool isVirus, const char *filename, const QColor& color, const Vector3f& center)
     : isVirus(isVirus), center(center), color(color)
 {
     std::ifstream in;
@@ -65,12 +65,12 @@ Model::Model(bool isVirus, const char *filename, const QColor& color, const Vect
 
 
 // Center
-Vector3f& Model::getCenter()
+Vector3f& BaseModel::getCenter()
 {
     return center;
 }
 
-void Model::setCenter(const Vector3f& newCenter)
+void BaseModel::setCenter(const Vector3f& newCenter)
 {
     center.x += newCenter.x;
     center.y += newCenter.y;
@@ -80,12 +80,12 @@ void Model::setCenter(const Vector3f& newCenter)
 
 
 // Vertes
-int Model::getVertsCount()
+int BaseModel::getVertsCount()
 {
     return verts.size();
 }
 
-Vector3f& Model::vert(const int& idx)
+Vector3f& BaseModel::vert(const int& idx)
 {
     return verts[idx];
 }
@@ -93,12 +93,12 @@ Vector3f& Model::vert(const int& idx)
 
 
 // Faces
-int Model::getFacesCount()
+int BaseModel::getFacesCount()
 {
     return faces.size();
 }
 
-std::vector<int> Model::face(const int& idx)
+std::vector<int> BaseModel::face(const int& idx)
 {
     std::vector<int> face;
     size_t size = faces[idx].size();
@@ -112,30 +112,30 @@ std::vector<int> Model::face(const int& idx)
 
 
 // Normals
-int Model::getNormsCount()
+int BaseModel::getNormsCount()
 {
     return norms.size();
 }
 
-void Model::setNorm(const int& iface, const int& nvert, const Vector3f& n)
+void BaseModel::setNorm(const int& iface, const int& nvert, const Vector3f& n)
 {
     int idx = faces[iface][nvert][2];
     norms[idx] = n;
 }
 
-Vector3f& Model::norm(const int& iface, const int& nvert)
+Vector3f& BaseModel::norm(const int& iface, const int& nvert)
 {
     int idx = faces[iface][nvert][2];
     return norms[idx].normalize();
 }
 
-Vector3f Model::normalCalculate(const Vector3f& a, const Vector3f& b, const Vector3f& c)
+Vector3f BaseModel::normalCalculate(const Vector3f& a, const Vector3f& b, const Vector3f& c)
 {
     Vector3f n = (c - a) ^ (b - a);
     return n;
 }
 
-void Model::normalsProcessing()
+void BaseModel::normalsProcessing()
 {
     size_t nface = faces.size();
 
@@ -152,19 +152,19 @@ void Model::normalsProcessing()
 
 
 // Color
-QColor& Model::getColor()
+QColor& BaseModel::getColor()
 {
     return color;
 }
 
-void Model::setColor(const QColor& newColor)
+void BaseModel::setColor(const QColor& newColor)
 {
     color = newColor;
 }
 
 
 
-void Model::scale(const Vector3f& k)
+void BaseModel::scale(const Vector3f& k)
 {
     int nverts = verts.size();
 
@@ -179,7 +179,7 @@ void Model::scale(const Vector3f& k)
 }
 
 
-void Model::rotate(const Vector3f& angle)
+void BaseModel::rotate(const Vector3f& angle)
 {
     std::shared_ptr<Matrix> m1(new MoveMatrix(center.x, center.y, center.z));
     std::shared_ptr<Matrix> m2(new MoveMatrix(-center.x, -center.y, -center.z));

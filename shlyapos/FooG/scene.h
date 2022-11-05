@@ -1,7 +1,7 @@
 #ifndef SCENE_H
 #define SCENE_H
 
-#include "./SceneObjects/model.h"
+#include "./SceneObjects/basemodel.h"
 #include "./SceneObjects/camera.h"
 #include "./SceneObjects/lightsourcepoint.h"
 
@@ -9,7 +9,7 @@ class Scene
 {
 private:
     Camera mainCamera;
-    std::vector<Model> models;
+    std::vector<BaseModel> models;
     std::vector<LightSourcePoint> lightSources;
 
 public:
@@ -17,8 +17,8 @@ public:
 
     // Models
     int    countModels();
-    void   addModel(const Model&, const Vector3f& scale = Vector3f(1, 1, 1));
-    Model& getModel(const int&);
+    void   addModel(const BaseModel&, const Vector3f& scale = Vector3f(1, 1, 1));
+    BaseModel& getModel(const int&);
     void   editModel(Vector3f&, Vector3f&, Vector3f&);
 
     // Lights

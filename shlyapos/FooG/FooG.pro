@@ -13,9 +13,9 @@ SOURCES += \
     MathObjects/matrix.cpp \
     MathObjects/transformmatrix.cpp \
     MathObjects/vector3.cpp \
+    SceneObjects/basemodel.cpp \
     SceneObjects/camera.cpp \
     SceneObjects/lightsourcepoint.cpp \
-    SceneObjects/model.cpp \
     drawer.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -29,9 +29,9 @@ HEADERS += \
     MathObjects/vector3.h \
     MathObjects/vector3.hpp \
     SceneObjects/AddModelParameters.h \
+    SceneObjects/basemodel.h \
     SceneObjects/camera.h \
     SceneObjects/lightsourcepoint.h \
-    SceneObjects/model.h \
     drawer.h \
     mainwindow.h \
     scene.h \
