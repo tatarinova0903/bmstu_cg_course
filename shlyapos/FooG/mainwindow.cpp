@@ -316,10 +316,10 @@ void MainWindow::setAddModelParams(AddModelParameters& newParams)
     Vector3f center(newParams.moveX, newParams.moveY, newParams.moveZ);
     Vector3f scaleK(newParams.scaleX, newParams.scaleY, newParams.scaleZ);
 
-    int virus_count = ui->virus_count_field->text().toInt();
-
     if (newParams.isVirus)
     {
+        int virus_count = ui->virus_count_field->text().toInt();
+        drawer->setVirusSpeed(ui->speed_slider->value());
         drawer->addVirus(center, scaleK, newParams.filename, newParams.color, virus_count);
     }
     else

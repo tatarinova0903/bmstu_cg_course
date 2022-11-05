@@ -11,6 +11,7 @@ private:
     Camera mainCamera;
     std::vector<BaseModel> models;
     std::vector<LightSourcePoint> lightSources;
+    float virus_speed;
 
 public:
     Scene();
@@ -42,6 +43,7 @@ public:
 
     // Virus
     void reCalculateVirus();
+    void setVirusSpeed(float speed);
 };
 
 #endif // SCENE_H

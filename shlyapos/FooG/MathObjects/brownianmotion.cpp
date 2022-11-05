@@ -3,12 +3,13 @@
 
 using namespace std;
 
-BrownianMotion::BrownianMotion() { }
+BrownianMotion::BrownianMotion(float speed): speed(speed) { }
 
-float get_random()
+float BrownianMotion::get_random()
 {
     static default_random_engine e;
-    static uniform_real_distribution<> dis(-0.03, 0.03);
+    float max_value = speed / 1000;
+    static uniform_real_distribution<> dis(-max_value, max_value);
     return dis(e);
 }
 

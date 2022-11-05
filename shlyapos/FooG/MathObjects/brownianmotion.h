@@ -6,8 +6,13 @@
 
 class BrownianMotion
 {
+private:
+    float speed;
+
+    float get_random();
+
 public:
-    BrownianMotion();
+    BrownianMotion(float speed);
 
     void calculate(std::vector<Vector3f *> &virus_centers);
 };

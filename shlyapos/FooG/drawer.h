@@ -81,6 +81,7 @@ public:
     // Virus
     void addVirus(Vector3f& center, Vector3f& scale, QString& filename, QColor& color, int count);
     void reCalculateVirus();
+    void setVirusSpeed(float speed);
 };
 
 inline QRgb iColor(const QRgb& a, const float& i);

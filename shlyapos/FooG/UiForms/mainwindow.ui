@@ -29,40 +29,11 @@
      </rect>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_loadScene">
-    <property name="geometry">
-     <rect>
-      <x>810</x>
-      <y>20</y>
-      <width>80</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {
-    color: rgba(200, 200, 200, 150);
-    border-radius: 5px;
-    background: rgba(20, 20, 20, 150);
-    }
-
-QPushButton:hover {
-    background: rgba(10, 10, 10, 150);
-    }
-
-QPushButton:pressed {
-    border-style: inset;
-    background: rgba(0, 0, 0, 150);
-    }</string>
-    </property>
-    <property name="text">
-     <string>Load</string>
-    </property>
-   </widget>
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
       <x>810</x>
-      <y>190</y>
+      <y>320</y>
       <width>81</width>
       <height>102</height>
      </rect>
@@ -141,69 +112,11 @@ QPushButton:pressed {
      </item>
     </layout>
    </widget>
-   <widget class="QPushButton" name="pushButton_mcancel">
-    <property name="geometry">
-     <rect>
-      <x>900</x>
-      <y>400</y>
-      <width>81</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {
-    color: rgba(200, 200, 200, 150);
-    border-radius: 5px;
-    background: rgba(20, 20, 20, 150);
-    }
-
-QPushButton:hover {
-    background: rgba(10, 10, 10, 150);
-    }
-
-QPushButton:pressed {
-    border-style: inset;
-    background: rgba(0, 0, 0, 150);
-   }</string>
-    </property>
-    <property name="text">
-     <string>Cancel</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_mapply">
-    <property name="geometry">
-     <rect>
-      <x>810</x>
-      <y>400</y>
-      <width>81</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {
-    color: rgba(200, 200, 200, 150);
-    border-radius: 5px;
-    background: rgba(20, 20, 20, 150);
-    }
-
-QPushButton:hover {
-    background: rgba(10, 10, 10, 150);
-    }
-
-QPushButton:pressed {
-    border-style: inset;
-    background: rgba(0, 0, 0, 150);
-   }</string>
-    </property>
-    <property name="text">
-     <string>Apply</string>
-    </property>
-   </widget>
    <widget class="QWidget" name="verticalLayoutWidget_2">
     <property name="geometry">
      <rect>
       <x>900</x>
-      <y>190</y>
+      <y>320</y>
       <width>81</width>
       <height>102</height>
      </rect>
@@ -248,7 +161,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>810</x>
-      <y>430</y>
+      <y>560</y>
       <width>171</width>
       <height>20</height>
      </rect>
@@ -380,16 +293,33 @@ QComboBox:on{
     <property name="geometry">
      <rect>
       <x>810</x>
-      <y>290</y>
+      <y>420</y>
       <width>171</width>
-      <height>104</height>
+      <height>101</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_6">
      <item>
       <layout class="QGridLayout" name="gridLayout_6">
-       <item row="1" column="1">
-        <widget class="QLineEdit" name="le_mrotate_x">
+       <item row="1" column="0">
+        <widget class="QLabel" name="lbl_mrotate_x">
+         <property name="text">
+          <string>X:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLabel" name="lbl_mrotate">
+         <property name="text">
+          <string>Rotate</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="le_mrotate_y">
          <property name="styleSheet">
           <string notr="true">QLineEdit {
     background: rgba(20, 20, 20, 180);
@@ -400,8 +330,15 @@ QComboBox:on{
          </property>
         </widget>
        </item>
-       <item row="2" column="1">
-        <widget class="QLineEdit" name="le_mrotate_y">
+       <item row="3" column="0">
+        <widget class="QLabel" name="lbl_mrotate_z">
+         <property name="text">
+          <string>Z:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="le_mrotate_x">
          <property name="styleSheet">
           <string notr="true">QLineEdit {
     background: rgba(20, 20, 20, 180);
@@ -419,20 +356,6 @@ QComboBox:on{
          </property>
         </widget>
        </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="lbl_mrotate_z">
-         <property name="text">
-          <string>Z:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="lbl_mrotate_x">
-         <property name="text">
-          <string>X:</string>
-         </property>
-        </widget>
-       </item>
        <item row="3" column="1">
         <widget class="QLineEdit" name="le_mrotate_z">
          <property name="styleSheet">
@@ -442,16 +365,6 @@ QComboBox:on{
 	border-style: inset;
     border-radius: 5px;
 }</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QLabel" name="lbl_mrotate">
-         <property name="text">
-          <string>Rotate</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
          </property>
         </widget>
        </item>
@@ -551,64 +464,6 @@ QPushButton:pressed {
 }</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_clear">
-    <property name="geometry">
-     <rect>
-      <x>900</x>
-      <y>20</y>
-      <width>80</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {
-    color: rgba(200, 200, 200, 150);
-    border-radius: 5px;
-    background: rgba(20, 20, 20, 150);
-    }
-
-QPushButton:hover {
-    background: rgba(10, 10, 10, 150);
-    }
-
-QPushButton:pressed {
-    border-style: inset;
-    background: rgba(0, 0, 0, 150);
-    }</string>
-    </property>
-    <property name="text">
-     <string>Clear</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_start">
-    <property name="geometry">
-     <rect>
-      <x>810</x>
-      <y>150</y>
-      <width>80</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {
-    color: rgba(200, 200, 200, 150);
-    border-radius: 5px;
-    background: rgba(20, 20, 20, 150);
-    }
-
-QPushButton:hover {
-    background: rgba(10, 10, 10, 150);
-    }
-
-QPushButton:pressed {
-    border-style: inset;
-    background: rgba(0, 0, 0, 150);
-    }</string>
-    </property>
-    <property name="text">
-     <string>Start</string>
-    </property>
-   </widget>
    <widget class="QWidget" name="gridLayoutWidget">
     <property name="geometry">
      <rect>
@@ -652,6 +507,299 @@ QPushButton:pressed {
           <enum>Qt::Horizontal</enum>
          </property>
         </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget_3">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>150</y>
+      <width>171</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QPushButton" name="pushButton_start">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    color: rgba(200, 200, 200, 150);
+    border-radius: 5px;
+    background: rgba(20, 20, 20, 150);
+    }
+
+QPushButton:hover {
+    background: rgba(10, 10, 10, 150);
+    }
+
+QPushButton:pressed {
+    border-style: inset;
+    background: rgba(0, 0, 0, 150);
+    }</string>
+       </property>
+       <property name="text">
+        <string>Start</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_stop">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    color: rgba(200, 200, 200, 150);
+    border-radius: 5px;
+    background: rgba(20, 20, 20, 150);
+    }
+
+QPushButton:hover {
+    background: rgba(10, 10, 10, 150);
+    }
+
+QPushButton:pressed {
+    border-style: inset;
+    background: rgba(0, 0, 0, 150);
+    }</string>
+       </property>
+       <property name="text">
+        <string>Stop</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget_4">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>0</y>
+      <width>171</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <item>
+      <widget class="QPushButton" name="pushButton_loadScene">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    color: rgba(200, 200, 200, 150);
+    border-radius: 5px;
+    background: rgba(20, 20, 20, 150);
+    }
+
+QPushButton:hover {
+    background: rgba(10, 10, 10, 150);
+    }
+
+QPushButton:pressed {
+    border-style: inset;
+    background: rgba(0, 0, 0, 150);
+    }</string>
+       </property>
+       <property name="text">
+        <string>Load</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_clear">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    color: rgba(200, 200, 200, 150);
+    border-radius: 5px;
+    background: rgba(20, 20, 20, 150);
+    }
+
+QPushButton:hover {
+    background: rgba(10, 10, 10, 150);
+    }
+
+QPushButton:pressed {
+    border-style: inset;
+    background: rgba(0, 0, 0, 150);
+    }</string>
+       </property>
+       <property name="text">
+        <string>Clear</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget_5">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>520</y>
+      <width>171</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_5">
+     <item>
+      <widget class="QPushButton" name="pushButton_mapply">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    color: rgba(200, 200, 200, 150);
+    border-radius: 5px;
+    background: rgba(20, 20, 20, 150);
+    }
+
+QPushButton:hover {
+    background: rgba(10, 10, 10, 150);
+    }
+
+QPushButton:pressed {
+    border-style: inset;
+    background: rgba(0, 0, 0, 150);
+   }</string>
+       </property>
+       <property name="text">
+        <string>Apply</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_mcancel">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    color: rgba(200, 200, 200, 150);
+    border-radius: 5px;
+    background: rgba(20, 20, 20, 150);
+    }
+
+QPushButton:hover {
+    background: rgba(10, 10, 10, 150);
+    }
+
+QPushButton:pressed {
+    border-style: inset;
+    background: rgba(0, 0, 0, 150);
+   }</string>
+       </property>
+       <property name="text">
+        <string>Cancel</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="Line" name="line_2">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>190</y>
+      <width>171</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_3">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>40</y>
+      <width>171</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_4">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>300</y>
+      <width>171</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QWidget" name="gridLayoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>210</y>
+      <width>171</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_7">
+     <item row="0" column="0">
+      <layout class="QVBoxLayout" name="verticalLayout_7">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_8">
+         <item>
+          <widget class="QLabel" name="walls_label">
+           <property name="text">
+            <string>Стены</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="walls_comboBox"/>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item row="1" column="0">
+      <layout class="QHBoxLayout" name="horizontalLayout_9">
+       <item>
+        <widget class="QLabel" name="floor_label">
+         <property name="text">
+          <string>Пол</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="floor_comboBox"/>
        </item>
       </layout>
      </item>

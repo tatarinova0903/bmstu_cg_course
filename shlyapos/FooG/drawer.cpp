@@ -138,6 +138,11 @@ void Drawer::addVirus(Vector3f& center, Vector3f& scale, QString& filename, QCol
     }
 }
 
+void Drawer::setVirusSpeed(float speed)
+{
+    scene.setVirusSpeed(speed);
+}
+
 
 // Private methods
 // Main draw processing methods

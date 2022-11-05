@@ -125,6 +125,12 @@ void Scene::reCalculateVirus()
             virus_centers.push_back(&(model->getCenter()));
         }
     }
-    BrownianMotion brownianMotion = BrownianMotion();
+    BrownianMotion brownianMotion = BrownianMotion(virus_speed);
     brownianMotion.calculate(virus_centers);
 }
+
+void Scene::setVirusSpeed(float speed)
+{
+    virus_speed = speed;
+}
+
