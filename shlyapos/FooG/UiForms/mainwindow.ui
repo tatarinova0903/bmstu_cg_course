@@ -775,6 +775,9 @@ QPushButton:pressed {
       <layout class="QVBoxLayout" name="verticalLayout_7">
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_8">
+         <property name="spacing">
+          <number>0</number>
+         </property>
          <item>
           <widget class="QLabel" name="walls_label">
            <property name="text">
@@ -783,7 +786,14 @@ QPushButton:pressed {
           </widget>
          </item>
          <item>
-          <widget class="QComboBox" name="walls_comboBox"/>
+          <widget class="QComboBox" name="walls_comboBox">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
@@ -791,6 +801,9 @@ QPushButton:pressed {
      </item>
      <item row="1" column="0">
       <layout class="QHBoxLayout" name="horizontalLayout_9">
+       <property name="spacing">
+        <number>0</number>
+       </property>
        <item>
         <widget class="QLabel" name="floor_label">
          <property name="text">

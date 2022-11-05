@@ -39,6 +39,7 @@ private:
     void initLables();
     void initButton();
     void initFields();
+    void initComboBoxes();
 
     void keyPressEvent(QKeyEvent *event);
 

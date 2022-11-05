@@ -31,6 +31,7 @@ HEADERS += \
     MathObjects/vector3.h \
     MathObjects/vector3.hpp \
     SceneObjects/AddModelParameters.h \
+    SceneObjects/Material.h \
     SceneObjects/basemodel.h \
     SceneObjects/camera.h \
     SceneObjects/lightsourcepoint.h \

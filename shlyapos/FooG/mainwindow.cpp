@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "SceneObjects/Material.h"
 
 #include <QDebug>
 #include <QTimer>
@@ -22,6 +23,7 @@ MainWindow::MainWindow(QWidget *parent)
     initLables();
     initButton();
     initFields();
+    initComboBoxes();
 
     // Combobox
     connect(ui->comboBox_light, SIGNAL(currentIndexChanged(QString)), SLOT(changeLight()));
@@ -110,6 +112,17 @@ void MainWindow::initFields()
     ui->le_mrotate_z->setText("0");
 
     ui->virus_count_field->setText("20");
+}
+
+void MainWindow::initComboBoxes()
+{
+    auto materials = Materials();
+    auto values = materials.value;
+    for (int i = 0; i < MATERIAL_TYPES_COUNT; i++)
+    {
+        ui->walls_comboBox->addItem(QString::fromStdString(values[i].raw_value));
+        ui->floor_comboBox->addItem(QString::fromStdString(values[i].raw_value));
+    }
 }
 
 // Virus animation
