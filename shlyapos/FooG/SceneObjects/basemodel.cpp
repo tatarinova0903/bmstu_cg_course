@@ -1,7 +1,7 @@
 #include "basemodel.h"
 
-BaseModel::BaseModel(bool isVirus, const char *filename, const QColor& color, const Vector3f& center)
-    : isVirus(isVirus), center(center), color(color)
+BaseModel::BaseModel(bool isVirus, const char *filename, const QColor& color, ModelType modelType, const Vector3f& center)
+    : center(center), color(color), isVirus(isVirus), modelType(modelType)
 {
     std::ifstream in;
 

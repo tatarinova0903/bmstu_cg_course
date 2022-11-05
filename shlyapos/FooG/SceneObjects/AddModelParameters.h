@@ -5,13 +5,16 @@
 #include <QFileDialog>
 #include <QColorDialog>
 
+#include "Material.h"
+#include "basemodel.h"
+
 struct AddModelParameters
 {
     float moveX, moveY, moveZ;
     float scaleX, scaleY, scaleZ;
 
     QString filename;
-    QString modelName;
+    ModelType modelType;
     bool isVirus;
 
     QColor color;
@@ -25,9 +28,9 @@ struct AddModelParameters
         scaleX = scaleZ = 1.4;
         scaleY = -1.4;
         filename = "/Users/daria/Desktop/bmstu_cg_cource/shlyapos/FooG/SourceObjects/person.obj";
-        modelName = "person";
+        modelType = PERSON;
         isVirus = false;
-        color = QColor(240, 161, 137);
+        color = Materials().skinMaterial.color;
     }
 
     void configLeftWall()
@@ -35,9 +38,9 @@ struct AddModelParameters
         moveX = moveY = moveZ = 0.0;
         scaleX = scaleY = scaleZ = 1.0;
         filename = "/Users/daria/Desktop/bmstu_cg_cource/shlyapos/FooG/SourceObjects/left_wall.obj";
-        modelName = "leftWall";
+        modelType = WALL;
         isVirus = false;
-        color = QColor(255, 255, 255);
+        color = Materials().woodMaterial.color;
     }
 
     void configRightWall()
@@ -45,9 +48,9 @@ struct AddModelParameters
         moveX = moveY = moveZ = 0.0;
         scaleX = scaleY = scaleZ = 1.0;
         filename = "/Users/daria/Desktop/bmstu_cg_cource/shlyapos/FooG/SourceObjects/right_wall.obj";
-        modelName = "rightWall";
+        modelType = WALL;
         isVirus = false;
-        color = QColor(255, 255, 255);
+        color = Materials().woodMaterial.color;
     }
 
     void configBackWall()
@@ -55,9 +58,9 @@ struct AddModelParameters
         moveX = moveY = moveZ = 0.0;
         scaleX = scaleY = scaleZ = 1.0;
         filename = "/Users/daria/Desktop/bmstu_cg_cource/shlyapos/FooG/SourceObjects/back_wall.obj";
-        modelName = "backWall";
+        modelType = WALL;
         isVirus = false;
-        color = QColor(255, 255, 255);
+        color = Materials().woodMaterial.color;
     }
 
     void configFloor()
@@ -65,9 +68,9 @@ struct AddModelParameters
         moveX = moveY = moveZ = 0.0;
         scaleX = scaleY = scaleZ = 1.0;
         filename = "/Users/daria/Desktop/bmstu_cg_cource/shlyapos/FooG/SourceObjects/floor.obj";
-        modelName = "floor";
+        modelType = FLOOR;
         isVirus = false;
-        color = QColor(255, 255, 255);
+        color = Materials().woodMaterial.color;
     }
 
     void configVirus()
@@ -75,9 +78,9 @@ struct AddModelParameters
         moveX = moveY = moveZ = 0.0;
         scaleX = scaleY = scaleZ = 0.04;
         filename = "/Users/daria/Desktop/bmstu_cg_cource/shlyapos/FooG/SourceObjects/sphere.obj";
-        modelName = "virus";
+        modelType = VIRUS;
         isVirus = true;
-        color = QColor(255, 0, 0, 127);
+        color = Materials().virusMaterial.color;
     }
 };
 

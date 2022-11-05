@@ -188,7 +188,11 @@ void MainWindow::applyModelChange()
                           ui->le_mrotate_z->text().toFloat());
     }
 
-    drawer->editModel(center, scale, rotate);
+    // For colors
+    QColor wallColor = materials.at(ui->walls_comboBox->currentIndex()).color;
+    QColor floorColor = materials.at(ui->floor_comboBox->currentIndex()).color;
+
+    drawer->editModel(center, scale, rotate, wallColor, floorColor);
     drawer->draw();
 }
 
@@ -334,7 +338,7 @@ void MainWindow::setAddModelParams(AddModelParameters& newParams)
     }
     else
     {
-        drawer->addModel(center, scaleK, newParams.filename, newParams.color);
+        drawer->addModel(center, scaleK, newParams.filename, newParams.color, newParams.modelType);
     }
 
     centersM.push_back(center);

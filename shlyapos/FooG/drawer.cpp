@@ -78,14 +78,14 @@ void Drawer::draw()
 
 
 // Model
-void Drawer::addModel(Vector3f& center, Vector3f& scale, QString& filename, QColor& color)
+void Drawer::addModel(Vector3f& center, Vector3f& scale, QString& filename, QColor& color, ModelType modelType)
 {
-    scene.addModel(Model(filename.toStdString().c_str(), color, center), scale);
+    scene.addModel(Model(filename.toStdString().c_str(), color, modelType, center), scale);
 }
 
-void Drawer::editModel(Vector3f& center, Vector3f& scale, Vector3f& rotate)
+void Drawer::editModel(Vector3f& center, Vector3f& scale, Vector3f& rotate, QColor& wallColor, QColor& floorColor)
 {
-    scene.editModel(center, scale, rotate);
+    scene.editModel(center, scale, rotate, wallColor, floorColor);
 }
 
 

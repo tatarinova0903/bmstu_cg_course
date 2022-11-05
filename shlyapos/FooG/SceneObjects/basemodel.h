@@ -14,6 +14,11 @@
 
 #include "../MathObjects/transformmatrix.h"
 
+enum ModelType
+{
+    PERSON, WALL, FLOOR, VIRUS
+};
+
 class BaseModel
 {
 protected:
@@ -30,9 +35,10 @@ protected:
     void normalsProcessing();
 
 public:
-    BaseModel(bool isVirus, const char*, const QColor&, const Vector3f& center = Vector3f(0, 0, 0));
+    BaseModel(bool isVirus, const char*, const QColor&, ModelType modelType, const Vector3f& center = Vector3f(0, 0, 0));
 
     bool isVirus;
+    ModelType modelType;
 
     // Center
     Vector3f& getCenter();

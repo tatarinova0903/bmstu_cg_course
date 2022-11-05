@@ -1,5 +1,6 @@
 #include "scene.h"
 #include "MathObjects/brownianmotion.h"
+#include "SceneObjects/model.h"
 #include <QDebug>
 #include <iterator>
 #include <vector>
@@ -30,12 +31,23 @@ BaseModel& Scene::getModel(const int& idx)
     return models[idx];
 }
 
-void Scene::editModel(Vector3f& center, Vector3f& scale, Vector3f& rotate)
+void Scene::editModel(Vector3f& center, Vector3f& scale, Vector3f& rotate, QColor& wallColor, QColor& floorColor)
 {
     for (auto it = models.begin(); it < models.end(); it++) {
         it->setCenter(center);
         it->scale(scale);
         it->rotate(rotate);
+        if (!it->isVirus && it->modelType == WALL)
+        {
+            if (it->modelType == WALL)
+            {
+                it->setColor(wallColor);
+            }
+            if (it->modelType == FLOOR)
+            {
+                it->setColor(floorColor);
+            }
+        }
      }
 }
 
