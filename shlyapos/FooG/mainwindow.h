@@ -38,13 +38,13 @@ private:
     void initDrawer();
     void initLables();
     void initButton();
+    void initFields();
 
     void keyPressEvent(QKeyEvent *event);
 
 private slots:
 
     // Model
-    void setDafaultParametrs();
     void applyModelChange();
     void cancelLineEditsModel();
 

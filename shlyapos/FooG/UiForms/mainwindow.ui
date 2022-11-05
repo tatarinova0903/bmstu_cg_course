@@ -62,7 +62,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>810</x>
-      <y>110</y>
+      <y>190</y>
       <width>81</width>
       <height>102</height>
      </rect>
@@ -145,7 +145,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>900</x>
-      <y>320</y>
+      <y>400</y>
       <width>81</width>
       <height>31</height>
      </rect>
@@ -174,7 +174,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>810</x>
-      <y>320</y>
+      <y>400</y>
       <width>81</width>
       <height>31</height>
      </rect>
@@ -203,7 +203,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>900</x>
-      <y>110</y>
+      <y>190</y>
       <width>81</width>
       <height>102</height>
      </rect>
@@ -248,7 +248,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>810</x>
-      <y>350</y>
+      <y>430</y>
       <width>171</width>
       <height>20</height>
      </rect>
@@ -380,7 +380,7 @@ QComboBox:on{
     <property name="geometry">
      <rect>
       <x>810</x>
-      <y>210</y>
+      <y>290</y>
       <width>171</width>
       <height>104</height>
      </rect>
@@ -583,8 +583,8 @@ QPushButton:pressed {
    <widget class="QPushButton" name="pushButton_start">
     <property name="geometry">
      <rect>
-      <x>860</x>
-      <y>60</y>
+      <x>810</x>
+      <y>150</y>
       <width>80</width>
       <height>25</height>
      </rect>
@@ -608,6 +608,54 @@ QPushButton:pressed {
     <property name="text">
      <string>Start</string>
     </property>
+   </widget>
+   <widget class="QWidget" name="gridLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>60</y>
+      <width>171</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_3">
+     <item row="0" column="0">
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLabel" name="virus_count_label">
+           <property name="text">
+            <string>Количество частиц</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="virus_count_field"/>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item row="1" column="0">
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QLabel" name="speed_label">
+         <property name="text">
+          <string>Скорость</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="speed_slider">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
    </widget>
   </widget>
  </widget>

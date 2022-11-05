@@ -5,7 +5,6 @@
 #include <QTimer>
 
 #define TIMEOUT 500
-#define VIRUS_COUNT 50
 
 int frames = 0;
 auto frameTime = 0;
@@ -22,6 +21,7 @@ MainWindow::MainWindow(QWidget *parent)
     initDrawer();
     initLables();
     initButton();
+    initFields();
 
     // Combobox
     connect(ui->comboBox_light, SIGNAL(currentIndexChanged(QString)), SLOT(changeLight()));
@@ -97,6 +97,21 @@ void MainWindow::initLables()
     ui->lbl_power->setStyleSheet("QLabel {color: rgba(200, 200, 200, 255);}");
 }
 
+void MainWindow::initFields()
+{
+    ui->le_mmove_x->setText("0.0");
+    ui->le_mmove_y->setText("0.0");
+    ui->le_mmove_z->setText("0.0");
+
+    ui->le_mscale_x->setText("1");
+
+    ui->le_mrotate_x->setText("0");
+    ui->le_mrotate_y->setText("0");
+    ui->le_mrotate_z->setText("0");
+
+    ui->virus_count_field->setText("20");
+}
+
 // Virus animation
 void MainWindow::startVirusSpread()
 {
@@ -117,19 +132,6 @@ void MainWindow::moveVirus()
 }
 
 // Model
-void MainWindow::setDafaultParametrs()
-{
-    ui->le_mmove_x->setText("0.0");
-    ui->le_mmove_y->setText("0.0");
-    ui->le_mmove_z->setText("0.0");
-
-    ui->le_mscale_x->setText("1");
-
-    ui->le_mrotate_x->setText("0");
-    ui->le_mrotate_y->setText("0");
-    ui->le_mrotate_z->setText("0");
-}
-
 void MainWindow::applyModelChange()
 {
     if (centersM.size() == 0)
@@ -307,8 +309,6 @@ void MainWindow::addModels()
     AddModelParameters floor = AddModelParameters();
     floor.configFloor();
     setAddModelParams(floor);
-
-    setDafaultParametrs();
 }
 
 void MainWindow::setAddModelParams(AddModelParameters& newParams)
@@ -316,9 +316,11 @@ void MainWindow::setAddModelParams(AddModelParameters& newParams)
     Vector3f center(newParams.moveX, newParams.moveY, newParams.moveZ);
     Vector3f scaleK(newParams.scaleX, newParams.scaleY, newParams.scaleZ);
 
+    int virus_count = ui->virus_count_field->text().toInt();
+
     if (newParams.isVirus)
     {
-        drawer->addVirus(center, scaleK, newParams.filename, newParams.color, VIRUS_COUNT);
+        drawer->addVirus(center, scaleK, newParams.filename, newParams.color, virus_count);
     }
     else
     {
