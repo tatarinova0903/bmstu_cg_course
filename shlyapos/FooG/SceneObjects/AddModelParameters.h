@@ -75,7 +75,8 @@ struct AddModelParameters
 
     void configVirus()
     {
-        moveX = moveY = moveZ = 0.0;
+        moveX = moveY = 0.0;
+        moveZ = 1.0;
         scaleX = scaleY = scaleZ = 0.04;
         filename = "/Users/daria/Desktop/bmstu_cg_cource/shlyapos/FooG/SourceObjects/sphere.obj";
         modelType = VIRUS;
