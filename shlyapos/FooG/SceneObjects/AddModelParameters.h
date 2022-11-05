@@ -21,9 +21,9 @@ struct AddModelParameters
     void configPerson()
     {
         moveX = moveZ = 0.0;
-        moveY = 0.4;
-        scaleX = scaleZ = 1.1;
-        scaleY = -1.1;
+        moveY = 0.3;
+        scaleX = scaleZ = 1.4;
+        scaleY = -1.4;
         filename = "/Users/daria/Desktop/bmstu_cg_cource/shlyapos/FooG/SourceObjects/person.obj";
         modelName = "person";
         isVirus = false;
