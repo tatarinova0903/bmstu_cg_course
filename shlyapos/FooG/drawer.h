@@ -23,7 +23,7 @@ private:
     // Scene
     Scene scene;
 
-    QColor bgColor = QColor(94, 115, 107);
+    QColor bgColor = QColor(50, 50, 50);
 
     // Screen
     QImage canvas;
