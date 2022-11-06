@@ -21,6 +21,7 @@ public:
     void   addModel(const BaseModel&, const Vector3f& scale = Vector3f(1, 1, 1));
     BaseModel& getModel(const int&);
     void   editModel(Vector3f&, Vector3f&, Vector3f&, QColor&, QColor&);
+    void clearModels();
 
     // Lights
     void              addLightSource(const Vector3f&, const float&);

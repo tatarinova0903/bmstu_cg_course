@@ -367,6 +367,7 @@ void MainWindow::setAddModelParams(AddModelParameters& newParams)
 // Clear
 void MainWindow::clear()
 {
-
+    drawer->clearScene();
+    drawer->draw();
 }
 

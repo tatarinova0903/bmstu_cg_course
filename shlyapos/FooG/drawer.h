@@ -62,6 +62,7 @@ public:
     ~Drawer();
 
     void draw();
+    void clearScene();
 
     // Model
     void addModel(Vector3f&, Vector3f&, QString&, QColor&, ModelType);

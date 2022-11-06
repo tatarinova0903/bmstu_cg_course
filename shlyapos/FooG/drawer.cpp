@@ -56,7 +56,7 @@ Drawer::~Drawer()
 }
 
 
-// Draw objects
+// Scene
 void Drawer::draw()
 {
     clearScreen();
@@ -74,6 +74,12 @@ void Drawer::draw()
 
     updateCanvas();
     updateScreen();
+}
+
+void Drawer::clearScene()
+{
+    clearScreen();
+    scene.clearModels();
 }
 
 

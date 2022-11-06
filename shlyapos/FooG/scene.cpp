@@ -51,6 +51,11 @@ void Scene::editModel(Vector3f& center, Vector3f& scale, Vector3f& rotate, QColo
      }
 }
 
+void Scene::clearModels()
+{
+    models.clear();
+}
+
 
 // Lights
 void Scene::addLightSource(const Vector3f& lPos, const float& lPower)
