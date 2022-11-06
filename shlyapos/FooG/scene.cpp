@@ -37,7 +37,7 @@ void Scene::editModel(Vector3f& center, Vector3f& scale, Vector3f& rotate, QColo
         it->setCenter(center);
         it->scale(scale);
         it->rotate(rotate);
-        if (!it->isVirus && it->modelType == WALL)
+        if (!it->isVirus)
         {
             if (it->modelType == WALL)
             {
