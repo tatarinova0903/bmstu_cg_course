@@ -118,6 +118,8 @@ void MainWindow::initFields()
     ui->le_mrotate_z->setText("0");
 
     ui->virus_count_field->setText("20");
+
+    ui->speed_slider->setValue(50);
 }
 
 void MainWindow::initComboBoxes()
