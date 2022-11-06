@@ -33,7 +33,7 @@
     <property name="geometry">
      <rect>
       <x>810</x>
-      <y>320</y>
+      <y>330</y>
       <width>81</width>
       <height>102</height>
      </rect>
@@ -116,16 +116,16 @@
     <property name="geometry">
      <rect>
       <x>900</x>
-      <y>320</y>
+      <y>330</y>
       <width>81</width>
       <height>102</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
      <item>
-      <widget class="QLabel" name="lbl_model_scale">
+      <widget class="QLabel" name="lbl_mrotate">
        <property name="text">
-        <string>Scale</string>
+        <string>Rotate</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -133,16 +133,54 @@
       </widget>
      </item>
      <item>
-      <layout class="QGridLayout" name="gridLayout_2">
-       <item row="0" column="0">
-        <widget class="QLabel" name="lbl_mscale_x">
+      <layout class="QGridLayout" name="gridLayout_6">
+       <item row="1" column="0">
+        <widget class="QLabel" name="lbl_mrotate_x">
          <property name="text">
-          <string>K:</string>
+          <string>X:</string>
          </property>
         </widget>
        </item>
-       <item row="0" column="1">
-        <widget class="QLineEdit" name="le_mscale_x">
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="le_mrotate_y">
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+    background: rgba(20, 20, 20, 180);
+	color: rgba(200, 200, 200, 255);
+	border-style: inset;
+    border-radius: 5px;
+}</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="lbl_mrotate_z">
+         <property name="text">
+          <string>Z:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="le_mrotate_x">
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+    background: rgba(20, 20, 20, 180);
+	color: rgba(200, 200, 200, 255);
+	border-style: inset;
+    border-radius: 5px;
+}</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="lbl_mrotate_y">
+         <property name="text">
+          <string>Y:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="le_mrotate_z">
          <property name="styleSheet">
           <string notr="true">QLineEdit {
     background: rgba(20, 20, 20, 180);
@@ -293,71 +331,39 @@ QComboBox:on{
     <property name="geometry">
      <rect>
       <x>810</x>
-      <y>420</y>
+      <y>430</y>
       <width>171</width>
-      <height>101</height>
+      <height>71</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_6">
      <item>
-      <layout class="QGridLayout" name="gridLayout_6">
-       <item row="1" column="0">
-        <widget class="QLabel" name="lbl_mrotate_x">
+      <widget class="QLabel" name="lbl_model_scale">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Scale</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <widget class="QLabel" name="lbl_mscale_x">
          <property name="text">
-          <string>X:</string>
+          <string>K:</string>
          </property>
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QLabel" name="lbl_mrotate">
-         <property name="text">
-          <string>Rotate</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QLineEdit" name="le_mrotate_y">
-         <property name="styleSheet">
-          <string notr="true">QLineEdit {
-    background: rgba(20, 20, 20, 180);
-	color: rgba(200, 200, 200, 255);
-	border-style: inset;
-    border-radius: 5px;
-}</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="lbl_mrotate_z">
-         <property name="text">
-          <string>Z:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QLineEdit" name="le_mrotate_x">
-         <property name="styleSheet">
-          <string notr="true">QLineEdit {
-    background: rgba(20, 20, 20, 180);
-	color: rgba(200, 200, 200, 255);
-	border-style: inset;
-    border-radius: 5px;
-}</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="lbl_mrotate_y">
-         <property name="text">
-          <string>Y:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1">
-        <widget class="QLineEdit" name="le_mrotate_z">
+        <widget class="QLineEdit" name="le_mscale_x">
          <property name="styleSheet">
           <string notr="true">QLineEdit {
     background: rgba(20, 20, 20, 180);
@@ -656,7 +662,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>810</x>
-      <y>520</y>
+      <y>510</y>
       <width>171</width>
       <height>41</height>
      </rect>
