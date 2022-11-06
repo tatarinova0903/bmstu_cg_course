@@ -64,6 +64,7 @@ void MainWindow::initButton()
     connect(ui->pushButton_clear, SIGNAL(released()), this, SLOT(clear()));
 
     connect(ui->pushButton_start, SIGNAL(released()), this, SLOT(startVirusSpread()));
+    connect(ui->pushButton_stop, SIGNAL(released()), this, SLOT(stopVirusSpread()));
 
     connect(ui->pushButton_mapply, SIGNAL(released()), this, SLOT(applyModelChange()));
     connect(ui->pushButton_mcancel, SIGNAL(released()), this, SLOT(cancelLineEditsModel()));
@@ -133,6 +134,11 @@ void MainWindow::startVirusSpread()
     timer->setInterval(TIMEOUT);
     connect(timer, &QTimer::timeout, this, &MainWindow::moveVirus);
     timer->start();
+}
+
+void MainWindow::stopVirusSpread()
+{
+
 }
 
 void MainWindow::moveVirus()

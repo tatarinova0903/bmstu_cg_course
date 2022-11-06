@@ -65,6 +65,7 @@ private slots:
 
     // Virus
     void startVirusSpread();
+    void stopVirusSpread();
     void moveVirus();
 };
 #endif // MAINWINDOW_H
