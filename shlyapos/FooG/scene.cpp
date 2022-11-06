@@ -146,3 +146,14 @@ void Scene::setVirusSpeed(float speed)
     virus_speed = speed;
 }
 
+bool Scene::hasVirus()
+{
+    for (auto model = models.begin(); model < models.end(); model++)
+    {
+        if (model->isVirus)
+        {
+            return true;
+        }
+    }
+    return false;
+}

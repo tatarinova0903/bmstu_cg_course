@@ -143,6 +143,10 @@ void Drawer::setVirusSpeed(float speed)
     scene.setVirusSpeed(speed);
 }
 
+bool Drawer::hasVirus()
+{
+    return scene.hasVirus();
+}
 
 // Private methods
 // Main draw processing methods

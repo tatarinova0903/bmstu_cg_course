@@ -32,6 +32,7 @@ private:
     Drawer *drawer;
 
     std::vector<Material> materials = Materials().value;
+    QTimer *timer;
 
     int modelCnt, lightCnt;
 
@@ -39,6 +40,7 @@ private:
     std::vector<Vector3f> centersS;
     std::vector<Vector3f> lightPos;
 
+    void initTimer();
     void initDrawer();
     void initLables();
     void initButton();

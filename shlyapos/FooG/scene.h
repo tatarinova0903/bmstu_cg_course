@@ -42,6 +42,7 @@ public:
     void      movingCamera(const float&);
 
     // Virus
+    bool hasVirus();
     void reCalculateVirus();
     void setVirusSpeed(float speed);
 };

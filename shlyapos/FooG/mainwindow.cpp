@@ -18,6 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->centralwidget->setStyleSheet("QWidget {background: rgba(50, 50, 50, 255);}");
 
+    initTimer();
     initDrawer();
     initLables();
     initButton();
@@ -42,7 +43,12 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
+void MainWindow::initTimer()
+{
+    timer = new QTimer(this);
+    timer->setInterval(TIMEOUT);
+    connect(timer, &QTimer::timeout, this, &MainWindow::moveVirus);
+}
 
 void MainWindow::initDrawer()
 {
@@ -126,19 +132,19 @@ void MainWindow::initComboBoxes()
 // Virus animation
 void MainWindow::startVirusSpread()
 {
-    AddModelParameters virus = AddModelParameters();
-    virus.configVirus();
-    setAddModelParams(virus);
+    if (!drawer->hasVirus())
+    {
+        AddModelParameters virus = AddModelParameters();
+        virus.configVirus();
+        setAddModelParams(virus);
+    }
 
-    QTimer *timer = new QTimer(this);
-    timer->setInterval(TIMEOUT);
-    connect(timer, &QTimer::timeout, this, &MainWindow::moveVirus);
     timer->start();
 }
 
 void MainWindow::stopVirusSpread()
 {
-
+    timer->stop();
 }
 
 void MainWindow::moveVirus()

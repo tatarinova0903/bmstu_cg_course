@@ -48,7 +48,6 @@ private:
     void updateScreen();
     void clearScreen();
 
-
     // Draw processing
     void  objectProcessing(BaseModel&, Vector3f&, Vector3f&, Vector3f&);
     float lightProcessing(const Vector3f&, const Vector3f&);
@@ -79,6 +78,7 @@ public:
     void movingCamera(const float&);
 
     // Virus
+    bool hasVirus();
     void addVirus(Vector3f& center, Vector3f& scale, QString& filename, QColor& color, int count);
     void reCalculateVirus();
     void setVirusSpeed(float speed);
