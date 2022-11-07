@@ -23,11 +23,10 @@ struct AddModelParameters
 
     void configPerson()
     {
-        moveX = moveZ = 0.0;
-        moveY = 0.3;
+        moveX = moveY = moveZ = 0.0;
         scaleX = scaleZ = 1.4;
         scaleY = -1.4;
-        filename = "/Users/daria/Desktop/bmstu_cg_cource/shlyapos/FooG/SourceObjects/person.obj";
+        filename = "/Users/daria/Desktop/bmstu_cg_cource/shlyapos/FooG/SourceObjects/model.obj";
         modelType = PERSON;
         isVirus = false;
         color = Materials().skinMaterial.color;
