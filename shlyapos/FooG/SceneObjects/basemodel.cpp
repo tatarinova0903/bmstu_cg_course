@@ -164,15 +164,15 @@ void BaseModel::setColor(const QColor& newColor)
 
 
 
-void BaseModel::scale(const Vector3f& k)
+void BaseModel::scale(const Vector3f& k, const Vector3f& sceneCenter)
 {
     int nverts = verts.size();
 
     for (int i = 0; i < nverts; i++)
     {
-        verts[i].x *= k.x;
-        verts[i].y *= k.y;
-        verts[i].z *= k.z;
+        verts[i].x = sceneCenter.x + (verts[i].x - sceneCenter.x) * k.x;
+        verts[i].y = sceneCenter.y + (verts[i].y - sceneCenter.y) * k.y;
+        verts[i].z = sceneCenter.z + (verts[i].z - sceneCenter.z) * k.z;
     }
 
     normalsProcessing();

@@ -61,7 +61,7 @@ public:
     QColor& getColor();
     void    setColor(const QColor&);
 
-    void scale(const Vector3f&);
+    void scale(const Vector3f&, const Vector3f&);
     void rotate(const Vector3f&);
 };
 

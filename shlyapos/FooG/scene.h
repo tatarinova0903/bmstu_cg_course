@@ -13,6 +13,8 @@ private:
     std::vector<LightSourcePoint> lightSources;
     float virus_speed;
 
+    Vector3f getSceneCenter();
+
 public:
     Scene();
 

@@ -12,7 +12,26 @@ Scene::Scene()
 
 }
 
-
+Vector3f Scene::getSceneCenter()
+{
+    float x = 0.0, y = 0.0, z = 0.0;
+    if (countModels() == 0)
+    {
+        return Vector3f(x, y, z);
+    }
+    for (auto it = models.begin(); it < models.end(); it++) {
+        if (it->modelType == WALL)
+        {
+            y = it->getCenter().y;
+            z = it->getCenter().z;
+        }
+        if (it->modelType == FLOOR)
+        {
+            x = it->getCenter().x;
+        }
+     }
+    return Vector3f(x, y, z);
+}
 
 // Models
 int Scene::countModels()
@@ -23,7 +42,7 @@ int Scene::countModels()
 void Scene::addModel(const BaseModel& newModel, const Vector3f& scale)
 {
     models.push_back(newModel);
-    models.back().scale(scale);
+    models.back().scale(scale, getSceneCenter());
 }
 
 BaseModel& Scene::getModel(const int& idx)
@@ -35,7 +54,7 @@ void Scene::editModel(Vector3f& center, Vector3f& scale, Vector3f& rotate, QColo
 {
     for (auto it = models.begin(); it < models.end(); it++) {
         it->setCenter(center);
-        it->scale(scale);
+        it->scale(scale, getSceneCenter());
         it->rotate(rotate);
         if (!it->isVirus)
         {
