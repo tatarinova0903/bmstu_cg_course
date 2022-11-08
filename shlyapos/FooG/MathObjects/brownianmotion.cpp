@@ -13,12 +13,12 @@ float BrownianMotion::get_random()
     return dis(e);
 }
 
-void BrownianMotion::calculate(std::vector<Vector3f *> &virus_centers)
+void BrownianMotion::calculate(std::vector<BaseModel *> &viruses)
 {
-    for (auto center = virus_centers.begin(); center < virus_centers.end(); center++)
+    for (auto virus = viruses.begin(); virus < viruses.end(); virus++)
     {
-        (*center)->x += get_random();
-        (*center)->y += get_random();
-        (*center)->z += get_random();
+        (*virus)->getCenter().x += get_random();
+        (*virus)->getCenter().y += get_random();
+        (*virus)->getCenter().z += get_random();
     }
 }

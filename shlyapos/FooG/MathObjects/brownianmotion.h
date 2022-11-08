@@ -3,6 +3,7 @@
 
 #include <vector>
 #include "vector3.h"
+#include "./SceneObjects/basemodel.h"
 
 class BrownianMotion
 {
@@ -14,7 +15,7 @@ private:
 public:
     BrownianMotion(float speed);
 
-    void calculate(std::vector<Vector3f *> &virus_centers);
+    void calculate(std::vector<BaseModel *> &viruses);
 };
 
 #endif // BROWNIANMOTION_H

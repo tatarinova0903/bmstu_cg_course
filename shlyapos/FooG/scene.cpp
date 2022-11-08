@@ -153,16 +153,16 @@ void Scene::movingCamera(const float& speed)
 // Virus
 void Scene::reCalculateVirus()
 {
-    std::vector<Vector3f *> virus_centers;
+    std::vector<BaseModel *> viruses;
     for (auto model = models.begin(); model < models.end(); model++)
     {
         if (model->isVirus)
         {
-            virus_centers.push_back(&(model->getCenter()));
+            viruses.push_back(&(*model));
         }
     }
     BrownianMotion brownianMotion = BrownianMotion(virus_speed);
-    brownianMotion.calculate(virus_centers);
+    brownianMotion.calculate(viruses);
 }
 
 void Scene::setVirusSpeed(float speed)
