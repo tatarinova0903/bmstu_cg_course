@@ -15,6 +15,7 @@ float BrownianMotion::get_random()
 
 void BrownianMotion::calculate(std::vector<BaseModel *> &viruses)
 {
+#pragma omp for
     for (auto virus = viruses.begin(); virus < viruses.end(); virus++)
     {
         (*virus)->getCenter().x += get_random();

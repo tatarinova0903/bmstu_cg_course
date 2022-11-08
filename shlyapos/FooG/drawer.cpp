@@ -67,6 +67,7 @@ void Drawer::draw()
 
     size_t models = scene.countModels();
 
+#pragma omp for
     for (size_t i = 0; i < models; i++)
     {
         objectProcessing(scene.getModel(i), camPos, camDir, camUp);

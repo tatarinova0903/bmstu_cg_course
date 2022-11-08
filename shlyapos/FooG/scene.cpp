@@ -154,6 +154,7 @@ void Scene::movingCamera(const float& speed)
 void Scene::reCalculateVirus()
 {
     std::vector<BaseModel *> viruses;
+#pragma omp for
     for (auto model = models.begin(); model < models.end(); model++)
     {
         if (model->isVirus)

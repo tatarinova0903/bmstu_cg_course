@@ -28,7 +28,9 @@ int ZBuffer::height()
 
 void ZBuffer::clearZBuffer()
 {
+#pragma omp for
     for (int i = 0; i < w; i++)
+#pragma omp for
         for (int j = 0; j < h; j++)
              data[i][j] = background;
 }
