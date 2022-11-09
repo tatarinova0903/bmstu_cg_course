@@ -1,6 +1,7 @@
 #ifndef VECTOR3_HPP
 #define VECTOR3_HPP
 
+#include <math.h>
 #include "vector3.h"
 
 // Constructors
@@ -22,6 +23,14 @@ Vector3<t>::Vector3(Matrix m) : x(m[0][0] / m[3][0]), y(m[1][0] / m[3][0]), z(m[
 
 }
 
+
+template<class t>
+Vector3<t>::Vector3(Vector3<t> p1, Vector3<t> p2) : w(1)
+{
+    x = p2.x - p1.x;
+    y = p2.y - p1.y;
+    z = p2.z - p1.z;
+}
 
 
 // Operators
@@ -120,5 +129,12 @@ void Vector3<t>::transform(const std::shared_ptr<Matrix> matrix)
     this->y = result[1];
     this->z = result[2];
 }
+
+template<class t>
+float Vector3<t>::distance(Vector3<t> &v)
+{
+    return sqrt((x - v.x) * (x - v.x) + (y - v.y) * (y - v.y) + (z - v.z) * (z - v.z));
+}
+
 
 #endif // VECTOR3_HPP

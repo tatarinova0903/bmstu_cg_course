@@ -37,6 +37,7 @@ HEADERS += \
     SceneObjects/lightsourcepoint.h \
     SceneObjects/model.h \
     SceneObjects/virus.h \
+    constants.h \
     drawer.h \
     mainwindow.h \
     scene.h \

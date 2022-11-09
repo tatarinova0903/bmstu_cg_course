@@ -19,6 +19,7 @@ public:
     Vector3<t>();
     Vector3<t>(t, t, t, t w = 1);
     Vector3<t>(Matrix);
+    Vector3(Vector3<t> p1, Vector3<t> p2);
 
     template<class u> Vector3<t>(const Vector3<u>&);
 
@@ -40,6 +41,7 @@ public:
     float norm() const;
     Vector3<t>& normalize(t l = 1);
     void transform(const std::shared_ptr<Matrix>);
+    float distance(Vector3<t> &);
 };
 
 

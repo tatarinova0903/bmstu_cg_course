@@ -196,7 +196,7 @@ void Drawer::objectProcessing(BaseModel& model, Vector3f& camPos, Vector3f& camD
             }
 
             screenCoords[j] = Vector3f(mvp * Matrix(v));
-            intensity[j] = lightProcessing(v, model.norm(i, j));
+            intensity[j] = (model.modelType == VIRUS) ? 1.0 : lightProcessing(v, model.norm(i, j));
         }
 
         if (skip || !checkIsVisible(screenCoords[0]) ||

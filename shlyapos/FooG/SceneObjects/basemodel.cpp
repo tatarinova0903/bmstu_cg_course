@@ -1,4 +1,6 @@
+#include <math.h>
 #include "basemodel.h"
+#include "./constants.h"
 
 BaseModel::BaseModel(bool isVirus, const char *filename, const QColor& color, ModelType modelType, const Vector3f& center)
     : center(center), color(color), isVirus(isVirus), modelType(modelType)
@@ -62,7 +64,55 @@ BaseModel::BaseModel(bool isVirus, const char *filename, const QColor& color, Mo
     //std::cerr << "Verteces - " << verts.size() << std::endl;
 }
 
+// Distance
+double BaseModel::minDistanceTo(Vector3f point)
+{
+    float minDistance = DOUBLE_MAX;
+    for (auto face = faces.begin(); face < faces.end(); face++)
+    {
+        Vector3f p1 = verts.at(face->at(0).x);
+        Vector3f p2 = verts.at(face->at(1).x);
+        Vector3f p3 = verts.at(face->at(2).x);
 
+        if (modelType != PERSON)
+        {
+                // 1. Найдем нормальный вектор плоскости
+                Vector3f n = Vector3f(p1, p2)^Vector3f(p1, p3);
+
+                // 2. Находим проекцию точки на плоскость
+                float t = (n.x * p1.x - n.x * point.x + n.y * p1.y - n.y * point.y + n.z * p1.z - n.z * point.z) / (n.x * n.x + n.y * n.y + n.z * n.z);
+                Vector3f projection = Vector3f(point.x + t * n.x, point.y + t * n.y, point.z + t * n.z);
+
+                // 3. Если проекция находится внутри основания тетраедра, то minDist = dist(projection, point)
+                float s = 0.5 * ((p1.x - p3.x) * (p2.y - p3.y) - (p2.x - p3.x) * (p1.y - p3.y));
+                float s1 = 0.5 * fabs((projection.x - p3.x) * (p2.y - p3.y) - (p2.x - p3.x) * (projection.y - p3.y));
+                float s2 = 0.5 * fabs((p1.x - p3.x) * (projection.y - p3.y) - (projection.x - p3.x) * (p1.y - p3.y));
+                float s3 = 0.5 * fabs((p1.x - projection.x) * (p2.y - projection.y) - (p2.x - projection.x) * (p1.y - projection.y));
+
+                if (fabs(s - (s1 + s2 + s3)) < EPS)
+                {
+                    float dist = point.distance(projection);
+                    if (dist < minDistance)
+                    {
+                        minDistance = dist;
+                    }
+                    continue;
+                }
+
+        }
+
+        // 4. Иначе minDist = min( dist(point, p1), dist(point, p2), dist(point, p3) )
+        float dist1 = point.distance(p1);
+        float dist2 = point.distance(p2);
+        float dist3 = point.distance(p3);
+        float dist = std::min({dist1, dist2, dist3});
+        if (dist < minDistance)
+        {
+            minDistance = dist;
+        }
+    }
+    return minDistance;
+}
 
 // Center
 Vector3f& BaseModel::getCenter()
@@ -166,6 +216,8 @@ void BaseModel::setColor(const QColor& newColor)
 
 void BaseModel::scale(const Vector3f& k, const Vector3f& sceneCenter)
 {
+    scaleK = k.x;
+
     int nverts = verts.size();
 
     for (int i = 0; i < nverts; i++)
@@ -200,4 +252,9 @@ void BaseModel::rotate(const Vector3f& angle)
 
         verts[i].transform(m2);
     }
+}
+
+float BaseModel::getScaleK()
+{
+    return scaleK;
 }

@@ -7,6 +7,7 @@
 
 #include "Material.h"
 #include "basemodel.h"
+#include "./constants.h"
 
 struct AddModelParameters
 {
@@ -75,8 +76,8 @@ struct AddModelParameters
     void configVirus()
     {
         moveX = moveY = 0.0;
-        moveZ = 1.0;
-        scaleX = scaleY = scaleZ = 0.04;
+        moveZ = 0.1;
+        scaleX = scaleY = scaleZ = VIRUS_SCALE;
         filename = "/Users/daria/Desktop/bmstu_cg_cource/shlyapos/FooG/SourceObjects/sphere.obj";
         modelType = VIRUS;
         isVirus = true;

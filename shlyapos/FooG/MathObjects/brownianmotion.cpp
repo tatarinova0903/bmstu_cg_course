@@ -7,10 +7,11 @@ BrownianMotion::BrownianMotion(float speed): speed(speed) { }
 
 float BrownianMotion::get_random()
 {
-    static default_random_engine e;
-    float max_value = speed / 1000;
-    static uniform_real_distribution<> dis(-max_value, max_value);
-    return dis(e);
+    std::random_device dev;
+    std::mt19937 rng(dev());
+    std::uniform_int_distribution<std::mt19937::result_type> dist6(0,1);
+
+    return dist6(rng) == 0 ? -0.01 : 0.01;
 }
 
 void BrownianMotion::calculate(std::vector<BaseModel *> &viruses)

@@ -4,6 +4,8 @@
 #include "./SceneObjects/basemodel.h"
 #include "./SceneObjects/camera.h"
 #include "./SceneObjects/lightsourcepoint.h"
+#include "SceneObjects/virus.h"
+#include "SceneObjects/model.h"
 
 class Scene
 {
@@ -14,6 +16,8 @@ private:
     float virus_speed;
 
     Vector3f getSceneCenter();
+    bool checkSettled(Virus *);
+    bool isVirusNearModel(Model *, Virus *);
 
 public:
     Scene();

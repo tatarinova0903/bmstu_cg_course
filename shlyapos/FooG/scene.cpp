@@ -1,6 +1,7 @@
 #include "scene.h"
 #include "MathObjects/brownianmotion.h"
 #include "SceneObjects/model.h"
+#include "constants.h"
 #include <QDebug>
 #include <iterator>
 #include <vector>
@@ -157,9 +158,9 @@ void Scene::reCalculateVirus()
 #pragma omp for
     for (auto model = models.begin(); model < models.end(); model++)
     {
-        if (model->isVirus)
+        if (model->isVirus && !checkSettled((Virus *)&*model))
         {
-            viruses.push_back(&(*model));
+            viruses.push_back(&*model);
         }
     }
     BrownianMotion brownianMotion = BrownianMotion(virus_speed);
@@ -181,4 +182,31 @@ bool Scene::hasVirus()
         }
     }
     return false;
+}
+
+bool Scene::checkSettled(Virus *virus)
+{
+    if (virus->isSettled)
+    {
+        return true;
+    }
+    for (auto model = models.begin(); model < models.end(); model++)
+    {
+        if (!model->isVirus)
+        {
+            // проверяем осел ли вирус на данной модели?
+            if (isVirusNearModel((Model *)&*model, (Virus *)virus))
+            {
+                virus->isSettled = true;
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+bool Scene::isVirusNearModel(Model *model, Virus *virus)
+{
+    double distance = model->minDistanceTo(virus->getCenter());
+    return distance < VIRUS_RADIUS * virus->getScaleK();
 }

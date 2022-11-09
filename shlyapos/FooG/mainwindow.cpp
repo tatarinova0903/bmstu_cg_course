@@ -4,7 +4,7 @@
 #include <QDebug>
 #include <QTimer>
 
-#define TIMEOUT 500
+#define TIMEOUT 300
 
 int frames = 0;
 auto frameTime = 0;

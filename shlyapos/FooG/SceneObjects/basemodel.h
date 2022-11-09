@@ -23,6 +23,7 @@ class BaseModel
 {
 protected:
     Vector3f center;
+    float scaleK;
     std::vector<Vector3f> verts;
 
     // attention, this Vector3i means vertex/uv/normal
@@ -38,7 +39,11 @@ public:
     BaseModel(bool isVirus, const char*, const QColor&, ModelType modelType, const Vector3f& center = Vector3f(0, 0, 0));
 
     bool isVirus;
+    bool isSettled = false;
     ModelType modelType;
+
+    // Distance
+    double minDistanceTo(Vector3f);
 
     // Center
     Vector3f& getCenter();
@@ -63,6 +68,8 @@ public:
 
     void scale(const Vector3f&, const Vector3f&);
     void rotate(const Vector3f&);
+
+    float getScaleK();
 };
 
 #endif // BASEMODEL_H
