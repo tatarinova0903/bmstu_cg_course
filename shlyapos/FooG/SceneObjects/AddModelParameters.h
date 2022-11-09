@@ -75,10 +75,9 @@ struct AddModelParameters
 
     void configVirus()
     {
-        moveX = moveY = 0.0;
-        moveZ = 0.1;
+        moveX = moveY = moveZ = 0.0;
         scaleX = scaleY = scaleZ = VIRUS_SCALE;
-        filename = "/Users/daria/Desktop/bmstu_cg_cource/shlyapos/FooG/SourceObjects/sphere.obj";
+        filename = "/Users/daria/Desktop/bmstu_cg_cource/shlyapos/FooG/SourceObjects/sphere1.obj";
         modelType = VIRUS;
         isVirus = true;
         color = Materials().virusMaterial.color;

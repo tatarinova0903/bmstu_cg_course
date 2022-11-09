@@ -76,29 +76,28 @@ double BaseModel::minDistanceTo(Vector3f point)
 
         if (modelType != PERSON)
         {
-                // 1. Найдем нормальный вектор плоскости
-                Vector3f n = Vector3f(p1, p2)^Vector3f(p1, p3);
+            // 1. Найдем нормальный вектор плоскости
+            Vector3f n = Vector3f(p1, p2)^Vector3f(p1, p3);
 
-                // 2. Находим проекцию точки на плоскость
-                float t = (n.x * p1.x - n.x * point.x + n.y * p1.y - n.y * point.y + n.z * p1.z - n.z * point.z) / (n.x * n.x + n.y * n.y + n.z * n.z);
-                Vector3f projection = Vector3f(point.x + t * n.x, point.y + t * n.y, point.z + t * n.z);
+            // 2. Находим проекцию точки на плоскость
+            float t = (n.x * p1.x - n.x * point.x + n.y * p1.y - n.y * point.y + n.z * p1.z - n.z * point.z) / (n.x * n.x + n.y * n.y + n.z * n.z);
+            Vector3f projection = Vector3f(point.x + t * n.x, point.y + t * n.y, point.z + t * n.z);
 
-                // 3. Если проекция находится внутри основания тетраедра, то minDist = dist(projection, point)
-                float s = 0.5 * ((p1.x - p3.x) * (p2.y - p3.y) - (p2.x - p3.x) * (p1.y - p3.y));
-                float s1 = 0.5 * fabs((projection.x - p3.x) * (p2.y - p3.y) - (p2.x - p3.x) * (projection.y - p3.y));
-                float s2 = 0.5 * fabs((p1.x - p3.x) * (projection.y - p3.y) - (projection.x - p3.x) * (p1.y - p3.y));
-                float s3 = 0.5 * fabs((p1.x - projection.x) * (p2.y - projection.y) - (p2.x - projection.x) * (p1.y - projection.y));
+            // 3. Если проекция находится внутри основания тетраедра, то minDist = dist(projection, point)
+            float s = 0.5 * ((p1.x - p3.x) * (p2.y - p3.y) - (p2.x - p3.x) * (p1.y - p3.y));
+            float s1 = 0.5 * fabs((projection.x - p3.x) * (p2.y - p3.y) - (p2.x - p3.x) * (projection.y - p3.y));
+            float s2 = 0.5 * fabs((p1.x - p3.x) * (projection.y - p3.y) - (projection.x - p3.x) * (p1.y - p3.y));
+            float s3 = 0.5 * fabs((p1.x - projection.x) * (p2.y - projection.y) - (p2.x - projection.x) * (p1.y - projection.y));
 
-                if (fabs(s - (s1 + s2 + s3)) < EPS)
-                {
-                    float dist = point.distance(projection);
-                    if (dist < minDistance)
-                    {
-                        minDistance = dist;
-                    }
-                    continue;
-                }
-
+            if (fabs(s - (s1 + s2 + s3)) < EPS)
+            {
+               float dist = point.distance(projection);
+               if (dist < minDistance)
+               {
+                   minDistance = dist;
+               }
+               continue;
+            }
         }
 
         // 4. Иначе minDist = min( dist(point, p1), dist(point, p2), dist(point, p3) )
@@ -244,13 +243,13 @@ void BaseModel::rotate(const Vector3f& angle)
 
     for (size_t i = 0; i < nverts; i++)
     {
-        verts[i].transform(m1);
+        verts[i].transform(m2);
 
         verts[i].transform(rx);
         verts[i].transform(ry);
         verts[i].transform(rz);
 
-        verts[i].transform(m2);
+        verts[i].transform(m1);
     }
 }
 
