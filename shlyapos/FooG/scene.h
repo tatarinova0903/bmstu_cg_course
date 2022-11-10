@@ -29,7 +29,7 @@ public:
     int    countModels();
     void   addModel(const BaseModel&, const Vector3f& scale = Vector3f(1, 1, 1));
     BaseModel& getModel(const int&);
-    void   editModel(Vector3f&, Vector3f&, Vector3f&, QColor&, QColor&);
+    void   editModel(Vector3f&, Vector3f&, Vector3f&, Material&, Material&);
     void clearModels();
 
     // Lights

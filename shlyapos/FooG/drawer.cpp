@@ -85,14 +85,14 @@ void Drawer::clearScene()
 
 
 // Model
-void Drawer::addModel(Vector3f& center, Vector3f& scale, QString& filename, QColor& color, ModelType modelType)
+void Drawer::addModel(Vector3f& center, Vector3f& scale, QString& filename, Material& material, ModelType modelType)
 {
-    scene.addModel(Model(filename.toStdString().c_str(), color, modelType, center), scale);
+    scene.addModel(Model(filename.toStdString().c_str(), material, modelType, center), scale);
 }
 
-void Drawer::editModel(Vector3f& center, Vector3f& scale, Vector3f& rotate, QColor& wallColor, QColor& floorColor)
+void Drawer::editModel(Vector3f& center, Vector3f& scale, Vector3f& rotate, Material& wallMaterial, Material& floorMaterial)
 {
-    scene.editModel(center, scale, rotate, wallColor, floorColor);
+    scene.editModel(center, scale, rotate, wallMaterial, floorMaterial);
 }
 
 
@@ -136,9 +136,9 @@ void Drawer::reCalculateVirus(int virusCount)
     scene.reCalculateVirus(virusCount);
 }
 
-void Drawer::addVirus(Vector3f& center, Vector3f& scale, QString& filename, QColor& color, int count)
+void Drawer::addVirus(Vector3f& center, Vector3f& scale, QString& filename, int count)
 {
-    Virus virus = Virus(filename.toStdString().c_str(), color, center);
+    Virus virus = Virus(filename.toStdString().c_str(), center);
     for (int i = 0; i < count; i++)
     {
         scene.addModel(virus, scale);

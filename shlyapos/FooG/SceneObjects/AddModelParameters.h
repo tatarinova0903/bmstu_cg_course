@@ -18,7 +18,7 @@ struct AddModelParameters
     ModelType modelType;
     bool isVirus;
 
-    QColor color;
+    Material material;
 
     float enX, enY, enZ;
 
@@ -30,7 +30,7 @@ struct AddModelParameters
         filename = "/Users/daria/Desktop/bmstu_cg_cource/shlyapos/FooG/SourceObjects/model.obj";
         modelType = PERSON;
         isVirus = false;
-        color = Materials().skinMaterial.color;
+        material = Materials().skinMaterial;
     }
 
     void configLeftWall()
@@ -40,7 +40,7 @@ struct AddModelParameters
         filename = "/Users/daria/Desktop/bmstu_cg_cource/shlyapos/FooG/SourceObjects/left_wall.obj";
         modelType = WALL;
         isVirus = false;
-        color = Materials().woodMaterial.color;
+        material = Materials().woodMaterial;
     }
 
     void configRightWall()
@@ -50,7 +50,7 @@ struct AddModelParameters
         filename = "/Users/daria/Desktop/bmstu_cg_cource/shlyapos/FooG/SourceObjects/right_wall.obj";
         modelType = WALL;
         isVirus = false;
-        color = Materials().woodMaterial.color;
+        material = Materials().woodMaterial;
     }
 
     void configBackWall()
@@ -60,7 +60,7 @@ struct AddModelParameters
         filename = "/Users/daria/Desktop/bmstu_cg_cource/shlyapos/FooG/SourceObjects/back_wall.obj";
         modelType = WALL;
         isVirus = false;
-        color = Materials().woodMaterial.color;
+        material = Materials().woodMaterial;
     }
 
     void configFloor()
@@ -70,7 +70,7 @@ struct AddModelParameters
         filename = "/Users/daria/Desktop/bmstu_cg_cource/shlyapos/FooG/SourceObjects/floor.obj";
         modelType = FLOOR;
         isVirus = false;
-        color = Materials().woodMaterial.color;
+        material = Materials().woodMaterial;
     }
 
     void configVirus()
@@ -80,7 +80,7 @@ struct AddModelParameters
         filename = "/Users/daria/Desktop/bmstu_cg_cource/shlyapos/FooG/SourceObjects/sphere1.obj";
         modelType = VIRUS;
         isVirus = true;
-        color = Materials().virusMaterial.color;
+        material = Materials().virusMaterial;
     }
 };
 

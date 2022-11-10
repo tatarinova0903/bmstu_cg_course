@@ -56,9 +56,10 @@ BaseModel& Scene::getModel(const int& idx)
     return models[idx];
 }
 
-void Scene::editModel(Vector3f& center, Vector3f& scale, Vector3f& rotate, QColor& wallColor, QColor& floorColor)
+void Scene::editModel(Vector3f& center, Vector3f& scale, Vector3f& rotate, Material& wallMaterial, Material& floorMaterial)
 {
-    for (auto it = models.begin(); it < models.end(); it++) {
+    for (auto it = models.begin(); it < models.end(); it++)
+    {
         it->setCenter(center);
         it->scale(scale, getSceneCenter());
         it->rotate(rotate);
@@ -66,11 +67,11 @@ void Scene::editModel(Vector3f& center, Vector3f& scale, Vector3f& rotate, QColo
         {
             if (it->modelType == WALL)
             {
-                it->setColor(wallColor);
+                it->setMaterial(wallMaterial);
             }
             if (it->modelType == FLOOR)
             {
-                it->setColor(floorColor);
+                it->setMaterial(floorMaterial);
             }
         }
      }

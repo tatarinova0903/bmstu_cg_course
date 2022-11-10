@@ -2,8 +2,8 @@
 #include "basemodel.h"
 #include "./constants.h"
 
-BaseModel::BaseModel(bool isVirus, const char *filename, const QColor& color, ModelType modelType, const Vector3f& center)
-    : center(center), color(color), isVirus(isVirus), modelType(modelType)
+BaseModel::BaseModel(bool isVirus, const char *filename, const Material& material, ModelType modelType, const Vector3f& center)
+    : center(center), material(material), isVirus(isVirus), modelType(modelType)
 {
     std::ifstream in;
 
@@ -235,12 +235,17 @@ void BaseModel::normalsProcessing()
 // Color
 QColor& BaseModel::getColor()
 {
-    return color;
+    return material.color;
 }
 
 void BaseModel::setColor(const QColor& newColor)
 {
-    color = newColor;
+    material.color = newColor;
+}
+
+void BaseModel::setMaterial(const Material& newMaterial)
+{
+    material = newMaterial;
 }
 
 

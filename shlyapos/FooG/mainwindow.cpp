@@ -206,10 +206,10 @@ void MainWindow::applyModelChange()
     }
 
     // For colors
-    QColor wallColor = materials.at(ui->walls_comboBox->currentIndex()).color;
-    QColor floorColor = materials.at(ui->floor_comboBox->currentIndex()).color;
+    Material wallMaterial = materials.at(ui->walls_comboBox->currentIndex());
+    Material floorMaterial = materials.at(ui->floor_comboBox->currentIndex());
 
-    drawer->editModel(center, scale, rotate, wallColor, floorColor);
+    drawer->editModel(center, scale, rotate, wallMaterial, floorMaterial);
     drawer->draw();
 }
 
@@ -350,11 +350,11 @@ void MainWindow::setAddModelParams(AddModelParameters& newParams)
     if (newParams.isVirus)
     {
         int virus_count = ui->virus_count_field->text().toInt();
-        drawer->addVirus(center, scaleK, newParams.filename, newParams.color, virus_count);
+        drawer->addVirus(center, scaleK, newParams.filename, virus_count);
     }
     else
     {
-        drawer->addModel(center, scaleK, newParams.filename, newParams.color, newParams.modelType);
+        drawer->addModel(center, scaleK, newParams.filename, newParams.material, newParams.modelType);
     }
 
     centersM.push_back(center);

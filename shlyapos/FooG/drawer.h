@@ -65,8 +65,8 @@ public:
     void clearScene();
 
     // Model
-    void addModel(Vector3f&, Vector3f&, QString&, QColor&, ModelType);
-    void editModel(Vector3f&, Vector3f&, Vector3f&, QColor&, QColor&);
+    void addModel(Vector3f&, Vector3f&, QString&, Material&, ModelType);
+    void editModel(Vector3f&, Vector3f&, Vector3f&, Material&, Material&);
 
     // Light
     void addLight(const Vector3f&, const float&);
@@ -80,7 +80,7 @@ public:
 
     // Virus
     bool hasVirus();
-    void addVirus(Vector3f& center, Vector3f& scale, QString& filename, QColor& color, int count);
+    void addVirus(Vector3f& center, Vector3f& scale, QString& filename, int count);
     void reCalculateVirus(int virusCount);
     void setVirusSpeed(float speed);
 };

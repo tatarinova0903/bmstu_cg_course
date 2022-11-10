@@ -6,12 +6,11 @@
 #include <fstream>
 #include <sstream>
 #include <vector>
-
 #include <QColor>
 
 #include "../MathObjects/vector3.h"
 #include "../MathObjects/vector3.hpp"
-
+#include "Material.h"
 #include "../MathObjects/transformmatrix.h"
 
 enum ModelType
@@ -31,13 +30,13 @@ protected:
     std::vector<std::vector<Vector3i>> faces;
     std::vector<Vector3f> norms;
 
-    QColor color;
+    Material material;
 
     Vector3f normalCalculate(const Vector3f&, const Vector3f&, const Vector3f&);
     void normalsProcessing();
 
 public:
-    BaseModel(bool isVirus, const char*, const QColor&, ModelType modelType, const Vector3f& center = Vector3f(0, 0, 0));
+    BaseModel(bool isVirus, const char*, const Material&, ModelType modelType, const Vector3f& center = Vector3f(0, 0, 0));
 
     bool isVirus;
     bool isSettled = false;
@@ -67,6 +66,7 @@ public:
     // Color
     QColor& getColor();
     void    setColor(const QColor&);
+    void    setMaterial(const Material&);
 
     void scale(const Vector3f&, const Vector3f&);
     void rotate(const Vector3f&);

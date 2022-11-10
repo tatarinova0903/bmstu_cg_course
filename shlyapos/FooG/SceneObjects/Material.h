@@ -9,7 +9,7 @@
 
 enum MaterialType
 {
-      WOOD, PAPER, CERAMICS, SKIN, CORONA
+      WOOD, PAPER, CERAMICS, SKIN, CORONA, AIR
 };
 
 struct Material
