@@ -202,8 +202,10 @@ bool Scene::checkSettled(Virus *virus)
             // проверяем осел ли вирус на данной модели?
             if (isVirusNearModel((Model *)&*model, (Virus *)virus))
             {
+//                std::cout << virus->getGeometricCenter().x << " " << virus->getGeometricCenter().y << " "
+//                          << virus->getGeometricCenter().z<< std::endl;
                 virus->isSettled = true;
-//                virus->setColor(QColor(0,255, 0));
+                virus->setColor(QColor(0,255, 0));
                 return true;
             }
         }
@@ -214,5 +216,9 @@ bool Scene::checkSettled(Virus *virus)
 bool Scene::isVirusNearModel(Model *model, Virus *virus)
 {
     double distance = model->minDistanceTo(virus->getGeometricCenter());
+//    if (distance < VIRUS_RADIUS * virus->getScaleK())
+//    {
+//        std::cout << distance << std::endl;
+//    }
     return distance < VIRUS_RADIUS * virus->getScaleK();
 }

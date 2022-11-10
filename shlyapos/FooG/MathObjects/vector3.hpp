@@ -136,5 +136,12 @@ float Vector3<t>::distance(Vector3<t> &v)
     return sqrt((x - v.x) * (x - v.x) + (y - v.y) * (y - v.y) + (z - v.z) * (z - v.z));
 }
 
+template<class t>
+float Vector3<t>::len()
+{
+    return sqrt(x * x + y * y + z * z);
+}
+
+
 
 #endif // VECTOR3_HPP

@@ -91,18 +91,26 @@ double BaseModel::minDistanceTo(Vector3f point)
 
         if (modelType != PERSON)
         {
+            // 0. Вектора сторон треугольника
+            Vector3f p1p2 = Vector3f(p1, p2);
+            Vector3f p1p3 = Vector3f(p1, p3);
+
             // 1. Найдем нормальный вектор плоскости
-            Vector3f n = Vector3f(p1, p2)^Vector3f(p1, p3);
+            Vector3f n = p1p2^p1p3;
 
             // 2. Находим проекцию точки на плоскость
             float t = (n.x * p1.x - n.x * point.x + n.y * p1.y - n.y * point.y + n.z * p1.z - n.z * point.z) / (n.x * n.x + n.y * n.y + n.z * n.z);
             Vector3f projection = Vector3f(point.x + t * n.x, point.y + t * n.y, point.z + t * n.z);
 
+            Vector3f prp1 = Vector3f(projection, p1);
+            Vector3f prp2 = Vector3f(projection, p2);
+            Vector3f prp3 = Vector3f(projection, p3);
+
             // 3. Если проекция находится внутри основания тетраедра, то minDist = dist(projection, point)
-            float s = 0.5 * ((p1.x - p3.x) * (p2.y - p3.y) - (p2.x - p3.x) * (p1.y - p3.y));
-            float s1 = 0.5 * fabs((projection.x - p3.x) * (p2.y - p3.y) - (p2.x - p3.x) * (projection.y - p3.y));
-            float s2 = 0.5 * fabs((p1.x - p3.x) * (projection.y - p3.y) - (projection.x - p3.x) * (p1.y - p3.y));
-            float s3 = 0.5 * fabs((p1.x - projection.x) * (p2.y - projection.y) - (p2.x - projection.x) * (p1.y - projection.y));
+            float s = 0.5 * (p1p2^p1p3).len();
+            float s1 = 0.5 * (prp2^prp3).len();
+            float s2 = 0.5 * (prp1^prp3).len();
+            float s3 = 0.5 * (prp1^prp2).len();
 
             if (fabs(s - (s1 + s2 + s3)) < EPS)
             {
@@ -111,6 +119,10 @@ double BaseModel::minDistanceTo(Vector3f point)
                {
                    minDistance = dist;
                }
+//               if (dist < 0.009)
+//               {
+//                   std::cout << dist << std::endl;
+//               }
                continue;
             }
         }

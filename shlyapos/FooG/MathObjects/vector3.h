@@ -42,6 +42,7 @@ public:
     Vector3<t>& normalize(t l = 1);
     void transform(const std::shared_ptr<Matrix>);
     float distance(Vector3<t> &);
+    float len();
 };
 
 
