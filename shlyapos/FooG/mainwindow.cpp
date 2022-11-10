@@ -4,7 +4,8 @@
 #include <QDebug>
 #include <QTimer>
 
-#define TIMEOUT 300
+#define MAX_SPEED 1000
+#define MIN_SPEED 100
 
 int frames = 0;
 auto frameTime = 0;
@@ -18,12 +19,12 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->centralwidget->setStyleSheet("QWidget {background: rgba(50, 50, 50, 255);}");
 
-    initTimer();
     initDrawer();
     initLables();
     initButton();
     initFields();
     initComboBoxes();
+    initTimer();
 
     // Combobox
     connect(ui->comboBox_light, SIGNAL(currentIndexChanged(QString)), SLOT(changeLight()));
@@ -46,8 +47,6 @@ MainWindow::~MainWindow()
 void MainWindow::initTimer()
 {
     timer = new QTimer(this);
-    timer->setInterval(TIMEOUT);
-    connect(timer, &QTimer::timeout, this, &MainWindow::moveVirus);
 }
 
 void MainWindow::initDrawer()
@@ -134,6 +133,10 @@ void MainWindow::initComboBoxes()
 // Virus animation
 void MainWindow::startVirusSpread()
 {
+    int speed = MAX_SPEED - (MAX_SPEED - MIN_SPEED) * ui->speed_slider->value() / 100.0;
+    timer->setInterval(speed);
+    connect(timer, &QTimer::timeout, this, &MainWindow::moveVirus);
+
     if (!drawer->hasVirus())
     {
         AddModelParameters virus = AddModelParameters();
@@ -347,7 +350,6 @@ void MainWindow::setAddModelParams(AddModelParameters& newParams)
     if (newParams.isVirus)
     {
         int virus_count = ui->virus_count_field->text().toInt();
-        drawer->setVirusSpeed(ui->speed_slider->value());
         drawer->addVirus(center, scaleK, newParams.filename, newParams.color, virus_count);
     }
     else
@@ -368,6 +370,7 @@ void MainWindow::setAddModelParams(AddModelParameters& newParams)
 void MainWindow::clear()
 {
     timer->stop();
+    disconnect(timer, &QTimer::timeout, this, &MainWindow::moveVirus);
     drawer->clearScene();
     drawer->draw();
 }
