@@ -14,6 +14,9 @@ BaseModel::BaseModel(bool isVirus, const char *filename, const QColor& color, Mo
 
     std::string line;
 
+    float max[] = {FLOAT_MIN, FLOAT_MIN, FLOAT_MIN};
+    float min[] = {FLOAT_MAX, FLOAT_MAX, FLOAT_MAX};
+
     while (!in.eof())
     {
         std::getline(in, line);
@@ -27,7 +30,17 @@ BaseModel::BaseModel(bool isVirus, const char *filename, const QColor& color, Mo
             Vector3f v;
 
             for (int i = 0; i < 3; i++)
+            {
                 iss >> v[i];
+                if (v[i] < min[i])
+                {
+                    min[i] = v[i];
+                }
+                if (v[i] > max[i])
+                {
+                    max[i] = v[i];
+                }
+            }
 
             verts.push_back(v);
         }
@@ -60,6 +73,8 @@ BaseModel::BaseModel(bool isVirus, const char *filename, const QColor& color, Mo
             faces.push_back(f);
         }
     }
+
+    geometricCenter = Vector3f((min[0] + max[0]) / 2, (min[1] + max[1]) / 2, (min[2] + max[2]) / 2);
     // For time tests
     //std::cerr << "Verteces - " << verts.size() << std::endl;
 }
@@ -117,6 +132,11 @@ double BaseModel::minDistanceTo(Vector3f point)
 Vector3f& BaseModel::getCenter()
 {
     return center;
+}
+
+Vector3f BaseModel::getGeometricCenter()
+{
+    return geometricCenter + center;
 }
 
 void BaseModel::setCenter(const Vector3f& newCenter)

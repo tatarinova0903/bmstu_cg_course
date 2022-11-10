@@ -23,6 +23,7 @@ class BaseModel
 {
 protected:
     Vector3f center;
+    Vector3f geometricCenter;
     float scaleK;
     std::vector<Vector3f> verts;
 
@@ -47,6 +48,7 @@ public:
 
     // Center
     Vector3f& getCenter();
+    Vector3f getGeometricCenter();
     void      setCenter(const Vector3f&);
 
     // Vertes

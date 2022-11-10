@@ -213,6 +213,6 @@ bool Scene::checkSettled(Virus *virus)
 
 bool Scene::isVirusNearModel(Model *model, Virus *virus)
 {
-    double distance = model->minDistanceTo(virus->getCenter());
+    double distance = model->minDistanceTo(virus->getGeometricCenter());
     return distance < VIRUS_RADIUS * virus->getScaleK();
 }
