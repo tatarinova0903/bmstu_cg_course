@@ -6,10 +6,12 @@
 #include "./SceneObjects/lightsourcepoint.h"
 #include "SceneObjects/virus.h"
 #include "SceneObjects/model.h"
+#include "MathObjects/brownianmotion.h"
 
 class Scene
 {
 private:
+    BrownianMotion brownianMotion;
     Camera mainCamera;
     std::vector<BaseModel> models;
     std::vector<LightSourcePoint> lightSources;
@@ -21,6 +23,7 @@ private:
 
 public:
     Scene();
+    ~Scene();
 
     // Models
     int    countModels();
@@ -50,7 +53,7 @@ public:
 
     // Virus
     bool hasVirus();
-    void reCalculateVirus();
+    void reCalculateVirus(int virusCount);
     void setVirusSpeed(float speed);
 };
 

@@ -81,7 +81,7 @@ public:
     // Virus
     bool hasVirus();
     void addVirus(Vector3f& center, Vector3f& scale, QString& filename, QColor& color, int count);
-    void reCalculateVirus();
+    void reCalculateVirus(int virusCount);
     void setVirusSpeed(float speed);
 };
 

@@ -151,7 +151,7 @@ void MainWindow::stopVirusSpread()
 
 void MainWindow::moveVirus()
 {
-    drawer->reCalculateVirus();
+    drawer->reCalculateVirus(ui->virus_count_field->text().toInt());
     drawer->draw();
 }
 

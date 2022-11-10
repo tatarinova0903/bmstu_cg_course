@@ -10,6 +10,11 @@
 Scene::Scene()
     : mainCamera(Camera()), models(std::vector<BaseModel>()), lightSources(std::vector<LightSourcePoint>())
 {
+    brownianMotion = BrownianMotion();
+}
+
+Scene::~Scene()
+{
 
 }
 
@@ -152,22 +157,22 @@ void Scene::movingCamera(const float& speed)
 }
 
 // Virus
-void Scene::reCalculateVirus()
+void Scene::reCalculateVirus(int virusCount)
 {
-    std::vector<BaseModel *> viruses;
+    std::vector<Vector3f *> virus_centers;
 #pragma omp for
     for (auto model = models.begin(); model < models.end(); model++)
     {
         if (model->isVirus && !checkSettled((Virus *)&*model))
         {
-            viruses.push_back(&*model);
+            virus_centers.push_back(&(model->getCenter()));
         }
     }
-    BrownianMotion brownianMotion = BrownianMotion(virus_speed);
-    brownianMotion.calculate(viruses);
+    brownianMotion.setVirusCount(virusCount);
+    brownianMotion.calculate(virus_centers);
 }
 
-void Scene::setVirusSpeed(float speed)
+void Scene::setVirusSpeed(float speed) // TODO: - NEED IT ???
 {
     virus_speed = speed;
 }
@@ -198,6 +203,7 @@ bool Scene::checkSettled(Virus *virus)
             if (isVirusNearModel((Model *)&*model, (Virus *)virus))
             {
                 virus->isSettled = true;
+//                virus->setColor(QColor(0,255, 0));
                 return true;
             }
         }
