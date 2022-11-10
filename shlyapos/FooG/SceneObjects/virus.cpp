@@ -7,5 +7,11 @@ Virus::Virus(const char *filename, const Vector3f& center)
 
 void Virus::setSettled(BaseModel *place)
 {
-//    materialType = place;
+    isSettled = true;
+    materialType = place->getMaterial().value;
+}
+
+bool Virus::getIsSettled()
+{
+    return isSettled;
 }

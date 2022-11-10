@@ -192,7 +192,7 @@ bool Scene::hasVirus()
 
 bool Scene::checkSettled(Virus *virus)
 {
-    if (virus->isSettled)
+    if (virus->getIsSettled())
     {
         return true;
     }
@@ -205,7 +205,7 @@ bool Scene::checkSettled(Virus *virus)
             {
 //                std::cout << virus->getGeometricCenter().x << " " << virus->getGeometricCenter().y << " "
 //                          << virus->getGeometricCenter().z<< std::endl;
-                virus->isSettled = true;
+                virus->setSettled(&*model);
                 virus->setColor(QColor(0,255, 0));
                 return true;
             }

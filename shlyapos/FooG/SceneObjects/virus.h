@@ -15,6 +15,8 @@ public:
     Virus(const char*, const Vector3f& center = Vector3f(0, 0, 0));
 
     void setSettled(BaseModel *place);
+
+    bool getIsSettled();
 };
 
 #endif // VIRUS_H

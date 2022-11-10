@@ -32,6 +32,8 @@ protected:
 
     Material material;
 
+    bool isSettled = false;
+
     Vector3f normalCalculate(const Vector3f&, const Vector3f&, const Vector3f&);
     void normalsProcessing();
 
@@ -39,7 +41,6 @@ public:
     BaseModel(bool isVirus, const char*, const Material&, ModelType modelType, const Vector3f& center = Vector3f(0, 0, 0));
 
     bool isVirus;
-    bool isSettled = false;
     ModelType modelType;
 
     // Distance
@@ -66,7 +67,10 @@ public:
     // Color
     QColor& getColor();
     void    setColor(const QColor&);
+
+    // Material
     void    setMaterial(const Material&);
+    Material& getMaterial();
 
     void scale(const Vector3f&, const Vector3f&);
     void rotate(const Vector3f&);

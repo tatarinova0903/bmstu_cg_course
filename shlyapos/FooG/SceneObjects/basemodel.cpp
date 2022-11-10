@@ -243,11 +243,17 @@ void BaseModel::setColor(const QColor& newColor)
     material.color = newColor;
 }
 
+
+// Color
 void BaseModel::setMaterial(const Material& newMaterial)
 {
     material = newMaterial;
 }
 
+Material& BaseModel::getMaterial()
+{
+    return material;
+}
 
 
 void BaseModel::scale(const Vector3f& k, const Vector3f& sceneCenter)
