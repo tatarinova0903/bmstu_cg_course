@@ -232,9 +232,6 @@ void BaseModel::scale(const Vector3f& k, const Vector3f& sceneCenter)
 
 void BaseModel::rotate(const Vector3f& angle)
 {
-    std::shared_ptr<Matrix> m1(new MoveMatrix(center.x, center.y, center.z));
-    std::shared_ptr<Matrix> m2(new MoveMatrix(-center.x, -center.y, -center.z));
-
     std::shared_ptr<Matrix> rx(new RotateOxMatrix(angle.x * M_PI / 180));
     std::shared_ptr<Matrix> ry(new RotateOyMatrix(angle.y * M_PI / 180));
     std::shared_ptr<Matrix> rz(new RotateOzMatrix(angle.z * M_PI / 180));
@@ -243,13 +240,9 @@ void BaseModel::rotate(const Vector3f& angle)
 
     for (size_t i = 0; i < nverts; i++)
     {
-        verts[i].transform(m2);
-
         verts[i].transform(rx);
         verts[i].transform(ry);
         verts[i].transform(rz);
-
-        verts[i].transform(m1);
     }
 }
 
