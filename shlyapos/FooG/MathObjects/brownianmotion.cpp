@@ -5,7 +5,7 @@
 using namespace std;
 
 BrownianMotion::BrownianMotion() {
-    float sigma = 0.1;
+    float sigma = 0.2;
     data = std::vector<std::vector<Vector3f>>(virusCount, std::vector<Vector3f>(SIZE + 1));
     for (int k = 0; k < virusCount; k++)
     {
