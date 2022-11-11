@@ -1,22 +1,23 @@
 #ifndef VIRUS_H
 #define VIRUS_H
 
-#include <chrono>
 #include "basemodel.h"
 #include "Material.h"
 
 class Virus: public BaseModel
 {
 private:
-    std::chrono::system_clock::time_point start;
-    MaterialType materialType = AIR;
+    void renewDate();
+
+    QColor calculateNewColor(QColor, unsigned long, unsigned long);
 
 public:
     Virus(const char*, const Vector3f& center = Vector3f(0, 0, 0));
 
     void setSettled(BaseModel *place);
-
     bool getIsSettled();
+
+    void renewColor();
 };
 
 #endif // VIRUS_H

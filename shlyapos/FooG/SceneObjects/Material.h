@@ -28,6 +28,7 @@ struct Materials
 
     Material skinMaterial = { .value = SKIN, .raw_value = "Кожа", .color = QColor(240, 161, 137) };
     Material virusMaterial = { .value = CORONA, .raw_value = "Вирус", .color = QColor(255, 0, 0) };
+    Material airMaterial = { .value = AIR, .raw_value = "Воздух", .color = QColor(255, 255, 255) };
 
     std::vector<Material> value = { woodMaterial, paperMaterial, ceramicsMaterial };
 };

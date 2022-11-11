@@ -164,9 +164,13 @@ void Scene::reCalculateVirus(int virusCount)
 #pragma omp for
     for (auto model = models.begin(); model < models.end(); model++)
     {
-        if (model->isVirus && !checkSettled((Virus *)&*model))
+        if (model->isVirus)
         {
-            virus_centers.push_back(&(model->getCenter()));
+            if (!checkSettled((Virus *)&*model))
+            {
+                virus_centers.push_back(&(model->getCenter()));
+            }
+            ((Virus *)&*model)->renewColor();
         }
     }
     brownianMotion.setVirusCount(virusCount);

@@ -34,6 +34,9 @@ protected:
 
     bool isSettled = false;
 
+    unsigned long bornTime;
+    Material settledMaterial = Materials().airMaterial;
+
     Vector3f normalCalculate(const Vector3f&, const Vector3f&, const Vector3f&);
     void normalsProcessing();
 
