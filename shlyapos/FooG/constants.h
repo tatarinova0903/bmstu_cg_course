@@ -10,12 +10,11 @@
 #define FLOAT_MAX std::numeric_limits<float>::max()
 #define FLOAT_MIN std::numeric_limits<float>::min()
 
-
 // Время жизни
-#define SKIN_TIME 10
-#define WOOD_TIME 7
-#define PAPER_TIME 5
-#define CERAMICS_TIME 6
-#define AIR_TIME 12
+#define SKIN_TIME 9
+#define WOOD_TIME 96
+#define PAPER_TIME 108
+#define CERAMICS_TIME 20
+#define AIR_TIME 72
 
 #endif // CONSTANTS_H
