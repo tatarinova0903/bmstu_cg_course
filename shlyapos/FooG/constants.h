@@ -4,7 +4,7 @@
 #include <QColor>
 #include <limits.h>
 
-#define VIRUS_RADIUS 0.018
+#define VIRUS_RADIUS 0.015
 #define VIRUS_CENTER 0.1
 #define EPS 1e-6
 
