@@ -44,6 +44,10 @@ void Virus::renewAlpha()
     {
         alpha = 1.0 - lifeTime / CERAMICS_TIME;
     }
+    if (alpha < EPS)
+    {
+        isVisible = false;
+    }
 }
 
 void Virus::renewDate()

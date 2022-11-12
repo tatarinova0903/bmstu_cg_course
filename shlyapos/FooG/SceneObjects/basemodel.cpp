@@ -298,3 +298,8 @@ float BaseModel::getScaleK()
 {
     return scaleK;
 }
+
+bool BaseModel::getIsVisible() const
+{
+    return isVisible;
+}

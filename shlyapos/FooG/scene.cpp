@@ -164,7 +164,7 @@ void Scene::reCalculateVirus(int virusCount)
 #pragma omp for
     for (auto model = models.begin(); model < models.end(); model++)
     {
-        if (model->isVirus)
+        if (model->isVirus && model->getIsVisible())
         {
             if (!checkSettled((Virus *)&*model))
             {

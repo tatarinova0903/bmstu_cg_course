@@ -34,6 +34,7 @@ protected:
     float alpha;
 
     bool isSettled = false;
+    bool isVisible = true;
 
     unsigned long bornTime;
     Material settledMaterial = Materials().airMaterial;
@@ -83,6 +84,7 @@ public:
     void rotate(const Vector3f&);
 
     float getScaleK();
+    bool getIsVisible() const;
 };
 
 #endif // BASEMODEL_H
