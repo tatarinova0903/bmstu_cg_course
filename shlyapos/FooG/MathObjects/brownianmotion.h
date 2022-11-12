@@ -5,8 +5,8 @@
 #include "vector3.h"
 #include "./SceneObjects/basemodel.h"
 
-#define SIZE 1024
-#define POWER 10
+#define SIZE 2048
+#define POWER 11
 
 class BrownianMotion
 {
