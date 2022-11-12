@@ -4,31 +4,7 @@
 
 using namespace std;
 
-BrownianMotion::BrownianMotion() {
-    float sigma = 0.2;
-    data = std::vector<std::vector<Vector3f>>(virusCount, std::vector<Vector3f>(SIZE + 1));
-    for (int k = 0; k < virusCount; k++)
-    {
-        data.at(k).at(0) = Vector3f(0.0, 0.0, 0.0);
-        data.at(k).at(SIZE) = Vector3f(sigma * getNormalRandom(), sigma * getNormalRandom(), sigma * getNormalRandom());
-        for (int j = 1; j <= POWER; j++)
-        {
-            for (int i = 1; i <= pow(2, (j - 1)); i++)
-            {
-                int ind = (2 * i - 1) * pow(2, POWER - j);
-                int old1 = (i - 1) * pow(2, POWER - j + 1);
-                int old2 = i * pow(2, POWER -j + 1);
-                data.at(k).at(ind).x = (data.at(k).at(old1).x + data.at(k).at(old2).x) / 2 + sigma * getNormalRandom() / pow(2, (j + 1) / 2);
-                data.at(k).at(ind).y = (data.at(k).at(old1).y + data.at(k).at(old2).y) / 2 + sigma * getNormalRandom() / pow(2, (j + 1) / 2);
-                data.at(k).at(ind).z = (data.at(k).at(old1).z + data.at(k).at(old2).z) / 2 + sigma * getNormalRandom() / pow(2, (j + 1) / 2);
-            }
-        }
-    }
-//    for (int i = 0; i < SIZE + 1; i++)
-//    {
-//        std::cout << arr.at(i).x << " ";
-//    }
-}
+BrownianMotion::BrownianMotion() { }
 
 float BrownianMotion::getNormalRandom()
 {
@@ -78,8 +54,35 @@ void BrownianMotion::midpoint(std::vector<Vector3f *> &virus_centers)
     }
 }
 
-void BrownianMotion::setVirusCount(int newVirusCount)
+void BrownianMotion::setVirusCountAndResetAllIfNeeded(int newVirusCount)
 {
+    if (virusCount == newVirusCount)
+    {
+        return;
+    }
     virusCount = newVirusCount;
+    float sigma = 0.2;
+    data = std::vector<std::vector<Vector3f>>(virusCount, std::vector<Vector3f>(SIZE + 1));
+    for (int k = 0; k < virusCount; k++)
+    {
+        data.at(k).at(0) = Vector3f(0.0, 0.0, 0.0);
+        data.at(k).at(SIZE) = Vector3f(sigma * getNormalRandom(), sigma * getNormalRandom(), sigma * getNormalRandom());
+        for (int j = 1; j <= POWER; j++)
+        {
+            for (int i = 1; i <= pow(2, (j - 1)); i++)
+            {
+                int ind = (2 * i - 1) * pow(2, POWER - j);
+                int old1 = (i - 1) * pow(2, POWER - j + 1);
+                int old2 = i * pow(2, POWER -j + 1);
+                data.at(k).at(ind).x = (data.at(k).at(old1).x + data.at(k).at(old2).x) / 2 + sigma * getNormalRandom() / pow(2, (j + 1) / 2);
+                data.at(k).at(ind).y = (data.at(k).at(old1).y + data.at(k).at(old2).y) / 2 + sigma * getNormalRandom() / pow(2, (j + 1) / 2);
+                data.at(k).at(ind).z = (data.at(k).at(old1).z + data.at(k).at(old2).z) / 2 + sigma * getNormalRandom() / pow(2, (j + 1) / 2);
+            }
+        }
+    }
+//    for (int i = 0; i < SIZE + 1; i++)
+//    {
+//        std::cout << arr.at(i).x << " ";
+//    }
 }
 

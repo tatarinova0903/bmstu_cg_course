@@ -12,7 +12,7 @@ class BrownianMotion
 {
 private:
     std::vector<std::vector<Vector3f>> data;
-    int virusCount = 20;
+    int virusCount;
 
     size_t i = 0;
 
@@ -28,7 +28,7 @@ public:
     BrownianMotion();
 
     void calculate(std::vector<Vector3f *> &virus_centers);
-    void setVirusCount(int);
+    void setVirusCountAndResetAllIfNeeded(int);
 };
 
 #endif // BROWNIANMOTION_H

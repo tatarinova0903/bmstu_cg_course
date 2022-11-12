@@ -173,7 +173,7 @@ void Scene::reCalculateVirus(int virusCount)
             ((Virus *)&*model)->renewAlpha();
         }
     }
-    brownianMotion.setVirusCount(virusCount);
+    brownianMotion.setVirusCountAndResetAllIfNeeded(virusCount);
     brownianMotion.calculate(virus_centers);
 }
 
