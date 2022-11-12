@@ -196,7 +196,7 @@ void Drawer::objectProcessing(BaseModel& model, Vector3f& camPos, Vector3f& camD
             }
 
             screenCoords[j] = Vector3f(mvp * Matrix(v));
-            intensity[j] = (model.modelType == VIRUS) ? 1.0 : lightProcessing(v, model.norm(i, j));
+            intensity[j] = lightProcessing(v, model.norm(i, j));
         }
 
         if (skip || !checkIsVisible(screenCoords[0]) ||
@@ -300,14 +300,10 @@ void Drawer::triangleProcessing(Vector3i& t0, Vector3i& t1, Vector3i& t2,
             if (zBuffer.getDepth(P.x, P.y) < P.z)
             {
                 zBuffer.setDepth(P.x, P.y, P.z);
-                QColor newColor;
-                if (fabs(modelAlpha - 1.0) < EPS)
+                QColor newColor = QColor(iColor(color.rgba(), iP));
+                if (fabs(modelAlpha - 1.0) > EPS)
                 {
-                    newColor = QColor(iColor(color.rgba(), iP));
-                }
-                else
-                {
-                    newColor = calculateNewColor(color, colorCache[P.x][P.y], modelAlpha);
+                    newColor = calculateNewColor(newColor, colorCache[P.x][P.y], modelAlpha);
                 }
                 colorCache[P.x][P.y] = newColor;
             }

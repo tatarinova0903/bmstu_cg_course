@@ -57,7 +57,7 @@ private:
     int  wPerm, hPerm;
     bool checkIsVisible(const Vector3i&);
 
-    QColor calculateNewColor(QColor, QColor, float) ;
+    QColor calculateNewColor(QColor, QColor, float);
 
 public:
     explicit Drawer(const int&, const int&, QObject *parent = nullptr);
