@@ -52,10 +52,12 @@ private:
     void  objectProcessing(BaseModel&, Vector3f&, Vector3f&, Vector3f&);
     float lightProcessing(const Vector3f&, const Vector3f&);
     void  triangleProcessing(Vector3i&, Vector3i&, Vector3i&,
-                            const QColor&, float&, float&, float&);
+                            const QColor&, float&, float&, float&, float);
 
     int  wPerm, hPerm;
     bool checkIsVisible(const Vector3i&);
+
+    QColor calculateNewColor(QColor, QColor, float) ;
 
 public:
     explicit Drawer(const int&, const int&, QObject *parent = nullptr);

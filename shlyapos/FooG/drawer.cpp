@@ -204,7 +204,7 @@ void Drawer::objectProcessing(BaseModel& model, Vector3f& camPos, Vector3f& camD
                     !checkIsVisible(screenCoords[2])) continue;
 
         triangleProcessing(screenCoords[0], screenCoords[1], screenCoords[2],
-                color, intensity[0], intensity[1], intensity[2]);
+                color, intensity[0], intensity[1], intensity[2], model.getAlpha());
     }
 }
 
@@ -242,7 +242,8 @@ float Drawer::lightProcessing(const Vector3f& vert, const Vector3f& norm)
 }
 
 void Drawer::triangleProcessing(Vector3i& t0, Vector3i& t1, Vector3i& t2,
-                                const QColor& color, float& i0, float& i1, float& i2)
+                                const QColor& color, float& i0, float& i1, float& i2,
+                                float modelAlpha)
 {
     if (t0.y == t1.y && t0.y == t2.y)
         return;
@@ -294,13 +295,21 @@ void Drawer::triangleProcessing(Vector3i& t0, Vector3i& t1, Vector3i& t2,
 
             Vector3i P = Vector3f(A) + Vector3f(B - A) * phi;
             float iP = iA + (iB - iA) * phi;
-
             if (P.x >= w || P.y >= h || P.x < 0 || P.y < 0) continue;
 
             if (zBuffer.getDepth(P.x, P.y) < P.z)
             {
                 zBuffer.setDepth(P.x, P.y, P.z);
-                colorCache[P.x][P.y] = QColor(iColor(color.rgba(), iP));
+                QColor newColor;
+                if (fabs(modelAlpha - 1.0) < EPS)
+                {
+                    newColor = QColor(iColor(color.rgba(), iP));
+                }
+                else
+                {
+                    newColor = calculateNewColor(color, colorCache[P.x][P.y], modelAlpha);
+                }
+                colorCache[P.x][P.y] = newColor;
             }
         }
     }
@@ -378,4 +387,25 @@ void Drawer::clearScreen()
     clearCanvas();
     clearColorCache();
     clearZBuffer();
+}
+
+// Helpers
+QColor Drawer::calculateNewColor(QColor source, QColor destination, float alpha)
+{
+    int destinationRed, destinationGreen, destinationBlue, sourceRed, sourceGreen, sourceBlue;
+    destination.getRgb(&destinationRed, &destinationGreen, &destinationBlue);
+    source.getRgb(&sourceRed, &sourceGreen, &sourceBlue);
+    int redDiff = destinationRed - sourceRed;
+    int greenDiff = destinationGreen - sourceGreen;
+    int blueDiff = destinationBlue - sourceBlue;
+    int newRed = sourceRed + (1.0 - alpha) * redDiff;
+    int newGreen = sourceGreen + (1.0 - alpha) * greenDiff;
+    int newBlue = sourceBlue + (1.0 - alpha) * blueDiff;
+    if ((redDiff < 0 && newRed < destinationRed) || (redDiff > 0 && newRed > destinationRed) ||
+            (greenDiff < 0 && newGreen < destinationGreen) || (greenDiff > 0 && newGreen > destinationGreen) ||
+            (blueDiff < 0 && newBlue < destinationBlue) || (blueDiff > 0 && newBlue > destinationBlue))
+    {
+        return destination;
+    }
+    return QColor(newRed, newGreen, newBlue);
 }

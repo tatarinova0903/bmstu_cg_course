@@ -17,7 +17,7 @@ public:
     void setSettled(BaseModel *place);
     bool getIsSettled();
 
-    void renewColor();
+    void renewAlpha();
 };
 
 #endif // VIRUS_H

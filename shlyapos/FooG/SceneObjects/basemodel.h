@@ -31,6 +31,7 @@ protected:
     std::vector<Vector3f> norms;
 
     Material material;
+    float alpha;
 
     bool isSettled = false;
 
@@ -70,6 +71,9 @@ public:
     // Color
     QColor& getColor();
     void    setColor(const QColor&);
+
+    // Alpha
+    float getAlpha() const;
 
     // Material
     void    setMaterial(const Material&);

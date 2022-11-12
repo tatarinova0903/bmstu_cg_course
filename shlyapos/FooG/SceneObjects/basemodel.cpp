@@ -3,7 +3,7 @@
 #include "./constants.h"
 
 BaseModel::BaseModel(bool isVirus, const char *filename, const Material& material, ModelType modelType, const Vector3f& center)
-    : center(center), material(material), isVirus(isVirus), modelType(modelType), settledMaterial(Materials().airMaterial)
+    : center(center), material(material), alpha(1.0), isVirus(isVirus), modelType(modelType), settledMaterial(Materials().airMaterial)
 {
     std::ifstream in;
 
@@ -243,7 +243,13 @@ void BaseModel::setColor(const QColor& newColor)
     material.color = newColor;
 }
 
-// Color
+// Alpha
+float BaseModel::getAlpha() const
+{
+    return alpha;
+}
+
+// Material
 void BaseModel::setMaterial(const Material& newMaterial)
 {
     material = newMaterial;
