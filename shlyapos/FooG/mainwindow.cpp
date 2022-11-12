@@ -123,10 +123,13 @@ void MainWindow::initFields()
 
 void MainWindow::initComboBoxes()
 {
-    for (int i = 0; i < MATERIAL_TYPES_COUNT; i++)
+    for (size_t i = 0; i < wallMaterials.size(); i++)
     {
-        ui->walls_comboBox->addItem(QString::fromStdString(materials[i].raw_value));
-        ui->floor_comboBox->addItem(QString::fromStdString(materials[i].raw_value));
+        ui->walls_comboBox->addItem(QString::fromStdString(wallMaterials[i].raw_value));
+    }
+    for (size_t i = 0; i < floorMaterials.size(); i++)
+    {
+        ui->floor_comboBox->addItem(QString::fromStdString(floorMaterials[i].raw_value));
     }
 }
 
@@ -206,8 +209,8 @@ void MainWindow::applyModelChange()
     }
 
     // For colors
-    Material wallMaterial = materials.at(ui->walls_comboBox->currentIndex());
-    Material floorMaterial = materials.at(ui->floor_comboBox->currentIndex());
+    Material wallMaterial = wallMaterials.at(ui->walls_comboBox->currentIndex());
+    Material floorMaterial = floorMaterials.at(ui->floor_comboBox->currentIndex());
 
     drawer->editModel(center, scale, rotate, wallMaterial, floorMaterial);
     drawer->draw();

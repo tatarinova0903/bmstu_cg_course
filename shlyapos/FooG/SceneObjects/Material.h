@@ -30,7 +30,8 @@ struct Materials
     Material virusMaterial = { .value = CORONA, .raw_value = "Вирус", .color = QColor(255, 0, 0) };
     Material airMaterial = { .value = AIR, .raw_value = "Воздух", .color = QColor(255, 255, 255) };
 
-    std::vector<Material> value = { woodMaterial, paperMaterial, ceramicsMaterial };
+    std::vector<Material> wallValue = { woodMaterial, paperMaterial, ceramicsMaterial };
+    std::vector<Material> floorValue = { woodMaterial, ceramicsMaterial };
 };
 
 #endif // MATERIAL_H

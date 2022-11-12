@@ -31,7 +31,8 @@ private:
     Ui::MainWindow *ui;
     Drawer *drawer;
 
-    std::vector<Material> materials = Materials().value;
+    std::vector<Material> wallMaterials = Materials().wallValue;
+    std::vector<Material> floorMaterials = Materials().floorValue;
     QTimer *timer;
 
     int modelCnt, lightCnt;
