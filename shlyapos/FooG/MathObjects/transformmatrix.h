@@ -9,7 +9,7 @@
 class MoveMatrix : public Matrix
 {
 public:
-    MoveMatrix(int, int, int);
+    MoveMatrix(float, float, float);
 };
 
 

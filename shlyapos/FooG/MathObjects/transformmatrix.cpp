@@ -1,6 +1,6 @@
 #include "transformmatrix.h"
 
-MoveMatrix::MoveMatrix(int x, int y, int z)
+MoveMatrix::MoveMatrix(float x, float y, float z)
 {
     this->data[0][0] = 1;
     this->data[1][1] = 1;
