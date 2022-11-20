@@ -1,2 +1,11 @@
-# Compiled class file
 .DS_Store
+*.aux
+*.log
+__pycache__
+*.so
+*.out
+*.nlo
+*.toc
+*.blg
+*.bbl
+*.info
