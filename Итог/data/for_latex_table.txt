@@ -1,0 +1,16 @@
+From file: data.csv
+
+
+1 & 235.0 \\ \hline 
+10 & 255.0 \\ \hline 
+20 & 265.0 \\ \hline 
+40 & 295.0 \\ \hline 
+60 & 330.0 \\ \hline 
+100 & 390.0 \\ \hline 
+150 & 460.0 \\ \hline 
+200 & 550.0 \\ \hline 
+250 & 620.0 \\ \hline 
+300 & 680.0 \\ \hline 
+400 & 830.0 \\ \hline 
+500 & 1000.0 \\ \hline 
+600 & 1130.0 \\ \hline 

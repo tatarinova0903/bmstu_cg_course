@@ -3,6 +3,7 @@
 
 #include <QDebug>
 #include <QTimer>
+#include <chrono>
 
 #define MAX_SPEED 1000
 #define MIN_SPEED 100
@@ -157,8 +158,12 @@ void MainWindow::stopVirusSpread()
 
 void MainWindow::moveVirus()
 {
+    std::chrono::time_point<std::chrono::system_clock> start, end;
+    start = std::chrono::system_clock::now();
     drawer->reCalculateVirus(ui->virus_count_field->text().toInt());
     drawer->draw();
+    end = std::chrono::system_clock::now();
+    std::cout << (std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count()) << std::endl;
 }
 
 // Model
