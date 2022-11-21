@@ -21,88 +21,46 @@
 
 \section{Реализация алгоритмов}
 
-В листингах \ref{code:comp_and_swap} -- \ref{code:parallel_bitonic} представлена реализация последовательного и параллельного алгоритмов битонной сортировки.
+В листингах \ref{code:getNormal} -- \ref{code:brown} представлена реализация алгоритмов моделирования броуновского движения и отрисовки сцены.
 
-\begin{lstlisting}[label=code:comp_and_swap,caption=Реализация вспомогательной функции обмена значениями элементов в массиве]
-void comp_and_swap(vector<int>& arr, unsigned long i, unsigned long j, 
-int dir)
+\begin{lstlisting}[label=code:getNormal,caption=Реализация вспомогательной функции вычисления распределенной нормально случайной величины]
+float BrownianMotion::getNormalRandom()
 {
-	if (dir == (arr[i] > arr[j]))
-	{
-		int temp = arr[i];
-		arr[i] = arr[j];
-		arr[j] = temp;
-	}
+	static default_random_engine e;
+	static uniform_real_distribution<> dis(-0.15, 0.15);
+	return dis(e);
 }
 \end{lstlisting}
 
+\newpage
 
-\begin{lstlisting}[label=code:bitonic,caption=Реализация последовательного алгоритма битонной сортировки]
-def compare_swap(arr, i, j, d):
-	if (d == 1 and arr[i] > arr[j]) or (d == 0 and arr[i] < arr[j]):
-		arr[i], arr[j] = arr[j], arr[i]
-
-def merge(arr, low, size, d):
-	if size > 1:
-		high = size // 2
-		for i in range(low, low + high):
-			compare_swap(arr, i, i + high, d)
-		merge(arr, low, high, d)
-		merge(arr, low + high, high, d)
-
-def bitonic_sort_rec(arr, low, size, d):
-	if size > 1:
-		high = int(size / 2)
-		bitonic_sort_rec(arr, low, high, 1)
-		bitonic_sort_rec(arr, low + high, high, 0)
-		merge(arr, low, size, d)
-
-def bitonic_sort(arr):
-	bitonic_sort_rec(arr, 0, len(arr), 1)
-	return arr
-\end{lstlisting}
-
-\begin{lstlisting}[label=code:parallel_bitonic,caption=Реализация параллельного алгоритма битонной сортировки]
-void bitonic_merge_parallel(vector<int>& arr, unsigned long low, int size, 
-	unsigned long iter_count, int thread_number, int dir)
+\begin{lstlisting}[label=code:brown,caption=Реализация расчета изменения координат центров частиц (броуновское движение)]
+void BrownianMotion::setVirusCountAndResetAllIfNeeded(int newVirusCount)
 {
-	for (int i = 0; i < size * iter_count; i += size)
+	if (virusCount == newVirusCount)
 	{
-		unsigned long med = size / 2;
-		unsigned long start = low + (thread_number * iter_count * size) + i;
-		for (unsigned long k = start; k < start + med; k++)
-		{
-			comp_and_swap(arr, k, k + med, dir);
-		}
+		return;
 	}
-}
-
-void bitonic_sort_rec(vector<int>& arr, unsigned long low, 
-	unsigned long size, int dir, int threads_count)
-{
-	vector<thread> threads(threads_count);
-	if (size > 1)
+	virusCount = newVirusCount;
+	float sigma = 0.2;
+	data = std::vector<std::vector<Vector3f>>(virusCount, std::vector<Vector3f>(SIZE + 1));
+	for (int k = 0; k < virusCount; k++)
 	{
-		unsigned long k = size / 2;
-		bitonic_sort_rec(arr, low, k, 1, threads_count);
-		bitonic_sort_rec(arr, low + k, k, 0, threads_count);
-		for (unsigned long j = size; j >= 2; j /= 2)
+		data.at(k).at(0) = Vector3f(0.0, 0.0, 0.0);
+		data.at(k).at(SIZE) = Vector3f(sigma * getNormalRandom(), sigma * getNormalRandom(), sigma * getNormalRandom());
+		for (int j = 1; j <= POWER; j++)
 		{
-			unsigned long for_count = size / j;
-			unsigned long real_threads_count = min(for_count, threads_count);
-			unsigned long iter_count = for_count / real_threads_count;
-			for (int i = 0; i < real_threads_count; i++)
+			for (int i = 1; i <= pow(2, (j - 1)); i++)
 			{
-				threads[i] = thread(bitonic_merge_parallel, ref(arr), low, j, iter_count, i, dir);
-				threads[i].join();
+				int ind = (2 * i - 1) * pow(2, POWER - j);
+				int old1 = (i - 1) * pow(2, POWER - j + 1);
+				int old2 = i * pow(2, POWER - j + 1);
+				data.at(k).at(ind).x = (data.at(k).at(old1).x + data.at(k).at(old2).x) / 2 + sigma * getNormalRandom() / pow(2, (j + 1) / 2);
+				data.at(k).at(ind).y = (data.at(k).at(old1).y + data.at(k).at(old2).y) / 2 + sigma * getNormalRandom() / pow(2, (j + 1) / 2);
+				data.at(k).at(ind).z = (data.at(k).at(old1).z + data.at(k).at(old2).z) / 2 + sigma * getNormalRandom() / pow(2, (j + 1) / 2);
 			}
 		}
 	}
-}
-
-void parallel_bitonic_sort(vector<int>& arr, int threads_count)
-{
-	bitonic_sort_rec(arr, 0, arr.size(), 1, threads_count);
 }
 \end{lstlisting}
 
