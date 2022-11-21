@@ -73,7 +73,7 @@ void BrownianMotion::setVirusCountAndResetAllIfNeeded(int newVirusCount)
             {
                 int ind = (2 * i - 1) * pow(2, POWER - j);
                 int old1 = (i - 1) * pow(2, POWER - j + 1);
-                int old2 = i * pow(2, POWER -j + 1);
+                int old2 = i * pow(2, POWER - j + 1);
                 data.at(k).at(ind).x = (data.at(k).at(old1).x + data.at(k).at(old2).x) / 2 + sigma * getNormalRandom() / pow(2, (j + 1) / 2);
                 data.at(k).at(ind).y = (data.at(k).at(old1).y + data.at(k).at(old2).y) / 2 + sigma * getNormalRandom() / pow(2, (j + 1) / 2);
                 data.at(k).at(ind).z = (data.at(k).at(old1).z + data.at(k).at(old2).z) / 2 + sigma * getNormalRandom() / pow(2, (j + 1) / 2);
