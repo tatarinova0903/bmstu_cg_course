@@ -27,9 +27,6 @@ MainWindow::MainWindow(QWidget *parent)
     initComboBoxes();
     initTimer();
 
-    // Combobox
-    connect(ui->comboBox_light, SIGNAL(currentIndexChanged(QString)), SLOT(changeLight()));
-
     this->resize(990, 800);
 
     modelCnt  = 0;
@@ -37,7 +34,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     lightPos.push_back(Vector3f(100, 1000, 100));
     drawer->addLight(Vector3f(100, 1000, 100), 1300);
-    ui->comboBox_light->addItem("Main light");
 }
 
 MainWindow::~MainWindow()
@@ -237,8 +233,7 @@ void MainWindow::cancelLineEditsModel()
 // Light
 void MainWindow::changeLight()
 {
-    int idx = ui->comboBox_light->currentIndex();
-    Vector3f currentCenter = lightPos[idx];
+    Vector3f currentCenter = lightPos[0];
 
     ui->le_lmove_x->setText(std::to_string(currentCenter.x).c_str());
     ui->le_lmove_y->setText(std::to_string(currentCenter.y).c_str());
@@ -252,7 +247,7 @@ void MainWindow::applyLightChange()
     if (lightPos.size() == 0)
         return;
 
-    int idx = ui->comboBox_light->currentIndex();
+    int idx = 0;
     Vector3f pos;
 
     if (ui->le_lmove_x->text().isEmpty() ||
@@ -278,7 +273,7 @@ void MainWindow::applyLightChange()
 
 void MainWindow::cancelLineEditsLight()
 {
-    int idx = ui->comboBox_light->currentIndex();
+    int idx = 0;
     Vector3f currentCenter = lightPos[idx];
 
     ui->le_lmove_x->setText(std::to_string(currentCenter.x).c_str());
