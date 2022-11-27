@@ -27,7 +27,7 @@ MainWindow::MainWindow(QWidget *parent)
     initComboBoxes();
     initTimer();
 
-    this->resize(990, 800);
+    this->resize(1000, 800);
 
     modelCnt  = 0;
     lightCnt  = 0;
@@ -154,9 +154,10 @@ void MainWindow::stopVirusSpread()
 
 void MainWindow::moveVirus()
 {
+    bool needChangeColor = ui->changeColorCheckBox->isChecked();
 //    std::chrono::time_point<std::chrono::system_clock> start, end;
 //    start = std::chrono::system_clock::now();
-    drawer->reCalculateVirus(ui->virus_count_field->text().toInt());
+    drawer->reCalculateVirus(ui->virus_count_field->text().toInt(), needChangeColor);
     drawer->draw();
 //    end = std::chrono::system_clock::now();
 //    std::cout << (std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count()) << std::endl;

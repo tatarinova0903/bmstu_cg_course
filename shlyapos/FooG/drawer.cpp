@@ -131,9 +131,9 @@ void Drawer::movingCamera(const float& speed)
 }
 
 // Virus
-void Drawer::reCalculateVirus(int virusCount)
+void Drawer::reCalculateVirus(int virusCount, bool needChangeColor)
 {
-    scene.reCalculateVirus(virusCount);
+    scene.reCalculateVirus(virusCount, needChangeColor);
 }
 
 void Drawer::addVirus(Vector3f& center, Vector3f& scale, QString& filename, int count)

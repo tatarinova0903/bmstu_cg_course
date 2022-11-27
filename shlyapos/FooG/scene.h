@@ -18,7 +18,7 @@ private:
     float virus_speed;
 
     Vector3f getSceneCenter();
-    bool checkSettled(Virus *);
+    bool checkSettled(Virus *virus, bool needChangeColor);
     bool isVirusNearModel(Model *, Virus *);
 
 public:
@@ -53,7 +53,7 @@ public:
 
     // Virus
     bool hasVirus();
-    void reCalculateVirus(int virusCount);
+    void reCalculateVirus(int virusCount, bool needChangeColor);
     void setVirusSpeed(float speed);
 };
 

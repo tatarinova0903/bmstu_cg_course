@@ -158,7 +158,7 @@ void Scene::movingCamera(const float& speed)
 }
 
 // Virus
-void Scene::reCalculateVirus(int virusCount)
+void Scene::reCalculateVirus(int virusCount, bool needChangeColor)
 {
     std::vector<Vector3f *> virus_centers;
 #pragma omp for
@@ -166,7 +166,7 @@ void Scene::reCalculateVirus(int virusCount)
     {
         if (model->isVirus && model->getIsVisible())
         {
-            if (!checkSettled((Virus *)&*model))
+            if (!checkSettled((Virus *)&*model, needChangeColor))
             {
                 virus_centers.push_back(&(model->getCenter()));
             }
@@ -194,7 +194,7 @@ bool Scene::hasVirus()
     return false;
 }
 
-bool Scene::checkSettled(Virus *virus)
+bool Scene::checkSettled(Virus *virus, bool needChangeColor)
 {
     if (virus->getIsSettled())
     {
@@ -210,7 +210,10 @@ bool Scene::checkSettled(Virus *virus)
 //                std::cout << virus->getGeometricCenter().x << " " << virus->getGeometricCenter().y << " "
 //                          << virus->getGeometricCenter().z<< std::endl;
                 virus->setSettled(&*model);
-                virus->setColor(QColor(0,255, 0));
+                if (needChangeColor)
+                {
+                    virus->setColor(QColor(0,255, 0));
+                }
                 return true;
             }
         }
