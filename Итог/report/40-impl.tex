@@ -21,18 +21,7 @@
 
 \section{Реализация алгоритмов}
 
-В листингах \ref{code:getNormal} -- \ref{code:brown} представлена реализация алгоритмов моделирования броуновского движения и отрисовки сцены.
-
-\begin{lstlisting}[label=code:getNormal,caption=Реализация вспомогательной функции вычисления распределенной нормально случайной величины]
-float BrownianMotion::getNormalRandom()
-{
-	static default_random_engine e;
-	static uniform_real_distribution<> dis(-step, step);
-	return dis(e);
-}
-\end{lstlisting}
-
-\newpage
+В листинге \ref{code:brown} представлена реализация алгоритма моделирования броуновского движения.
 
 \begin{lstlisting}[label=code:brown,caption=Реализация вычисления изменения координат центров частиц (броуновское движение)]
 void BrownianMotion::setVirusCountAndResetAllIfNeeded(int newVirusCount)
@@ -101,7 +90,7 @@ float Drawer::processLight(const Vector3f& vert, const Vector3f& norm)
 }
 \end{lstlisting}
 
-В листинге \ref{code:processPoligon} представлен метод, который осуществляет вычисление глубины каждой точки полигона и её интенсивности.
+В листинге \ref{code:processPoligon} представлен алгоритм вычисления глубины каждой точки полигона и её интенсивности.
 
 \begin{lstlisting}[label=code:processPoligon,caption=Реализация вычисления интенсивности вершины]
 void Drawer::processPoligon(Vector3i& t0, Vector3i& t1, Vector3i& t2,
@@ -137,10 +126,10 @@ float modelAlpha)
 		float alpha = (float)i / total_height;
 		float betta = (float)(i - (second_half ? t1.y - t0.y : 0)) / segment_height;
 		
-		Vector3i A =               t0 + Vector3f(t2 - t0) * alpha;
+		Vector3i A = t0 + Vector3f(t2 - t0) * alpha;
 		Vector3i B = second_half ? t1 + Vector3f(t2 - t1) * betta : t0 + Vector3f(t1 - t0) * betta;
 		
-		float iA =               i0 + (i2 - i0) * alpha;
+		float iA = i0 + (i2 - i0) * alpha;
 		float iB = second_half ? i1 + (i2 - i1) * betta : i0 + (i1 - i0) * betta;
 		
 		if (A.x > B.x)
@@ -206,6 +195,6 @@ float modelAlpha)
 \clearpage
 
 \section*{Вывод}
-В данном разделе были перечислены требования к программному обеспечению, средства разработки, с помощью которых была реализована программа, приведены листинги реализаций алгоритмов вычисления необходимых параметров дял отрисовки сцены, а также алгоритма моделированяи броуновского движения.
+В данном разделе были перечислены требования к программному обеспечению, средства разработки, с помощью которых была реализована программа, приведены реализации алгоритмов вычисления необходимых параметров для отрисовки сцены, а также алгоритма моделирования броуновского движения.
 
 
