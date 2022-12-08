@@ -29,10 +29,10 @@ Vector3f Scene::getSceneCenter()
         if (it->modelType == WALL)
         {
             y = it->getCenter().y;
-            z = it->getCenter().z;
         }
         if (it->modelType == FLOOR)
         {
+            z = it->getCenter().z;
             x = it->getCenter().x;
         }
      }

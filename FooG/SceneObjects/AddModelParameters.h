@@ -73,10 +73,10 @@ struct AddModelParameters
         material = Materials().woodMaterial;
     }
 
-    void configVirus()
+    void configVirus(float scale)
     {
         moveX = moveY = moveZ = 0.0;
-        scaleX = scaleY = scaleZ = 1.0;
+        scaleX = scaleY = scaleZ = scale;
         filename = "/Users/daria/Desktop/bmstu_cg_cource/shlyapos/FooG/SourceObjects/sphere1.obj";
         modelType = VIRUS;
         isVirus = true;

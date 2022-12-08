@@ -4,7 +4,7 @@
 #include <QColor>
 #include <limits.h>
 
-#define VIRUS_RADIUS 0.015
+#define VIRUS_RADIUS 0.016
 #define VIRUS_CENTER 0.1
 #define EPS 1e-6
 
@@ -16,9 +16,9 @@
 // Время жизни
 #define MULTIPLIER 3.0
 #define SKIN_TIME (9.0 * MULTIPLIER)
-#define WOOD_TIME (96.0 * MULTIPLIER)
-#define PAPER_TIME (108.0 * MULTIPLIER)
+#define WOOD_TIME (20.0 * MULTIPLIER)
+#define PAPER_TIME (30.0 * MULTIPLIER)
 #define CERAMICS_TIME (20.0 * MULTIPLIER)
-#define AIR_TIME (96.0 * MULTIPLIER)
+#define AIR_TIME (70.0 * MULTIPLIER)
 
 #endif // CONSTANTS_H

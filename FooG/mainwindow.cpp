@@ -116,6 +116,11 @@ void MainWindow::initFields()
     ui->virus_count_field->setText("20");
 
     ui->speed_slider->setValue(50);
+
+    ui->le_lmove_x->setText("100.0");
+    ui->le_lmove_y->setText("500.0");
+    ui->le_lmove_z->setText("100.0");
+    ui->le_power->setText("200");
 }
 
 void MainWindow::initComboBoxes()
@@ -140,7 +145,8 @@ void MainWindow::startVirusSpread()
     if (!drawer->hasVirus())
     {
         AddModelParameters virus = AddModelParameters();
-        virus.configVirus();
+        float kScale = ui->le_mscale_x->text().toFloat();
+        virus.configVirus(kScale);
         setAddModelParams(virus);
     }
 
@@ -290,10 +296,10 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
 
     switch (key)
     {
-    case Qt::Key_W:
+    case Qt::Key_Equal:
         drawer->movingCamera(1);
         break;
-    case Qt::Key_S:
+    case Qt::Key_Minus:
         drawer->movingCamera(-1);
         break;
     case Qt::Key_A:

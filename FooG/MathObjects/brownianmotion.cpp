@@ -9,8 +9,10 @@ BrownianMotion::BrownianMotion() { }
 float BrownianMotion::getNormalRandom()
 {
     static default_random_engine e;
-    static uniform_real_distribution<> dis(-0.15, 0.15);
-    return dis(e);
+    static uniform_real_distribution<> dis(-0.1, 0.1);
+    float rand = dis(e);
+//    cout << rand << endl;
+    return rand;
 }
 
 float BrownianMotion::get_random()

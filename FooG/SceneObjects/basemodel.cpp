@@ -148,7 +148,8 @@ Vector3f& BaseModel::getCenter()
 
 Vector3f BaseModel::getGeometricCenter()
 {
-    return geometricCenter + center;
+//    geometricCenter.x = sceneCenter.x + (geometricCenter.x - sceneCenter.x) * k.x;
+    return (geometricCenter + center);
 }
 
 void BaseModel::setCenter(const Vector3f& newCenter)
@@ -266,6 +267,10 @@ void BaseModel::scale(const Vector3f& k, const Vector3f& sceneCenter)
     scaleK = k.x;
 
     int nverts = verts.size();
+
+    geometricCenter.x = sceneCenter.x + (geometricCenter.x - sceneCenter.x) * k.x;
+    geometricCenter.y = sceneCenter.y + (geometricCenter.y - sceneCenter.y) * k.y;
+    geometricCenter.z = sceneCenter.z + (geometricCenter.z - sceneCenter.z) * k.z;
 
     for (int i = 0; i < nverts; i++)
     {
