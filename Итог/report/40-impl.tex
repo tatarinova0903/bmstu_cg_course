@@ -60,31 +60,27 @@ float Drawer::processLight(const Vector3f& vert, const Vector3f& norm)
 {
 	float wholeIntensity = 0;
 	float intensity;
-	
 	size_t lights = scene.getLightSourceCount();
 	
 	for (size_t i = 0; i < lights; i++)
 	{
 		intensity = 0;
 		LightSourcePoint lsp = scene.getLightSource(i);
-		
 		Vector3f lightDir = vert - lsp.getPosition();
 		
 		intensity += lightDir * norm / pow(lightDir.norm(), 2.0);
 		intensity *= lsp.getIntensity() * LIGHT_REFLECT;
-		
 		intensity = fmax(0.0, intensity);
 		intensity = fmin(1.0, intensity);
-		
 		intensity = BG_LIGHT + intensity * (1 - BG_LIGHT);
 		
 		wholeIntensity += intensity;
 	}
 	
 	if (wholeIntensity == 0)
-	wholeIntensity = BG_LIGHT;
+		wholeIntensity = BG_LIGHT;
 	else
-	wholeIntensity /= lights;
+		wholeIntensity /= lights;
 	
 	return wholeIntensity;
 }
@@ -98,8 +94,7 @@ const QColor& color, float& i0, float& i1, float& i2,
 float modelAlpha)
 {
 	if (t0.y == t1.y && t0.y == t2.y)
-	return;
-	
+		return;
 	if (t0.y > t1.y)
 	{
 		std::swap(t0, t1);
@@ -115,20 +110,15 @@ float modelAlpha)
 		std::swap(t1, t2);
 		std::swap(i1, i2);
 	}
-	
 	int total_height = t2.y - t0.y;
-	
 	for (int i = 0; i < total_height; i++)
 	{
 		bool second_half = i > t1.y - t0.y || t1.y == t0.y;
 		int segment_height = second_half ? t2.y - t1.y : t1.y - t0.y;
-		
 		float alpha = (float)i / total_height;
 		float betta = (float)(i - (second_half ? t1.y - t0.y : 0)) / segment_height;
-		
 		Vector3i A = t0 + Vector3f(t2 - t0) * alpha;
 		Vector3i B = second_half ? t1 + Vector3f(t2 - t1) * betta : t0 + Vector3f(t1 - t0) * betta;
-		
 		float iA = i0 + (i2 - i0) * alpha;
 		float iB = second_half ? i1 + (i2 - i1) * betta : i0 + (i1 - i0) * betta;
 		
@@ -174,6 +164,8 @@ float modelAlpha)
 	\label{fig:simple}
 \end{figure}
 
+\clearpage
+
 На рисунке \ref{fig:virus_move1} изображено движение частиц.
 
 \begin{figure}[ph!]
@@ -186,9 +178,11 @@ float modelAlpha)
 
 \begin{figure}[ph!]
 	\center{\includegraphics[scale=0.35]{img/settle.png}}
-	\caption{Пример оседания и тускнения частиц}
+	\caption{Пример оседания частиц}
 	\label{fig:virus_settled}
 \end{figure}
+
+\clearpage
 
 \section*{Вывод}
 В данном разделе были перечислены требования к программному обеспечению, средства разработки, с помощью которых была реализована программа, приведены реализации алгоритмов вычисления необходимых параметров для отрисовки сцены, а также реализация алгоритма моделирования броуновского движения.
